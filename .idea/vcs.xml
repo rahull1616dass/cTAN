@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="" vcs="" />
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/applications/examples/ai" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/applications/examples/basic" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/applications/examples/unity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/applications/simthief" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/applications/xroads" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/atn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/feature" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/nlp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/planning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/reasoning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/editor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/cv" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/j4k" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/json" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/sphinx" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/tuio" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/vrpn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ontology/generating" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/physics/jbullet" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/remote" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/renderer/gui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/renderer/jvr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/renderer/unity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/sound/java-sound" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
+  </component>
+</project>

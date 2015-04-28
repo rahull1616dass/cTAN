@@ -1,0 +1,12 @@
+workspace.xml
+dictionaries/
+inspectionProfiles/
+projectCodeStyle.xml
+misc.xml
+compiler.xml
+codeStyleSettings.xml
+scala_settings.xml
+/highlighting.xml
+/modules.xml
+modules/
+libraries/

@@ -1,0 +1,743 @@
+<!DOCTYPE html>  
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  <title>simx-getting-started</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+body{
+    margin: 0 auto;
+    background-color:white;
+
+/*	--------- FONT FAMILY --------
+ 	following are some optional font families. Usually a family 
+	is safer to choose than a specific font, 
+	which may not be on the users computer		*/
+    font-family:Georgia, Palatino, serif;
+/    font-family:"Book Antiqua", Palatino, serif;
+/    font-family:Arial, Helvetica, sans-serif;
+/    font-family:Tahoma, Verdana, Geneva, sans-serif;
+/    font-family:Courier, monospace;
+/    font-family:"Times New Roman", Times, serif;
+
+/*	-------------- COLOR OPTIONS ------------
+ 	following are additional color options for base font
+	you could uncomment another one to easily change the base color 
+	or add one to a specific element style below         */		
+    color: #333333; /* dark gray not black */
+/    color: #000000; /* black */
+/    color: #666666; /* medium gray  black */	
+/    color: #E3E3E3; /* very light gray */
+/    color: white; 
+
+    line-height: 1;
+/    max-width: 960px;
+    max-width: 800px;
+    padding: 30px;
+    font-size: 18px;
+}
+
+
+p   {
+/    font-size: 22px;
+    line-height: 150%;
+/    max-width: 540px;
+    max-width: 960px;
+    font-weight: 400;
+     color: #333333
+}
+
+
+h1, h2, h3, h4 {
+/    color: #111111;
+    font-weight: 400;
+}
+
+h2, h3, h4, h5, p {
+    margin-bottom: 25px;
+    padding: 0;
+}
+
+h1 {
+    margin-bottom: 10px;
+    font-size:300%;
+    padding: 0px;
+    font-variant:small-caps;
+}
+
+h2 {
+    font-size:150%
+/    margin: 24px 0 6px; 
+}
+
+h3 {
+    font-size:120%
+}
+h4 {
+    font-size:100%
+    font-variant:small-caps;
+
+}
+h5 {
+    font-size:80%
+    font-weight: 100;
+}
+
+h6 {
+    font-size:80%
+    font-weight: 100;
+    color:red;
+    font-variant:small-caps;
+}
+a {
+    color: grey;
+    margin: 0;
+    padding: 0;
+    vertical-align: baseline;
+}
+a:hover {
+    text-decoration: blink;
+    color: green;
+}
+a:visited {
+    color: black;
+}
+ul, ol {
+    padding: 0;
+    margin: 0px 0px 0px 50px;
+}
+ul {
+    list-style-type: square;
+    list-style-position: inside;
+
+}
+
+li {
+     line-height:150%    
+}
+li ul, li ul {
+    margin-left: 24px;
+}
+
+pre {
+    padding: 0px 24px;
+    max-width: 800px;
+    white-space: pre-wrap;
+}
+code {
+    font-family: Consolas, Monaco, Andale Mono, monospace;
+    line-height: 1.5;
+    font-size: 13px;
+}
+aside {
+    display: block;
+    float: right;
+    width: 390px;
+}
+blockquote {
+    border-left:.5em solid #eee;
+    padding: 0 1em;
+    margin-left:0;
+    max-width: 476px;
+}
+blockquote  cite {
+ /   font-size:14px;
+    line-height:20px;
+    color:#bfbfbf;
+}
+blockquote cite:before {
+    content: '\2014 \00A0';
+}
+
+blockquote p {  
+    color: #666;
+    max-width: 460px;
+}
+hr {
+/    width: 540px;
+    text-align: left;
+    margin: 0 auto 0 0;
+    color: #999;
+}
+figcaption {
+    text-align: center;
+}
+figure {
+    text-align: center;
+}
+/*
+
+github.com style (c) Vasily Polovnyov <vast@whiteants.net>
+
+*/
+
+pre code {
+  display: block; padding: 0.5em;
+  color: #000;
+  background: #f8f8ff
+}
+
+pre .comment,
+pre .template_comment,
+pre .diff .header,
+pre .javadoc {
+  color: #998;
+  font-style: italic
+}
+
+pre .keyword,
+pre .css .rule .keyword,
+pre .winutils,
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
+  color: #000;
+  font-weight: bold
+}
+
+pre .ruby .keyword {
+  font-weight: normal
+}
+
+pre .number,
+pre .hexcolor {
+  color: #40a070
+}
+
+pre .string,
+pre .tag .value,
+pre .phpdoc,
+pre .tex .formula {
+  color: #d14
+}
+
+pre .title,
+pre .id {
+  color: #900;
+  font-weight: bold
+}
+
+pre .javascript .title,
+pre .lisp .title,
+pre .subst {
+  font-weight: normal
+}
+
+pre .class .title,
+pre .haskell .label,
+pre .tex .command {
+  color: #458;
+  font-weight: bold
+}
+
+pre .class .params {
+	color: #000;
+}
+
+pre .tag,
+pre .tag .title,
+pre .rules .property,
+pre .django .tag .keyword {
+  color: #000080;
+  font-weight: normal
+}
+
+pre .attribute,
+pre .variable,
+pre .instancevar,
+pre .lisp .body {
+  color: #008080
+}
+
+pre .regexp {
+  color: #009926
+}
+
+pre .class {
+  color: #458;
+  font-weight: bold
+}
+
+pre .symbol,
+pre .ruby .symbol .string,
+pre .ruby .symbol .keyword,
+pre .ruby .symbol .keymethods,
+pre .lisp .keyword,
+pre .tex .special,
+pre .input_number {
+  color: #0086b3
+}
+
+pre .ruby .identifier .keyword,
+pre .ruby .identifier .keymethods {
+  color: #0086b3;
+}
+
+pre .ruby .constant {
+  color: #008080;
+}
+
+pre .builtin,
+pre .built_in,
+pre .lisp .title {
+  color: #0086b3
+}
+
+pre .preprocessor,
+pre .pi,
+pre .doctype,
+pre .shebang,
+pre .cdata {
+  color: #999;
+  font-weight: bold
+}
+
+pre .deletion {
+  background: #fdd
+}
+
+pre .addition {
+  background: #dfd
+}
+
+pre .diff .change {
+  background: #0086b3
+}
+
+pre .chunk {
+  color: #aaa
+}
+
+pre .tex .formula {
+  opacity: 0.5;
+}
+</style>
+
+</head>
+<body class="normal">
+  <div id="wrapper">
+      <p><a href="./simx-ReadMe.html">Back to Read Me</a></p>
+
+<figure>
+<img src="figures/simx-logo.png" alt="" id="simx-logo" title="simx-logo" style="width:4cm;" align="right" /></figure>
+
+
+
+<h1 id="simulatorx:gettingstarted">Simulator X: Getting Started</h1>
+
+<h2 id="tableofcontents">Table of Contents</h2>
+
+<ul>
+<li><a href="#settinguptheenvironment">Setting up the environment</a>
+
+<ul>
+<li><a href="#git">Git</a></li>
+<li><a href="#java">Java</a></li>
+<li><a href="#intellij">IntelliJ</a></li>
+</ul></li>
+<li><a href="#settinguptheproject">Setting up the project</a></li>
+<li><a href="#exampleapplications">Example applications</a>
+
+<ul>
+<li><a href="#basicexample">Basic example</a></li>
+<li><a href="#clusterexample">Cluster example</a></li>
+</ul></li>
+<li><a href="./creating-components.html">Example components</a></li>
+</ul>
+
+<p><strong>Note:</strong>
+<em>The first time after you compiled the application (which takes a while!), it may come up with an ClassNotFoundException. In most cases the reason for this ist the fact that IntelliJ did not recognize the class file fast enough after SBT created it. Simply start the application again.</em></p>
+
+<p>Simulator X is an evolutionary platform for software technology research in the area of intelligent RIS. The current architecture incorporates some well known abstractions and good practices as well as some interesting experimental features [latoschik:2011]:</p>
+
+<ul>
+<li>Unified concurrency model based on actors.</li>
+<li>Shared entity model using a distributed state.</li>
+<li>Component architecture using the concurrency model.</li>
+<li>Functional/OOP approach based on Scala.</li>
+<li>Semantic binding for the integration of AI.</li>
+<li>Generic support for multimodal interfaces.</li>
+</ul>
+
+<h2 id="settinguptheenvironment">Setting up the environment</h2>
+
+<p>This section describes how to setup a system to obtain, built and run Simulator X to ultimately develop own applications. The Simulator X project is hosted at <a href="https://github.com">GitHub</a> and mainly developed using the programming language <a href="http://www.scala-lang.org">Scala</a> in conjuction with the IDE <a href="http://www.jetbrains.com/idea/">IntelliJ</a>. To compile and run the Scala code an installation of the Java Development Kit (JDK) is required. Considering all dependancies the supported operating systems are (at least) Windows (7 and 8), Linux and MacOSX (10.6 and later).</p>
+
+<h3 id="git">Git</h3>
+
+<p>The Simulator X project is hosted at <a href="https://github.com">GitHub</a> and can be accessed via the following project URL:</p>
+
+<p><a href="https://github.com/organizations/simulator-x">https://github.com/organizations/simulator-x</a></p>
+
+<p>To obtain the source code you will likely need to setup the version control system (VCS) git on your system. See for example GitHub&#8217;s <a href="https://help.github.com/articles/set-up-git">Getting Started</a> for help.</p>
+
+<h3 id="java">Java</h3>
+
+<p>Simulator X runs on the Java Virtual Machine (JVM). It is compatible with Oracles&#8217;s Java 6 on all supported operating systems. In addition it is compatible with Oracles&#8217;s Java 7 on Windows systems.</p>
+
+<p>To compile and run Simulator X you need the Java Development Kit (JDK) to be installed on you system and your <em>path</em> environment to be configured to contain your JDK&#8217;s <em>bin</em> folder (<em>E.g. you should be able to execute <code>java</code> and <code>javac</code> in a terminal if your configuration is right.</em>).</p>
+
+<h3 id="intellij">IntelliJ</h3>
+
+<p>The repository of Simulator X obtained from GitHub contains a preconfigured IntelliJ project as a easy starting point for the development own applications. In order to use this configuration you need to install at least the free community version of JetBrain&#8217;s IDE <a href="http://www.jetbrains.com/idea/index.html">IntelliJ IDEA</a> as well as the plugins <em>SBT</em> and <em>scala</em> (see JetBrain&#8217;s <a href="http://www.jetbrains.com/idea/plugins/index.html">plugin page</a> for a how-to).</p>
+
+<h2 id="settinguptheproject">Setting up the project</h2>
+
+<p>First you need to download the project files. Go to <a href="https://github.com/organizations/simulator-x">Simulator X&#8217;s project page</a> and obtain the files via one of GitHub&#8217;s download alternatives. Store them at a nice place at your system (<em>Hint: Choosing a path containing no whitespaces or special characters prevents errors in some cases. In general any valid path should be fine.</em>)</p>
+
+<p>The files you downloaded contain a IntelliJ project. Open IntelliJ, select <em>Open Project</em> and choose the root folder of the files you just downloaded. The Simulator X project should load as a result, presenting you <a href="#intellij-default">IntelliJ&#8217;s default project view</a>.</p>
+
+<figure>
+<img src="figures/intellij-default.png" alt="IntelliJs default project view" id="intellij-default" title="intellij-default" style="width:100%;" />
+<figcaption>IntelliJ&#8217;s default project view</figcaption></figure>
+
+
+
+<p>You may need to add your Java SDK in the project settings menu (<em>File → Project Structure → SDKs</em>) and set this SDK as project SDK (<em>Project Settings → Project</em>). </p>
+
+<h2 id="exampleapplications">Example applications</h2>
+
+<p>The Simulator X project contains three demo applications to showcase the framework and to provide a starting point for development: A basic example, component examples and GenerateBasicExamplesSymbols, which generates Symbols from an online OWL ontology. To compile and execute these example applications simply select and run one of the preconfigured <a href="#run-cfgs">configurations</a> from the IntelliJ project (e.g. by clicking on the green &#8220;play button&#8221;).</p>
+
+<figure>
+<img src="figures/run-cfgs.png" alt="Run configurations" id="run-cfgs" title="run-cfgs" />
+<figcaption>Run configurations</figcaption></figure>
+
+
+
+<p>On the left side of <a href="#intellij-default">IntelliJ&#8217;s user interface</a> you see all modules the Simulator X IntelliJ project consist of. Besides basic functionality (like in <em>core</em>) or component implementations (like in <em>jbullet</em> for physics or <em>jvr</em> for graphics), the <em>basicexamples</em> module contains the before mentioned fundamental examples for Simulator X. </p>
+
+<h3 id="basicexample">Basic example</h3>
+
+<p>This section describes the application contained in the <em>ExampleApplication</em> file (loctated in the package ) in detail. To compile and run the example, simply select and apply the corresponding <a href="#run-cfgs">run configuration</a>. The application demonstrates the basics of Simulator X&#8217;s API in the context of a simple example that combines object creation and manipulation as well as input handling while using graphics and physics functionality. The resulting virtual scene shows <a href="#basic-example-render">a ball jumping on a rotating table</a> in the render window on startup. By pressing the <code>space</code> key one can spawn additional balls above the table. The position of the mouse inside the focused render output window is used to manipulate the viewing direction of the virtual camera, allowing a slight &#8220;look around&#8221;. In addition to the rendering output the application opens another window, containing a <a href="#basic-example-edit">graphical editor</a> for the simulation&#8217;s world state (that will be described later in this section). </p>
+
+<figure>
+<img src="figures/simx-be-render.png" alt="Rendering output of the basic example application." id="basic-example-render" title="basic-example-render" style="width:100%;" />
+<figcaption>Rendering output of the basic example application.</figcaption></figure>
+
+
+
+<figure>
+<img src="figures/simx-be-edit.png" alt="Graphical world state editor." id="basic-example-edit" title="basic-example-edit" style="width:100%;" />
+<figcaption>Graphical world state editor.</figcaption></figure>
+
+
+
+
+<h4 id="startingup">Starting Up</h4>
+
+<p>In the following the implementation of this example will be explained in detail. The source code of the example is located in the module <em>basicexamples</em> in the package <code>simx.applications.basicexamples</code>. The first important lines are the those:</p>
+
+<pre><code class="scala">class ExampleApplication extends SimXApplication with JVRInit {
+  /*...*/
+}</code></pre>
+
+<p>The starting point of the basic example applications is the class <code>ExampleApplication</code>, which extends the <code>SimXApplication</code> trait. This trait is provided to support the rapid implementation of simple applications like this example. It realizes one potential way to setup and run a Simulator X application. For this purpose it deals with common initialization and shutdown procedures internally and defines three interface methods for component- and content creation as well as for additional application logic. In addition to the <code>SimXApplication</code> trait, the second mixed in trait (<code>JVRInit</code>) initializes <em>OpenGL</em> for the utilized rendering component. It is of secondary importance for this example.</p>
+
+<h4 id="creatingcomponents">Creating Components</h4>
+
+<p>The first thing to do to fulfill the <code>SimXApplication</code> trait is to create the components that are required for the application. In this case there are a rendering component, a physics component and an editor. Simulator X already comes with several pre implemented components for typical tasks. These implementations are located in the <code>simx.components</code> package. The example uses the rendering component <code>JVRConnector</code> based on the open source java renderer <a href="http://cga200.beuth-hochschule.de/jVR/">jVR</a> implemented at the Beuth Hochschule für Technik Berlin, the physics component <code>JBulletComponent</code> based on the open source physics engine <a href="http://jbullet.advel.cz">JBullet</a> and the editor component <code>Editor</code> implemented directly for Simulator X: </p>
+
+<pre><code class="scala">val gfxName = Symbol(&quot;renderer&quot;)
+val physicsName = Symbol(&quot;physics&quot;)
+val editorName = Symbol(&quot;editor&quot;)
+
+protected def createComponents() {
+  println(&quot;[Creating components]&quot;)
+
+  create(new JBulletComponent(physicsName))
+  create(new JVRConnector(gfxName))
+  create(new Editor(editorName))
+}</code></pre>
+
+<p>The method <code>createComponents</code> shown here implements the respective method defined in <code>SimXApplication</code>. It is the designated location for component creation. The method <code>create</code> is then used to create all desired components, by passing the component&#8217;s constructor (see the respective component documentation for details concerning alternative constructor parameters). The passed component name is a standard argument for components that can be used to reference the component later. It is extracted into a local value here to avoid error resulting of typos in component names. </p>
+
+<p>The use of the method <code>create</code> instead of a direct constructor call is necessary, inter alia, to guarantee a transparent interface for local as well as clustered applications. In the latter case it could be necessary to instantiate a component on a different machine. Without a direct constructor call a switch between a local and a distributed version of the application can be configured without changing the actual application code.</p>
+
+<p>One important consequence of this decoupling in terms of component creation is that the <code>create</code> method has no return value. As stated before, the creation of a component could lead to its instantiation on another machine. Following the paradigms of the <a href="http://dl.acm.org/citation.cfm?id=1624804">actor model</a> that underlies Simulator X, this could (in the case of a distributed application) happen asynchronously using message passing.
+To provide a convenient way of creating component and to give a example for advanced users (in the source code), the <code>SimXApplication</code> trait carries out every component creation request (using <code>create</code>) inside <code>createComponents</code> in parallel and then waits, until every component&#8217;s creation process is finished, before calling <code>configureComponents</code>. </p>
+
+<h4 id="configuringcomponents">Configuring Components</h4>
+
+<p>Most components need a separate configuration to run properly. This configuration can be arbitrarily altered (again) at runtime, in contrast to the component&#8217;s constructor arguments. Besides these configurations the execution scheme as well as inter component synchronization and miscellaneous application logic involving components may be configured.</p>
+
+<p>This example configures the rendering component to use a 800 x 600 px render window, to run with <em>low</em> shadow quality and no (<em>none</em>) mirror effects, to run at a target frame rate of 60 fps and to close the application if the render window is closed. The physics component is configured to apply gravity along the negative y-axis (<code>ConstVec3f(0, -9.81f, 0)</code>) and to run at a target frame rate of 60 fps as well. The configuration for the editor component simply sets the application name (used for example in the <a href="#basic-example-edit">graphical user interface</a>). Since the editor is a passive component, that solely reacts to value changes it does not need an <code>ExecutionStrategy</code>.</p>
+
+<pre><code class="scala">protected def configureComponents(components: immutable.Map[Symbol, Component]) {
+  println(&quot;[Configuring components]&quot;)
+
+  components(gfxName) ! 
+    ConfigureRenderer(
+      BasicDisplayConfiguration(800, 600), 
+      EffectsConfiguration(&quot;low&quot;,&quot;none&quot;)
+    )
+  start(ExecutionStrategy where components(gfxName) runs Soft(60))
+  exitOnClose(components(gfxName), shutdown _) // register for exit on close
+
+  components(physicsName) ! PhysicsConfiguration (ConstVec3f(0, -9.81f, 0))
+  start(ExecutionStrategy where components(physicsName) runs Soft(60))
+
+  components(editorName) ! EditorConfiguration(appName = &quot;MasterControlProgram&quot;)
+}</code></pre>
+
+<p>The described configuration is realized by implementing the <code>configureComponents</code> defined in the <code>SimXApplication</code> trait. This method is called after all component creation processes requested in <code>createComponents</code> are completely finished (see <a href="#creatingcomponents">Creating Components</a>). The results of the creation processes are available via <code>configureComponents</code>&#8217; parameter <code>components</code>. As a second consequence of the underlying <a href="http://dl.acm.org/citation.cfm?id=1624804">actor model</a>, the created components are actors themselves and results are references to their actor interface.</p>
+
+<p>To access single component references the component name is utilized. The actual configuration is then transferred to the component, using the <a href="http://dl.acm.org/citation.cfm?id=1624804">actor model</a>&#8217;s message passing operator <code>!</code> (see the component&#8217;s documentation for details on valid configuration messages).</p>
+
+<p>The execution scheme and the inter-component synchronization is configured using the <code>start</code> method and the <code>ExecutionStrategy</code> domain specific language (DSL from the <code>simx.core.components</code> package (see the respective documentation for details).</p>
+
+<p>The method <code>exitOnClose</code> provided by the <code>JVRInit</code> trait is used to logically connect the closing of the renderer window with the call of the <code>shutdown</code> method (from the <code>SimXApplication</code> trait) (This is a specific functionality of the utilized rendering component <code>JVRConnector</code> realized directly via message passing).</p>
+
+<h4 id="creatingentities">Creating Entities</h4>
+
+<p>After the successful creation and configuration of all desired components the objects of the simulation, so called <em>entities</em>, can be created. Besides visible objects other items, like lights, virtual cameras or input devices are considered to be entities in Simulator X. The creation of such entities is divided into two conceptional parts: The description of an entity defining all its desired properties and the realization of such an entity description (e.g. resulting in actual rendering or simulation). The description of entities itself is achieved by specifying a set of aspects for an entity, each intended to be realized by a specific component type. </p>
+
+<p>In the presented example application, three entities are created at startup: a table, a ball and a light. The ball has graphical, physical and naming aspects, that state the following (The descriptions of table and light are similar and not described here):</p>
+
+<ul>
+<li>Ball is an graphical object loaded from a (collada-) file with a specific scaling</li>
+<li>Ball is a physical sphere with a specific radius and position</li>
+<li>Ball is is named <em>the ball</em></li>
+</ul>
+
+<p>After the entities have been realized a respective command line output is generated.</p>
+
+<pre><code class="scala">private var tableEntityOption: Option[Entity] = None
+private val ballRadius = 0.2f
+private val ballPosition = ConstVec3f(0f, 1.5f, -7f)
+
+protected def createEntities() {
+  println(&quot;[Creating entities]&quot;)
+
+  val ballDescription =
+    EntityDescription (
+      PhysSphere(
+        restitution    = 0.998f,
+        transform      = ballPosition,
+        radius         = ballRadius
+      ),
+      ShapeFromFile(
+        file           = &quot;assets/vis/ball.dae&quot;,
+        scale          = ConstMat4f(Mat3x4f.scale(ballRadius*2f)),
+        transformation = ReadFromElseWhere
+      ),
+      NameIt(&quot;the ball&quot;)
+    )
+
+  ballDescription.realize(entityComplete)
+  Light(&quot;the light&quot;, Vec3f(-4f, 8f, -7f), 270f, -25f, 0f).realize(entityComplete)
+  Table(&quot;the table&quot;, Vec3f(3f, 1f, 2f), Vec3f(0f, -1.5f, -7f)).realize((tableEntity: Entity) =&gt; {
+    entityComplete(tableEntity)
+    tableEntityOption = Some(tableEntity)
+  })
+}
+
+private def entityComplete(e: Entity) {println(&quot;[Completetd entity] &quot; + e)}</code></pre>
+
+<p>The described entity creation is implemented in <code>createEntities</code>, an interface method defined in <code>SimXApplication</code>. It is called directly after <code>configureComponents</code> finished.
+The description of the ball (stored in <code>ballDescription</code>) is created using the <code>EntityDescription</code> class. <code>EntityDescription</code>&#8217;s constructor directly realizes the concept of describing entities as set for aspects, by accepting an arbitrary number of <code>EntityAspect</code> objects. In the case of the ball description the physics aspect <code>PhysSphere</code>, the graphics aspect <code>ShapeFromFile</code> and the naming aspect <code>NameIt</code> are used (for details concerning available aspect implementations or their constructor parameters, see the respective documentation or the respective comments in the <code>simx.core.components</code>). These aspects are directly related to the functionality provided by the created components (e.g. <code>JVRConnector</code> or <code>JBulletComponent</code>).</p>
+
+<p>In order to create a ball entity from the <code>ballDescription</code> the method <code>realize</code> (from the <code>EntityDescription</code> class) is called. This call brings the components to realize the respective aspects and Simulator X to actually create the entity. Because components, Simulator X core functionality as well the example application itself are all implemented on-top of the actor <a href="http://dl.acm.org/citation.cfm?id=1624804">actor model</a> model and hence are realized by utilizing or rather being actors, this is achieved by message passing. Similar to the case of component creation, one consequence is that the result of <code>realize</code> is not immediately available. Thus, <code>realize</code> takes one function as parameter that handles the described entity once its realization is completed. In the example of the <code>ballDescription</code> the function <code>entityComplete</code> (a function that takes one entity and prints <em>[Completetd entity] &#8230;</em> to the console) is passed to <code>realize</code>.</p>
+
+<p>Similar to the ball, the light and the table are realized. Their <code>EntityDescription</code>s are sourced out to the classes <code>Light</code> and <code>Table</code>. By doing so these <code>EntityDescription</code> can easily be reused, while varying properties can be set via the constructor (e.g. the position). In addition to printing out a console message, the function passed to the <code>realize</code>-call on the table description stores the completed entity in a class variable for later use.</p>
+
+<p>The results of the three calls of <code>realize</code> in of components and output are:</p>
+
+<ul>
+<li>The ball and the table collada files are loaded by the renderer and displayed in the <a href="#basic-example-render">render output window</a></li>
+<li>The light is created by the renderer and the scene is lid accordingly</li>
+<li>The physical shapes of the ball and the table are loaded by the physics component and simulated accordingly (the table is a static object - mass = 0 - that is not affected by gravity)</li>
+<li>Due to the combination of physical and graphical aspects in one <code>EntityDescription</code>, the position and orientation of the ball (and the table) calculated by the physics component&#8217;s simulation are shared with the rendering component. This results in the display of the ball jumping on the table in the render output window.</li>
+<li>The created entities are listed in the <a href="#basic-example-edit-2">editor GUI</a> according to their <code>NameIt</code> aspect</li>
+</ul>
+
+<p>Note: The order in which the realized entity descriptions are completed (resulting in the actual entity) is not predetermined (due to the underlying <a href="http://dl.acm.org/citation.cfm?id=1624804">actor model</a> and the implementation of the process in Simulator X). Related messages are sent and processed asynchronously and in parallel.</p>
+
+<h4 id="settingupadditionalapplicationlogic">Setting up additional application logic</h4>
+
+<p>Now that all initially required entities are created, the application window shows a ball jumping on a table. In this state, the application does not provide any possibility of interaction or manipulation by the user (except of using the editor) yet. In order to implement such <em>application logic</em>, the <code>SimXApplication</code> trait defines one additional method that is call right after entity creation and is designated for the realization of any additional requirement. Note that this approach of realizing <em>application logic</em> is only suitable for small and simple applications. If things become more complex other approaches, e.g.\ like creating own dedicated components, should be used (see the documentation dealing with the creation of components).</p>
+
+<p>In the presented example application three additional behaviors are implemented:</p>
+
+<ul>
+<li>The continuous animation (i.e. rotation) of the table.</li>
+<li>The spawning of new balls as reaction to a key press.</li>
+<li>A simple camera look around using the mouse.</li>
+</ul>
+
+<p>These examples showcase the following basic operations:</p>
+
+<ul>
+<li>Access of entity properties, so called <em>state variables</em></li>
+<li>Manipulation of <em>state variables</em></li>
+<li>Scheduling of jobs</li>
+<li>Reaction to the change of <em>state variables</em></li>
+<li>Creation and removal of entities in general</li>
+<li>Access of input device data (here keyboard and mouse)</li>
+</ul>
+
+<pre><code class="scala">protected def finishConfiguration() {
+  println(&quot;[Configuring application]&quot;)
+  rotateTable()
+  initializeBallSpawning()
+  initializeMouseControl()
+  println(&quot;[Application is running] Press SPACE to spawn new balls!&quot;)
+}</code></pre>
+
+<p>The described behaviors are setup inside <code>finishConfiguration</code>, an interface method provided by the <code>SimXApplication</code> trait. <code>finishConfiguration</code> is called right after <code>createEntities</code> from within the <code>SimXApplication</code> trait. For this example application the implementations of the described behaviors are sourced out into the methods <code>rotateTable</code>, <code>initializeBallSpawning</code> and <code>initializeMouseControl</code>.</p>
+
+<pre><code class="scala">private def rotateTable() {
+  addJobIn(16L, () =&gt; {
+    tableEntityOption.collect{ case tableEntity =&gt; {
+      val transformationSVar = tableEntity.get(types.Transformation).head
+      transformationSVar.get(
+        (currentTransform) =&gt; {transformationSVar.set(rotate(currentTransform))})
+    }}
+    rotateTable()
+  })
+}
+
+private def rotate(mat: ConstMat4f) = mat * ConstMat4f(Mat3x4f.rotateY(0.01f))</code></pre>
+
+<p>The fist method, <code>rotateTable</code>, implements the continuous animation (i.e. rotation) of the table. Animations like this typically require a kind of loop, that continuously updates the object&#8217;s properties (e.g. its orientation) dependent of the time that passed since the last update. Here this loop is realized by utilizing a recursive approach as well as the job scheduling method <code>addJobIn</code> provided by the trait <code>SVarActor</code> via <code>SimXApplication</code>.</p>
+
+<p>A call of <code>rotateTable</code> does only one thing: It schedules a job, that is to be carried out in 16 milliseconds. To do so two parameters are passed <code>addJobIn</code> to <code>addJobIn</code>: </p>
+
+<ul>
+<li>The <code>Long</code> &#8220;16&#8221;, defining when the job is to be carried out and</li>
+<li>an anonymous <code>Function0[Unit]</code> (or using another Scala syntax <code>() =&gt; Unit</code>), a function that takes no parameters and has no return value, defining the job itself.</li>
+</ul>
+
+<p>When the scheduled job is finally carried out after 16 milliseconds (see the documentation of the underlying <code>SVarActor</code> implementation for details), the passed anonymous function is called. This function then applies two steps: An update of the table&#8217;s orientation and the scheduling of the next update. </p>
+
+<p>In order to update the table&#8217;s orientation the member variable <code>tableEntityOption</code> (see <a href="#creatingentities">Creating Entities</a>) is checked. If it is defined, i.e. the realization of the table has already been completed, the <em>state variable</em> containing the table entity&#8217;s position and orientation is retrieved. This is done by passing the respective identifier for the property of interest (<code>types.Transformation</code>) to the <code>get</code> method of the <code>tableEntity</code>. Since the entity could contain more than one property of the type <code>Transformation</code>, <code>get</code> returns a collection of <em>state variables</em>. However this example implicitly requires that there is only one <code>Transformation</code>. Thus the first resulting <em>state variable</em> is selected via the method <code>head</code> (<em>In more complex applications it is reasonable to check if the list is not empty, rather than just call <code>head</code></em>). This single result (<code>transformationSVar</code>) is an instance of the class <code>SVar</code>, that can be used to retrieve and manipulate this entity property or to react to its changes (see the documentation of the <em>state variable</em> concept for details). Here a combination of retrieval and subsequent manipulation is used: First the current value of the table&#8217;s position and orientation (a transformation matrix) is retrieved via the method <code>get</code>. Since this retrieval may require the exchange of messages between underlying actors, its result cannot be processed directly. Instead a function has to be passed, defining what to to with the value (in the example <code>currentTransform</code>) once it is available (see the documentation of the <em>state variable</em> concept for details). Then, this function uses <code>currentTransform</code> to apply a very simple update operation (sourced out to <code>rotate</code>) and to manipulate the table&#8217;s transformation <em>state variable</em> <code>transformationSVar</code> via its method <code>set</code> accordingly.</p>
+
+<p>After this update of the table&#8217;s orientation (in fact after the request of the current transformation and the definition of what to do with it when its available via <code>get</code>) the method <code>rotateTable</code> is called in order to schedule the next update in 16 milliseconds. The overall result is that the orientation of the table is altered every 16 milliseconds. Since these updates are passed to the respective <em>state variable</em> of the table&#8217;s entity, components that are responsible for the realization of an aspect (see Creating Entities][]) of this entity can react to this changes. In the context of this example the previously created rendering component can update its internal representation (e.g. its scenegraph) to render the rotated table. Note that the connection between the table entity and the rendering component is established because of the inclusion of the <code>ShapeFromFile</code> aspect into the entity&#8217;s <code>EntityDescription</code>.</p>
+
+<pre><code class="scala">private def initializeBallSpawning() {
+  handleDevice(types.Keyboard)( (keyboardEntity) =&gt; {
+    val spaceSVar = keyboardEntity.get(types.Key_Space).head
+    spaceSVar.observe( (pressed) =&gt; {if(pressed) spawnBall()} )
+  })
+}
+
+private var ballCounter = 0
+
+private def spawnBall() {
+  ballCounter += 1
+  val randomOffset = Vec3f(Random.nextFloat(), Random.nextFloat(), Random.nextFloat()) * 0.05f
+  Ball(&quot;ball#&quot; + ballCounter, ballRadius, ballPosition + randomOffset).realize( (newBallEntity) =&gt; {
+    val transformationSVar = newBallEntity.get(types.Transformation).head
+    transformationSVar.observe( (newTransform) =&gt; {
+      if(extractHeight(newTransform) &lt; -2f) newBallEntity.remove()
+    })
+  })
+}
+
+private def extractHeight(mat: ConstMat4f) = mat.m13</code></pre>
+
+<p>The second method, <code>initializeBallSpawning</code>, implements the spawning of new balls as reaction to a key press. Two main steps have to be taken here:</p>
+
+<ul>
+<li>Access of the data coming from the keyboard, i.e. the keyboard&#8217;s current state</li>
+<li>and the definition of a reaction to the change of this state.</li>
+</ul>
+
+<p>Data coming from input devices, like a keyboard or a mouse, are represented in the same manner as other objects of the simulation: They are represented by entities. In the case of the keyboard the corresponding representation is an entity containing <em>state variables</em> for every keyboard key. An entity representing an input device usually has not to be created from within an application. This is typically done by an component that is able to provide such data. In this case the rendering component can tab key presses and mouse movements inside the rendering window and provide it to the application via entities. To grant other software parts (like the this application code) access to this entities, they are registered globally (see the <em>worldinterface</em> documentation). </p>
+
+<p>The look-up of registered entities is carried out by the method <code>handleDevice</code> provided by the <code>IORegistryHandling</code> trait via <code>SimXApplication</code>. By passing the identifier <code>types.Keyboard</code> the respective entity is requested (in the same manner as the access of entity properties). The underlying mechanism carries out the necessary message passing and takes care of temporal dependancies: If for example the keyboard entity is requested is before the rendering component finished its creation, the response is simple postponed until its available. Similar to the access of <em>state variables</em> values, the result of this request cannot be used directly. Instead <code>handleDevice</code> requires a function, as a parameter, that defines what to to with the result.</p>
+
+<p>Here this function uses the result of the request, the <code>keyboardEntity</code>, to retrieve its <em>state variable</em> <code>spaceSVar</code> representing the space key (see the description of <code>rotateTable</code> in the previous paragraph for details). The <em>state variable</em>&#8217;s method <code>observe</code> is then used to register a reaction to value changes. This is done by passing a function that takes this value a parameter and defines what to in consequence of a value change. In the case of the <code>spaceSVar</code> this function takes one <code>Boolean</code> parameter <code>pressed</code>. The function body then checks if <code>pressed</code> is <code>true</code>. This means, the space key state changed and is now is pressed. In this case the method <code>spawnBall</code> is called.</p>
+
+<p><code>spawnBall</code> carries out the actual reaction to the key press: It creates a new ball entity and handles it removal. To create a new ball the sourced out <code>EntityDescription</code> <code>Ball</code> is used (see <a href="#creatingentities">Creating Entities</a>). In order to prevent the balls from spawning at the exact same position a slight <code>randomOffset</code> is utilized. Furthermore the ball&#8217;s names are appended by a consecutively numbering.</p>
+
+<p>After the creation of the new ball entity is completed a reaction to changes of the balls position is registered. This is done by passing a respective anonymous function to <code>realize</code>. Using the same mechanisms as for the observation of the space key, a reaction the the changes of the ball&#8217;s position (contained in its <code>transformationSVar</code>) is defined: If the ball&#8217;s new hight falls below a defined value it is to be removed. In the context of the example the method <code>extractHeight</code> extracts the hight of the ball from its transformation matrix, using the table&#8217;s 3D-model orientation to derive that the y-axis is pointing up. The threshold value <code>-2f</code> is used to determine balls that fell slightly below the table&#8217;s top. If a ball&#8217;s position is determined to be &#8220;too low&#8221;, the method <code>remove</code> is called on the corresponding entity. This call leads to the notification of all involved components as well as to the removal of all <em>state variable</em> data. In this example the rendering-, physics-, naming- and editor component will remove the ball from their internal representation.</p>
+
+<pre><code class="scala">private var userEntityOption: Option[Entity] = None
+
+private def initializeMouseControl() {
+  handleDevice(types.User)( (userEntity) =&gt; userEntityOption = Some(userEntity))
+  handleDevice(types.Mouse)( (mouseEntity) =&gt; {
+    val positionSVar = mouseEntity.get(types.Position2D).head
+    positionSVar.observe{ case newMousePosition =&gt; {
+      userEntityOption.collect{ case userEntity =&gt;
+       val viewplattformTransformationSvar = userEntity.get(types.ViewPlatform).head
+       viewplattformTransformationSvar.set(calculateView(newMousePosition))
+      }
+    }}
+  })
+}
+
+private def calculateView(mousePos: ConstVec2f) = {
+  val weight = 0.1f
+  val angleHorizontal = ((mousePos.x - 400f) / -400f) * weight
+  val angleVertical = ((mousePos.y - 300f) / -300f) * weight
+  ConstMat4f(Mat3x4f.rotateY(angleHorizontal).rotateX(angleVertical))
+}</code></pre>
+
+<p>The third method, <code>initializeMouseControl</code>, implements a simple camera look around using the mouse. It uses the same approach and mechanisms as the two previous behavior implementations in order to react to mouse movement by manipulating the virtual camera&#8217;s orientation.</p>
+
+<p>Like the <code>keyboardEntity</code> before the entity <code>userEntity</code>, representing the virtual camera (TODO: Why is this retrieved via handeleDEVICE?), and the entity <code>mouseEntity</code>, representing data coming from the mouse, are requested by utilizing the method <code>handleDevice</code>. The following is done with the requested entities, when they are available.</p>
+
+<p><code>userEntity</code> is stored in the local variable <code>userEntityOption</code> for later use. <code>mouseEntity</code> is utilized to access the <em>state variable</em> <code>positionSVar</code>, representing the mouse&#8217;s current position inside the rendering window, via the identifier <code>types.Position2D</code>. By applying <code>positionSVar</code>&#8217;s <code>observe</code> method a reaction to a change of the mouse position is then registered:</p>
+
+<p>If <code>userEntityOption</code> is defined, i.e. the request for <code>userEntity</code> has already been answered, its <em>state variable</em>, representing the virtual camera&#8217;s position and orientation, is accessed via <code>types.ViewPlatform</code> and is then <code>set</code> to a new orientation depending on the <code>newMousePosition</code>. The calculation of the new orientation is sourced out to <code>calculateView</code>, a pragmatic implementation that is of no further relevance. The result of this &#8220;reaction-definition&#8221; is, that the camera view slightly rotates in the direction of the mouse, if it is moved from the center of the window to the border.</p>
+
+<h4 id="startingtheapplication">Starting the application</h4>
+
+<p>Now, all initially required entities are now created and additional <em>application logic</em> is set up. To actually start the application the <code>SimXApplicationMain</code> trait is used. It provides a convenient interface to start Simulator X applications and requires the constructor of one actor to be initially started. In case of the presented example this actor is <code>ExampleApplication</code>. Since <code>ExampleApplication</code> derives from <code>SimXApplication</code> it is a <code>SVarActor</code>, implemented to setup the application as described above at startup.</p>
+
+<pre><code class="scala">object ExampleApplication extends SimXApplicationMain( new ExampleApplication )</code></pre>
+
+<p>The <code>SimXApplicationMain</code> trait solely contains a <code>main</code>-Method and is equal to the following written out object:</p>
+
+<pre><code class="scala">object ExampleApplicationMain {
+  def main(args : Array[String]){
+    SVarActor.createActor(new ExampleApplication)
+  }
+}</code></pre>
+
+<p>When running the application two windows should appear as described in the initial paragraph of the <a href="#basicexample">Basic example</a>: A rendering output window as well as a <a href="#basic-example-edit">graphical editor</a>.</p>
+
+<h4 id="usingtheeditor">Using the Editor</h4>
+
+<p>The editor is designed to provide a graphical user interface for the manipulation of the world state during runtime. All created entities (see previous sections) are displayed in a tree view on <a href="#basic-example-edit-2">the left side of the editor window</a>. </p>
+
+<figure>
+<img src="figures/simx-be-edit-2.png" alt="Entities displayed by the graphical world state editor." id="basic-example-edit-2" title="basic-example-edit-2" style="width:100%;" />
+<figcaption>Entities displayed by the graphical world state editor.</figcaption></figure>
+
+
+
+<p>By expanding entities in the tree view, a list of all their <em>state variables</em> can be accessed. The names displayed for these <em>state variables</em> correspond to the identifiers used in the code. If a specific <em>state variable</em> is selected in the tree view, two corresponding views become visible on <a href="#basic-example-edit-3">the right side of the editor window</a>: </p>
+
+<ul>
+<li>One view, on the top, to set the value of this state variable</li>
+<li>and one view, on the bottom, that displays its current value.</li>
+</ul>
+
+<figure>
+<img src="figures/simx-be-edit-3.png" alt="Viewing and setting state variable values using the graphical world state editor." id="basic-example-edit-3" title="basic-example-edit-3" style="width:100%;" />
+<figcaption>Viewing and setting <em>state variable</em> values using the graphical world state editor.</figcaption></figure>
+
+
+
+<p>These views are dependent on the <em>state variable</em>&#8217;s type and semantics. If the top view is used to alter the <em>state variable</em>&#8217;s current value, the new value is passed directly to the running application. This is realized by using <code>SVar</code>&#8217;s method <code>set</code>, just like in the application&#8217;s implementation.</p>
+
+<h3 id="clusterexample">Cluster example</h3>
+
+<p>The cluster example showcases a distributed system setup where Simulator X is used to transparently handle bootstrapping, communication and synchronization&#8230;</p>
+
+<p>The package cluster contains several examples using the clustering sub system of Simulator X.</p>
+
+<p>The package syncgroup contains an example that shows how the sync groups in Simulator X work.</p>
+
+<p><a href="./simx-ReadMe.html">Back to Read Me</a></p>
+
+<script>var hljs=new function(){function m(p){return p.replace(/&/gm,"&amp;").replace(/</gm,"&lt;")}function c(r,q,p){return RegExp(q,"m"+(r.cI?"i":"")+(p?"g":""))}function j(r){for(var p=0;p<r.childNodes.length;p++){var q=r.childNodes[p];if(q.nodeName=="CODE"){return q}if(!(q.nodeType==3&&q.nodeValue.match(/\s+/))){break}}}function g(t,s){var r="";for(var q=0;q<t.childNodes.length;q++){if(t.childNodes[q].nodeType==3){var p=t.childNodes[q].nodeValue;if(s){p=p.replace(/\n/g,"")}r+=p}else{if(t.childNodes[q].nodeName=="BR"){r+="\n"}else{r+=g(t.childNodes[q])}}}if(/MSIE [678]/.test(navigator.userAgent)){r=r.replace(/\r/g,"\n")}return r}function a(s){var q=s.className.split(/\s+/);q=q.concat(s.parentNode.className.split(/\s+/));for(var p=0;p<q.length;p++){var r=q[p].replace(/^language-/,"");if(d[r]||r=="no-highlight"){return r}}}function b(p){var q=[];(function(s,t){for(var r=0;r<s.childNodes.length;r++){if(s.childNodes[r].nodeType==3){t+=s.childNodes[r].nodeValue.length}else{if(s.childNodes[r].nodeName=="BR"){t+=1}else{q.push({event:"start",offset:t,node:s.childNodes[r]});t=arguments.callee(s.childNodes[r],t);q.push({event:"stop",offset:t,node:s.childNodes[r]})}}}return t})(p,0);return q}function l(y,z,x){var r=0;var w="";var t=[];function u(){if(y.length&&z.length){if(y[0].offset!=z[0].offset){return(y[0].offset<z[0].offset)?y:z}else{return z[0].event=="start"?y:z}}else{return y.length?y:z}}function s(C){var D="<"+C.nodeName.toLowerCase();for(var A=0;A<C.attributes.length;A++){var B=C.attributes[A];D+=" "+B.nodeName.toLowerCase();if(B.nodeValue!=undefined&&B.nodeValue!=false&&B.nodeValue!=null){D+='="'+m(B.nodeValue)+'"'}}return D+">"}while(y.length||z.length){var v=u().splice(0,1)[0];w+=m(x.substr(r,v.offset-r));r=v.offset;if(v.event=="start"){w+=s(v.node);t.push(v.node)}else{if(v.event=="stop"){var q=t.length;do{q--;var p=t[q];w+=("</"+p.nodeName.toLowerCase()+">")}while(p!=v.node);t.splice(q,1);while(q<t.length){w+=s(t[q]);q++}}}}w+=x.substr(r);return w}function i(){function p(u,t,v){if(u.compiled){return}if(!v){u.bR=c(t,u.b?u.b:"\\B|\\b");if(!u.e&&!u.eW){u.e="\\B|\\b"}if(u.e){u.eR=c(t,u.e)}}if(u.i){u.iR=c(t,u.i)}if(u.r==undefined){u.r=1}if(u.k){u.lR=c(t,u.l||hljs.IR,true)}for(var s in u.k){if(!u.k.hasOwnProperty(s)){continue}if(u.k[s] instanceof Object){u.kG=u.k}else{u.kG={keyword:u.k}}break}if(!u.c){u.c=[]}u.compiled=true;for(var r=0;r<u.c.length;r++){p(u.c[r],t,false)}if(u.starts){p(u.starts,t,false)}}for(var q in d){if(!d.hasOwnProperty(q)){continue}p(d[q].dM,d[q],true)}}function e(J,D){if(!i.called){i();i.called=true}function z(r,M){for(var L=0;L<M.c.length;L++){if(M.c[L].bR.test(r)){return M.c[L]}}}function w(L,r){if(C[L].e&&C[L].eR.test(r)){return 1}if(C[L].eW){var M=w(L-1,r);return M?M+1:0}return 0}function x(r,L){return L.iR&&L.iR.test(r)}function A(O,N){var M=[];for(var L=0;L<O.c.length;L++){M.push(O.c[L].b)}var r=C.length-1;do{if(C[r].e){M.push(C[r].e)}r--}while(C[r+1].eW);if(O.i){M.push(O.i)}return c(N,"("+M.join("|")+")",true)}function s(M,L){var N=C[C.length-1];if(!N.t){N.t=A(N,H)}N.t.lastIndex=L;var r=N.t.exec(M);if(r){return[M.substr(L,r.index-L),r[0],false]}else{return[M.substr(L),"",true]}}function p(O,r){var L=H.cI?r[0].toLowerCase():r[0];for(var N in O.kG){if(!O.kG.hasOwnProperty(N)){continue}var M=O.kG[N].hasOwnProperty(L);if(M){return[N,M]}}return false}function F(M,O){if(!O.k){return m(M)}var N="";var P=0;O.lR.lastIndex=0;var L=O.lR.exec(M);while(L){N+=m(M.substr(P,L.index-P));var r=p(O,L);if(r){t+=r[1];N+='<span class="'+r[0]+'">'+m(L[0])+"</span>"}else{N+=m(L[0])}P=O.lR.lastIndex;L=O.lR.exec(M)}N+=m(M.substr(P,M.length-P));return N}function K(r,M){if(M.sL&&d[M.sL]){var L=e(M.sL,r);t+=L.keyword_count;return L.value}else{return F(r,M)}}function I(M,r){var L=M.cN?'<span class="'+M.cN+'">':"";if(M.rB){q+=L;M.buffer=""}else{if(M.eB){q+=m(r)+L;M.buffer=""}else{q+=L;M.buffer=r}}C.push(M);B+=M.r}function E(O,L,Q){var R=C[C.length-1];if(Q){q+=K(R.buffer+O,R);return false}var M=z(L,R);if(M){q+=K(R.buffer+O,R);I(M,L);return M.rB}var r=w(C.length-1,L);if(r){var N=R.cN?"</span>":"";if(R.rE){q+=K(R.buffer+O,R)+N}else{if(R.eE){q+=K(R.buffer+O,R)+N+m(L)}else{q+=K(R.buffer+O+L,R)+N}}while(r>1){N=C[C.length-2].cN?"</span>":"";q+=N;r--;C.length--}var P=C[C.length-1];C.length--;C[C.length-1].buffer="";if(P.starts){I(P.starts,"")}return R.rE}if(x(L,R)){throw"Illegal"}}var H=d[J];var C=[H.dM];var B=0;var t=0;var q="";try{var v=0;H.dM.buffer="";do{var y=s(D,v);var u=E(y[0],y[1],y[2]);v+=y[0].length;if(!u){v+=y[1].length}}while(!y[2]);if(C.length>1){throw"Illegal"}return{r:B,keyword_count:t,value:q}}catch(G){if(G=="Illegal"){return{r:0,keyword_count:0,value:m(D)}}else{throw G}}}function f(t){var r={keyword_count:0,r:0,value:m(t)};var q=r;for(var p in d){if(!d.hasOwnProperty(p)){continue}var s=e(p,t);s.language=p;if(s.keyword_count+s.r>q.keyword_count+q.r){q=s}if(s.keyword_count+s.r>r.keyword_count+r.r){q=r;r=s}}if(q.language){r.second_best=q}return r}function h(r,q,p){if(q){r=r.replace(/^((<[^>]+>|\t)+)/gm,function(t,w,v,u){return w.replace(/\t/g,q)})}if(p){r=r.replace(/\n/g,"<br>")}return r}function o(u,x,q){var y=g(u,q);var s=a(u);if(s=="no-highlight"){return}if(s){var w=e(s,y)}else{var w=f(y);s=w.language}var p=b(u);if(p.length){var r=document.createElement("pre");r.innerHTML=w.value;w.value=l(p,b(r),y)}w.value=h(w.value,x,q);var t=u.className;if(!t.match("(\\s|^)(language-)?"+s+"(\\s|$)")){t=t?(t+" "+s):s}if(/MSIE [678]/.test(navigator.userAgent)&&u.tagName=="CODE"&&u.parentNode.tagName=="PRE"){var r=u.parentNode;var v=document.createElement("div");v.innerHTML="<pre><code>"+w.value+"</code></pre>";u=v.firstChild.firstChild;v.firstChild.cN=r.cN;r.parentNode.replaceChild(v.firstChild,r)}else{u.innerHTML=w.value}u.className=t;u.result={language:s,kw:w.keyword_count,re:w.r};if(w.second_best){u.second_best={language:w.second_best.language,kw:w.second_best.keyword_count,re:w.second_best.r}}}function k(){if(k.called){return}k.called=true;var r=document.getElementsByTagName("pre");for(var p=0;p<r.length;p++){var q=j(r[p]);if(q){o(q,hljs.tabReplace)}}}function n(){if(window.addEventListener){window.addEventListener("DOMContentLoaded",k,false);window.addEventListener("load",k,false)}else{if(window.attachEvent){window.attachEvent("onload",k)}else{window.onload=k}}}var d={};this.LANGUAGES=d;this.highlight=e;this.highlightAuto=f;this.fixMarkup=h;this.highlightBlock=o;this.initHighlighting=k;this.initHighlightingOnLoad=n;this.IR="[a-zA-Z][a-zA-Z0-9_]*";this.UIR="[a-zA-Z_][a-zA-Z0-9_]*";this.NR="\\b\\d+(\\.\\d+)?";this.CNR="\\b(0x[A-Za-z0-9]+|\\d+(\\.\\d+)?)";this.RSR="!|!=|!==|%|%=|&|&&|&=|\\*|\\*=|\\+|\\+=|,|\\.|-|-=|/|/=|:|;|<|<<|<<=|<=|=|==|===|>|>=|>>|>>=|>>>|>>>=|\\?|\\[|\\{|\\(|\\^|\\^=|\\||\\|=|\\|\\||~";this.BE={b:"\\\\.",r:0};this.ASM={cN:"string",b:"'",e:"'",i:"\\n",c:[this.BE],r:0};this.QSM={cN:"string",b:'"',e:'"',i:"\\n",c:[this.BE],r:0};this.CLCM={cN:"comment",b:"//",e:"$"};this.CBLCLM={cN:"comment",b:"/\\*",e:"\\*/"};this.HCM={cN:"comment",b:"#",e:"$"};this.NM={cN:"number",b:this.NR,r:0};this.CNM={cN:"number",b:this.CNR,r:0};this.inherit=function(p,s){var r={};for(var q in p){r[q]=p[q]}if(s){for(var q in s){r[q]=s[q]}}return r}}();hljs.LANGUAGES.bash=function(){var d={"true":1,"false":1};var b={cN:"variable",b:"\\$([a-zA-Z0-9_]+)\\b"};var a={cN:"variable",b:"\\$\\{(([^}])|(\\\\}))+\\}",c:[hljs.CNM]};var c={cN:"string",b:'"',e:'"',i:"\\n",c:[hljs.BE,b,a],r:0};var e={cN:"test_condition",b:"",e:"",c:[c,b,a,hljs.CNM],k:{literal:d},r:0};return{dM:{k:{keyword:{"if":1,then:1,"else":1,fi:1,"for":1,"break":1,"continue":1,"while":1,"in":1,"do":1,done:1,echo:1,exit:1,"return":1,set:1,declare:1},literal:d},c:[{cN:"shebang",b:"(#!\\/bin\\/bash)|(#!\\/bin\\/sh)",r:10},hljs.HCM,hljs.CNM,c,b,a,hljs.inherit(e,{b:"\\[ ",e:" \\]",r:0}),hljs.inherit(e,{b:"\\[\\[ ",e:" \\]\\]"})]}}}();hljs.LANGUAGES.cs={dM:{k:{"abstract":1,as:1,base:1,bool:1,"break":1,"byte":1,"case":1,"catch":1,"char":1,checked:1,"class":1,"const":1,"continue":1,decimal:1,"default":1,delegate:1,"do":1,"do":1,"double":1,"else":1,"enum":1,event:1,explicit:1,extern:1,"false":1,"finally":1,fixed:1,"float":1,"for":1,foreach:1,"goto":1,"if":1,implicit:1,"in":1,"int":1,"interface":1,internal:1,is:1,lock:1,"long":1,namespace:1,"new":1,"null":1,object:1,operator:1,out:1,override:1,params:1,"private":1,"protected":1,"public":1,readonly:1,ref:1,"return":1,sbyte:1,sealed:1,"short":1,sizeof:1,stackalloc:1,"static":1,string:1,struct:1,"switch":1,"this":1,"throw":1,"true":1,"try":1,"typeof":1,uint:1,ulong:1,unchecked:1,unsafe:1,ushort:1,using:1,virtual:1,"volatile":1,"void":1,"while":1,ascending:1,descending:1,from:1,get:1,group:1,into:1,join:1,let:1,orderby:1,partial:1,select:1,set:1,value:1,"var":1,where:1,yield:1},c:[{cN:"comment",b:"///",e:"$",rB:true,c:[{cN:"xmlDocTag",b:"///|<!--|-->"},{cN:"xmlDocTag",b:"</?",e:">"}]},hljs.CLCM,hljs.CBLCLM,{cN:"string",b:'@"',e:'"',c:[{b:'""'}]},hljs.ASM,hljs.QSM,hljs.CNM]}};hljs.LANGUAGES.ruby=function(){var g="[a-zA-Z_][a-zA-Z0-9_]*(\\!|\\?)?";var a="[a-zA-Z_]\\w*[!?=]?|[-+~]\\@|<<|>>|=~|===?|<=>|[<>]=?|\\*\\*|[-/+%^&*~`|]|\\[\\]=?";var n={keyword:{and:1,"false":1,then:1,defined:1,module:1,"in":1,"return":1,redo:1,"if":1,BEGIN:1,retry:1,end:1,"for":1,"true":1,self:1,when:1,next:1,until:1,"do":1,begin:1,unless:1,END:1,rescue:1,nil:1,"else":1,"break":1,undef:1,not:1,"super":1,"class":1,"case":1,require:1,yield:1,alias:1,"while":1,ensure:1,elsif:1,or:1,def:1},keymethods:{__id__:1,__send__:1,abort:1,abs:1,"all?":1,allocate:1,ancestors:1,"any?":1,arity:1,assoc:1,at:1,at_exit:1,autoload:1,"autoload?":1,"between?":1,binding:1,binmode:1,"block_given?":1,call:1,callcc:1,caller:1,capitalize:1,"capitalize!":1,casecmp:1,"catch":1,ceil:1,center:1,chomp:1,"chomp!":1,chop:1,"chop!":1,chr:1,"class":1,class_eval:1,"class_variable_defined?":1,class_variables:1,clear:1,clone:1,close:1,close_read:1,close_write:1,"closed?":1,coerce:1,collect:1,"collect!":1,compact:1,"compact!":1,concat:1,"const_defined?":1,const_get:1,const_missing:1,const_set:1,constants:1,count:1,crypt:1,"default":1,default_proc:1,"delete":1,"delete!":1,delete_at:1,delete_if:1,detect:1,display:1,div:1,divmod:1,downcase:1,"downcase!":1,downto:1,dump:1,dup:1,each:1,each_byte:1,each_index:1,each_key:1,each_line:1,each_pair:1,each_value:1,each_with_index:1,"empty?":1,entries:1,eof:1,"eof?":1,"eql?":1,"equal?":1,"eval":1,exec:1,exit:1,"exit!":1,extend:1,fail:1,fcntl:1,fetch:1,fileno:1,fill:1,find:1,find_all:1,first:1,flatten:1,"flatten!":1,floor:1,flush:1,for_fd:1,foreach:1,fork:1,format:1,freeze:1,"frozen?":1,fsync:1,getc:1,gets:1,global_variables:1,grep:1,gsub:1,"gsub!":1,"has_key?":1,"has_value?":1,hash:1,hex:1,id:1,include:1,"include?":1,included_modules:1,index:1,indexes:1,indices:1,induced_from:1,inject:1,insert:1,inspect:1,instance_eval:1,instance_method:1,instance_methods:1,"instance_of?":1,"instance_variable_defined?":1,instance_variable_get:1,instance_variable_set:1,instance_variables:1,"integer?":1,intern:1,invert:1,ioctl:1,"is_a?":1,isatty:1,"iterator?":1,join:1,"key?":1,keys:1,"kind_of?":1,lambda:1,last:1,length:1,lineno:1,ljust:1,load:1,local_variables:1,loop:1,lstrip:1,"lstrip!":1,map:1,"map!":1,match:1,max:1,"member?":1,merge:1,"merge!":1,method:1,"method_defined?":1,method_missing:1,methods:1,min:1,module_eval:1,modulo:1,name:1,nesting:1,"new":1,next:1,"next!":1,"nil?":1,nitems:1,"nonzero?":1,object_id:1,oct:1,open:1,pack:1,partition:1,pid:1,pipe:1,pop:1,popen:1,pos:1,prec:1,prec_f:1,prec_i:1,print:1,printf:1,private_class_method:1,private_instance_methods:1,"private_method_defined?":1,private_methods:1,proc:1,protected_instance_methods:1,"protected_method_defined?":1,protected_methods:1,public_class_method:1,public_instance_methods:1,"public_method_defined?":1,public_methods:1,push:1,putc:1,puts:1,quo:1,raise:1,rand:1,rassoc:1,read:1,read_nonblock:1,readchar:1,readline:1,readlines:1,readpartial:1,rehash:1,reject:1,"reject!":1,remainder:1,reopen:1,replace:1,require:1,"respond_to?":1,reverse:1,"reverse!":1,reverse_each:1,rewind:1,rindex:1,rjust:1,round:1,rstrip:1,"rstrip!":1,scan:1,seek:1,select:1,send:1,set_trace_func:1,shift:1,singleton_method_added:1,singleton_methods:1,size:1,sleep:1,slice:1,"slice!":1,sort:1,"sort!":1,sort_by:1,split:1,sprintf:1,squeeze:1,"squeeze!":1,srand:1,stat:1,step:1,store:1,strip:1,"strip!":1,sub:1,"sub!":1,succ:1,"succ!":1,sum:1,superclass:1,swapcase:1,"swapcase!":1,sync:1,syscall:1,sysopen:1,sysread:1,sysseek:1,system:1,syswrite:1,taint:1,"tainted?":1,tell:1,test:1,"throw":1,times:1,to_a:1,to_ary:1,to_f:1,to_hash:1,to_i:1,to_int:1,to_io:1,to_proc:1,to_s:1,to_str:1,to_sym:1,tr:1,"tr!":1,tr_s:1,"tr_s!":1,trace_var:1,transpose:1,trap:1,truncate:1,"tty?":1,type:1,ungetc:1,uniq:1,"uniq!":1,unpack:1,unshift:1,untaint:1,untrace_var:1,upcase:1,"upcase!":1,update:1,upto:1,"value?":1,values:1,values_at:1,warn:1,write:1,write_nonblock:1,"zero?":1,zip:1}};var h={cN:"yardoctag",b:"@[A-Za-z]+"};var d={cN:"comment",b:"#",e:"$",c:[h]};var c={cN:"comment",b:"^\\=begin",e:"^\\=end",c:[h],r:10};var b={cN:"comment",b:"^__END__",e:"\\n$"};var u={cN:"subst",b:"#\\{",e:"}",l:g,k:n};var p=[hljs.BE,u];var s={cN:"string",b:"'",e:"'",c:p,r:0};var r={cN:"string",b:'"',e:'"',c:p,r:0};var q={cN:"string",b:"%[qw]?\\(",e:"\\)",c:p,r:10};var o={cN:"string",b:"%[qw]?\\[",e:"\\]",c:p,r:10};var m={cN:"string",b:"%[qw]?{",e:"}",c:p,r:10};var l={cN:"string",b:"%[qw]?<",e:">",c:p,r:10};var k={cN:"string",b:"%[qw]?/",e:"/",c:p,r:10};var j={cN:"string",b:"%[qw]?%",e:"%",c:p,r:10};var i={cN:"string",b:"%[qw]?-",e:"-",c:p,r:10};var t={cN:"string",b:"%[qw]?\\|",e:"\\|",c:p,r:10};var e={cN:"function",b:"\\bdef\\s+",e:" |$|;",l:g,k:n,c:[{cN:"title",b:a,l:g,k:n},{cN:"params",b:"\\(",e:"\\)",l:g,k:n},d,c,b]};var f={cN:"identifier",b:g,l:g,k:n,r:0};var v=[d,c,b,s,r,q,o,m,l,k,j,i,t,{cN:"class",b:"\\b(class|module)\\b",e:"$|;",k:{"class":1,module:1},c:[{cN:"title",b:"[A-Za-z_]\\w*(::\\w+)*(\\?|\\!)?",r:0},{cN:"inheritance",b:"<\\s*",c:[{cN:"parent",b:"("+hljs.IR+"::)?"+hljs.IR}]},d,c,b]},e,{cN:"constant",b:"(::)?([A-Z]\\w*(::)?)+",r:0},{cN:"symbol",b:":",c:[s,r,q,o,m,l,k,j,i,t,f],r:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",r:0},{cN:"number",b:"\\?\\w"},{cN:"variable",b:"(\\$\\W)|((\\$|\\@\\@?)(\\w+))"},f,{b:"("+hljs.RSR+")\\s*",c:[d,c,b,{cN:"regexp",b:"/",e:"/[a-z]*",i:"\\n",c:[hljs.BE]}],r:0}];u.c=v;e.c[1].c=v;return{dM:{l:g,k:n,c:v}}}();hljs.LANGUAGES.diff={cI:true,dM:{c:[{cN:"chunk",b:"^\\@\\@ +\\-\\d+,\\d+ +\\+\\d+,\\d+ +\\@\\@$",r:10},{cN:"chunk",b:"^\\*\\*\\* +\\d+,\\d+ +\\*\\*\\*\\*$",r:10},{cN:"chunk",b:"^\\-\\-\\- +\\d+,\\d+ +\\-\\-\\-\\-$",r:10},{cN:"header",b:"Index: ",e:"$"},{cN:"header",b:"=====",e:"=====$"},{cN:"header",b:"^\\-\\-\\-",e:"$"},{cN:"header",b:"^\\*{3} ",e:"$"},{cN:"header",b:"^\\+\\+\\+",e:"$"},{cN:"header",b:"\\*{5}",e:"\\*{5}$"},{cN:"addition",b:"^\\+",e:"$"},{cN:"deletion",b:"^\\-",e:"$"},{cN:"change",b:"^\\!",e:"$"}]}};hljs.LANGUAGES.javascript={dM:{k:{keyword:{"in":1,"if":1,"for":1,"while":1,"finally":1,"var":1,"new":1,"function":1,"do":1,"return":1,"void":1,"else":1,"break":1,"catch":1,"instanceof":1,"with":1,"throw":1,"case":1,"default":1,"try":1,"this":1,"switch":1,"continue":1,"typeof":1,"delete":1},literal:{"true":1,"false":1,"null":1}},c:[hljs.ASM,hljs.QSM,hljs.CLCM,hljs.CBLCLM,hljs.CNM,{b:"("+hljs.RSR+"|case|return|throw)\\s*",k:{"return":1,"throw":1,"case":1},c:[hljs.CLCM,hljs.CBLCLM,{cN:"regexp",b:"/",e:"/[gim]*",c:[{b:"\\\\/"}]}],r:0},{cN:"function",b:"\\bfunction\\b",e:"{",k:{"function":1},c:[{cN:"title",b:"[A-Za-z$_][0-9A-Za-z$_]*"},{cN:"params",b:"\\(",e:"\\)",c:[hljs.ASM,hljs.QSM,hljs.CLCM,hljs.CBLCLM]}]}]}};hljs.LANGUAGES.css=function(){var a={cN:"function",b:hljs.IR+"\\(",e:"\\)",c:[{eW:true,eE:true,c:[hljs.NM,hljs.ASM,hljs.QSM]}]};return{cI:true,dM:{i:"[=/|']",c:[hljs.CBLCLM,{cN:"id",b:"\\#[A-Za-z0-9_-]+"},{cN:"class",b:"\\.[A-Za-z0-9_-]+",r:0},{cN:"attr_selector",b:"\\[",e:"\\]",i:"$"},{cN:"pseudo",b:":(:)?[a-zA-Z0-9\\_\\-\\+\\(\\)\\\"\\']+"},{cN:"at_rule",b:"@(font-face|page)",l:"[a-z-]+",k:{"font-face":1,page:1}},{cN:"at_rule",b:"@",e:"[{;]",eE:true,k:{"import":1,page:1,media:1,charset:1},c:[a,hljs.ASM,hljs.QSM,hljs.NM]},{cN:"tag",b:hljs.IR,r:0},{cN:"rules",b:"{",e:"}",i:"[^\\s]",r:0,c:[hljs.CBLCLM,{cN:"rule",b:"[^\\s]",rB:true,e:";",eW:true,c:[{cN:"attribute",b:"[A-Z\\_\\.\\-]+",e:":",eE:true,i:"[^\\s]",starts:{cN:"value",eW:true,eE:true,c:[a,hljs.NM,hljs.QSM,hljs.ASM,hljs.CBLCLM,{cN:"hexcolor",b:"\\#[0-9A-F]+"},{cN:"important",b:"!important"}]}}]}]}]}}}();hljs.LANGUAGES.xml=function(){var b="[A-Za-z0-9\\._:-]+";var a={eW:true,c:[{cN:"attribute",b:b,r:0},{b:'="',rB:true,e:'"',c:[{cN:"value",b:'"',eW:true}]},{b:"='",rB:true,e:"'",c:[{cN:"value",b:"'",eW:true}]},{b:"=",c:[{cN:"value",b:"[^\\s/>]+"}]}]};return{cI:true,dM:{c:[{cN:"pi",b:"<\\?",e:"\\?>",r:10},{cN:"doctype",b:"<!DOCTYPE",e:">",r:10,c:[{b:"\\[",e:"\\]"}]},{cN:"comment",b:"<!--",e:"-->",r:10},{cN:"cdata",b:"<\\!\\[CDATA\\[",e:"\\]\\]>",r:10},{cN:"tag",b:"<style",e:">",k:{title:{style:1}},c:[a],starts:{cN:"css",e:"</style>",rE:true,sL:"css"}},{cN:"tag",b:"<script",e:">",k:{title:{script:1}},c:[a],starts:{cN:"javascript",e:"<\/script>",rE:true,sL:"javascript"}},{cN:"vbscript",b:"<%",e:"%>",sL:"vbscript"},{cN:"tag",b:"</?",e:"/?>",c:[{cN:"title",b:"[^ />]+"},a]}]}}}();hljs.LANGUAGES.java={dM:{k:{"false":1,"synchronized":1,"int":1,"abstract":1,"float":1,"private":1,"char":1,"interface":1,"boolean":1,"static":1,"null":1,"if":1,"const":1,"for":1,"true":1,"while":1,"long":1,"throw":1,strictfp:1,"finally":1,"protected":1,"extends":1,"import":1,"native":1,"final":1,"implements":1,"return":1,"void":1,"enum":1,"else":1,"break":1,"transient":1,"new":1,"catch":1,"instanceof":1,"byte":1,"super":1,"class":1,"volatile":1,"case":1,assert:1,"short":1,"package":1,"default":1,"double":1,"public":1,"try":1,"this":1,"switch":1,"continue":1,"throws":1},c:[{cN:"javadoc",b:"/\\*\\*",e:"\\*/",c:[{cN:"javadoctag",b:"@[A-Za-z]+"}],r:10},hljs.CLCM,hljs.CBLCLM,hljs.ASM,hljs.QSM,{cN:"class",b:"(class |interface )",e:"{",k:{"class":1,"interface":1},i:":",c:[{b:"(implements|extends)",k:{"extends":1,"implements":1},r:10},{cN:"title",b:hljs.UIR}]},hljs.CNM,{cN:"annotation",b:"@[A-Za-z]+"}]}};hljs.LANGUAGES.php={cI:true,dM:{k:{and:1,include_once:1,list:1,"abstract":1,global:1,"private":1,echo:1,"interface":1,as:1,"static":1,endswitch:1,array:1,"null":1,"if":1,endwhile:1,or:1,"const":1,"for":1,endforeach:1,self:1,"var":1,"while":1,isset:1,"public":1,"protected":1,exit:1,foreach:1,"throw":1,elseif:1,"extends":1,include:1,__FILE__:1,empty:1,require_once:1,"function":1,"do":1,xor:1,"return":1,"implements":1,parent:1,clone:1,use:1,__CLASS__:1,__LINE__:1,"else":1,"break":1,print:1,"eval":1,"new":1,"catch":1,__METHOD__:1,"class":1,"case":1,exception:1,php_user_filter:1,"default":1,die:1,require:1,__FUNCTION__:1,enddeclare:1,"final":1,"try":1,"this":1,"switch":1,"continue":1,endfor:1,endif:1,declare:1,unset:1,"true":1,"false":1,namespace:1},c:[hljs.CLCM,hljs.HCM,{cN:"comment",b:"/\\*",e:"\\*/",c:[{cN:"phpdoc",b:"\\s@[A-Za-z]+",r:10}]},hljs.CNM,hljs.inherit(hljs.ASM,{i:null}),hljs.inherit(hljs.QSM,{i:null}),{cN:"variable",b:"\\$[a-zA-Z_\x7f-\xff][a-zA-Z0-9_\x7f-\xff]*"},{cN:"preprocessor",b:"<\\?php",r:10},{cN:"preprocessor",b:"\\?>"}]}};hljs.LANGUAGES.python=function(){var c={cN:"string",b:"(u|b)?r?'''",e:"'''",r:10};var b={cN:"string",b:'(u|b)?r?"""',e:'"""',r:10};var a={cN:"string",b:"(u|r|ur|b|br)'",e:"'",c:[hljs.BE],r:10};var f={cN:"string",b:'(u|r|ur|b|br)"',e:'"',c:[hljs.BE],r:10};var d={cN:"title",b:hljs.UIR};var e={cN:"params",b:"\\(",e:"\\)",c:[c,b,a,f,hljs.ASM,hljs.QSM]};return{dM:{k:{keyword:{and:1,elif:1,is:1,global:1,as:1,"in":1,"if":1,from:1,raise:1,"for":1,except:1,"finally":1,print:1,"import":1,pass:1,"return":1,exec:1,"else":1,"break":1,not:1,"with":1,"class":1,assert:1,yield:1,"try":1,"while":1,"continue":1,del:1,or:1,def:1,lambda:1,nonlocal:10},built_in:{None:1,True:1,False:1,Ellipsis:1,NotImplemented:1}},i:"(</|->|\\?)",c:[hljs.HCM,c,b,a,f,hljs.ASM,hljs.QSM,{cN:"function",b:"\\bdef ",e:":",i:"$",k:{def:1},c:[d,e],r:10},{cN:"class",b:"\\bclass ",e:":",i:"[${]",k:{"class":1},c:[d,e],r:10},hljs.CNM,{cN:"decorator",b:"@",e:"$"}]}}}();hljs.LANGUAGES.sql={cI:true,dM:{i:"[^\\s]",c:[{cN:"operator",b:"(begin|start|commit|rollback|savepoint|lock|alter|create|drop|rename|call|delete|do|handler|insert|load|replace|select|truncate|update|set|show|pragma)\\b",e:";|$",k:{keyword:{all:1,partial:1,global:1,month:1,current_timestamp:1,using:1,go:1,revoke:1,smallint:1,indicator:1,"end-exec":1,disconnect:1,zone:1,"with":1,character:1,assertion:1,to:1,add:1,current_user:1,usage:1,input:1,local:1,alter:1,match:1,collate:1,real:1,then:1,rollback:1,get:1,read:1,timestamp:1,session_user:1,not:1,integer:1,bit:1,unique:1,day:1,minute:1,desc:1,insert:1,execute:1,like:1,ilike:2,level:1,decimal:1,drop:1,"continue":1,isolation:1,found:1,where:1,constraints:1,domain:1,right:1,national:1,some:1,module:1,transaction:1,relative:1,second:1,connect:1,escape:1,close:1,system_user:1,"for":1,deferred:1,section:1,cast:1,current:1,sqlstate:1,allocate:1,intersect:1,deallocate:1,numeric:1,"public":1,preserve:1,full:1,"goto":1,initially:1,asc:1,no:1,key:1,output:1,collation:1,group:1,by:1,union:1,session:1,both:1,last:1,language:1,constraint:1,column:1,of:1,space:1,foreign:1,deferrable:1,prior:1,connection:1,unknown:1,action:1,commit:1,view:1,or:1,first:1,into:1,"float":1,year:1,primary:1,cascaded:1,except:1,restrict:1,set:1,references:1,names:1,table:1,outer:1,open:1,select:1,size:1,are:1,rows:1,from:1,prepare:1,distinct:1,leading:1,create:1,only:1,next:1,inner:1,authorization:1,schema:1,corresponding:1,option:1,declare:1,precision:1,immediate:1,"else":1,timezone_minute:1,external:1,varying:1,translation:1,"true":1,"case":1,exception:1,join:1,hour:1,"default":1,"double":1,scroll:1,value:1,cursor:1,descriptor:1,values:1,dec:1,fetch:1,procedure:1,"delete":1,and:1,"false":1,"int":1,is:1,describe:1,"char":1,as:1,at:1,"in":1,varchar:1,"null":1,trailing:1,any:1,absolute:1,current_time:1,end:1,grant:1,privileges:1,when:1,cross:1,check:1,write:1,current_date:1,pad:1,begin:1,temporary:1,exec:1,time:1,update:1,catalog:1,user:1,sql:1,date:1,on:1,identity:1,timezone_hour:1,natural:1,whenever:1,interval:1,work:1,order:1,cascade:1,diagnostics:1,nchar:1,having:1,left:1,call:1,"do":1,handler:1,load:1,replace:1,truncate:1,start:1,lock:1,show:1,pragma:1},aggregate:{count:1,sum:1,min:1,max:1,avg:1}},c:[{cN:"string",b:"'",e:"'",c:[hljs.BE,{b:"''"}],r:0},{cN:"string",b:'"',e:'"',c:[hljs.BE,{b:'""'}],r:0},{cN:"string",b:"`",e:"`",c:[hljs.BE]},hljs.CNM,{b:"\\n"}]},hljs.CBLCLM,{cN:"comment",b:"--",e:"$"}]}};hljs.LANGUAGES.ini={cI:true,dM:{i:"[^\\s]",c:[{cN:"comment",b:";",e:"$"},{cN:"title",b:"^\\[",e:"\\]"},{cN:"setting",b:"^[a-z0-9_\\[\\]]+[ \\t]*=[ \\t]*",e:"$",c:[{cN:"value",eW:true,k:{on:1,off:1,"true":1,"false":1,yes:1,no:1},c:[hljs.QSM,hljs.NM]}]}]}};hljs.LANGUAGES.perl=function(){var c={getpwent:1,getservent:1,quotemeta:1,msgrcv:1,scalar:1,kill:1,dbmclose:1,undef:1,lc:1,ma:1,syswrite:1,tr:1,send:1,umask:1,sysopen:1,shmwrite:1,vec:1,qx:1,utime:1,local:1,oct:1,semctl:1,localtime:1,readpipe:1,"do":1,"return":1,format:1,read:1,sprintf:1,dbmopen:1,pop:1,getpgrp:1,not:1,getpwnam:1,rewinddir:1,qq:1,fileno:1,qw:1,endprotoent:1,wait:1,sethostent:1,bless:1,s:1,opendir:1,"continue":1,each:1,sleep:1,endgrent:1,shutdown:1,dump:1,chomp:1,connect:1,getsockname:1,die:1,socketpair:1,close:1,flock:1,exists:1,index:1,shmget:1,sub:1,"for":1,endpwent:1,redo:1,lstat:1,msgctl:1,setpgrp:1,abs:1,exit:1,select:1,print:1,ref:1,gethostbyaddr:1,unshift:1,fcntl:1,syscall:1,"goto":1,getnetbyaddr:1,join:1,gmtime:1,symlink:1,semget:1,splice:1,x:1,getpeername:1,recv:1,log:1,setsockopt:1,cos:1,last:1,reverse:1,gethostbyname:1,getgrnam:1,study:1,formline:1,endhostent:1,times:1,chop:1,length:1,gethostent:1,getnetent:1,pack:1,getprotoent:1,getservbyname:1,rand:1,mkdir:1,pos:1,chmod:1,y:1,substr:1,endnetent:1,printf:1,next:1,open:1,msgsnd:1,readdir:1,use:1,unlink:1,getsockopt:1,getpriority:1,rindex:1,wantarray:1,hex:1,system:1,getservbyport:1,endservent:1,"int":1,chr:1,untie:1,rmdir:1,prototype:1,tell:1,listen:1,fork:1,shmread:1,ucfirst:1,setprotoent:1,"else":1,sysseek:1,link:1,getgrgid:1,shmctl:1,waitpid:1,unpack:1,getnetbyname:1,reset:1,chdir:1,grep:1,split:1,require:1,caller:1,lcfirst:1,until:1,warn:1,"while":1,values:1,shift:1,telldir:1,getpwuid:1,my:1,getprotobynumber:1,"delete":1,and:1,sort:1,uc:1,defined:1,srand:1,accept:1,"package":1,seekdir:1,getprotobyname:1,semop:1,our:1,rename:1,seek:1,"if":1,q:1,chroot:1,sysread:1,setpwent:1,no:1,crypt:1,getc:1,chown:1,sqrt:1,write:1,setnetent:1,setpriority:1,foreach:1,tie:1,sin:1,msgget:1,map:1,stat:1,getlogin:1,unless:1,elsif:1,truncate:1,exec:1,keys:1,glob:1,tied:1,closedir:1,ioctl:1,socket:1,readlink:1,"eval":1,xor:1,readline:1,binmode:1,setservent:1,eof:1,ord:1,bind:1,alarm:1,pipe:1,atan2:1,getgrent:1,exp:1,time:1,push:1,setgrent:1,gt:1,lt:1,or:1,ne:1,m:1};var d={cN:"subst",b:"[$@]\\{",e:"}",k:c,r:10};var b={cN:"variable",b:"\\$\\d"};var a={cN:"variable",b:"[\\$\\%\\@\\*](\\^\\w\\b|#\\w+(\\:\\:\\w+)*|[^\\s\\w{]|{\\w+}|\\w+(\\:\\:\\w*)*)"};var g=[hljs.BE,d,b,a];var f={b:"->",c:[{b:hljs.IR},{b:"{",e:"}"}]};var e=[b,a,hljs.HCM,{cN:"comment",b:"^(__END__|__DATA__)",e:"\\n$",r:5},f,{cN:"string",b:"q[qwxr]?\\s*\\(",e:"\\)",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\[",e:"\\]",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\{",e:"\\}",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\|",e:"\\|",c:g,r:5},{cN:"string",b:"q[qwxr]?\\s*\\<",e:"\\>",c:g,r:5},{cN:"string",b:"qw\\s+q",e:"q",c:g,r:5},{cN:"string",b:"'",e:"'",c:[hljs.BE],r:0},{cN:"string",b:'"',e:'"',c:g,r:0},{cN:"string",b:"`",e:"`",c:[hljs.BE]},{cN:"string",b:"{\\w+}",r:0},{cN:"string",b:"-?\\w+\\s*\\=\\>",r:0},{cN:"number",b:"(\\b0[0-7_]+)|(\\b0x[0-9a-fA-F_]+)|(\\b[1-9][0-9_]*(\\.[0-9_]+)?)|[0_]\\b",r:0},{cN:"regexp",b:"(s|tr|y)/(\\\\.|[^/])*/(\\\\.|[^/])*/[a-z]*",r:10},{cN:"regexp",b:"(m|qr)?/",e:"/[a-z]*",c:[hljs.BE],r:0},{cN:"sub",b:"\\bsub\\b",e:"(\\s*\\(.*?\\))?[;{]",k:{sub:1},r:5},{cN:"operator",b:"-\\w\\b",r:0},{cN:"pod",b:"\\=\\w",e:"\\=cut"}];d.c=e;f.c[1].c=e;return{dM:{k:c,c:e}}}();hljs.LANGUAGES.cpp=function(){var b={keyword:{"false":1,"int":1,"float":1,"while":1,"private":1,"char":1,"catch":1,"export":1,virtual:1,operator:2,sizeof:2,dynamic_cast:2,typedef:2,const_cast:2,"const":1,struct:1,"for":1,static_cast:2,union:1,namespace:1,unsigned:1,"long":1,"throw":1,"volatile":2,"static":1,"protected":1,bool:1,template:1,mutable:1,"if":1,"public":1,friend:2,"do":1,"return":1,"goto":1,auto:1,"void":2,"enum":1,"else":1,"break":1,"new":1,extern:1,using:1,"true":1,"class":1,asm:1,"case":1,typeid:1,"short":1,reinterpret_cast:2,"default":1,"double":1,register:1,explicit:1,signed:1,typename:1,"try":1,"this":1,"switch":1,"continue":1,wchar_t:1,inline:1,"delete":1,alignof:1,char16_t:1,char32_t:1,constexpr:1,decltype:1,noexcept:1,nullptr:1,static_assert:1,thread_local:1},built_in:{std:1,string:1,cin:1,cout:1,cerr:1,clog:1,stringstream:1,istringstream:1,ostringstream:1,auto_ptr:1,deque:1,list:1,queue:1,stack:1,vector:1,map:1,set:1,bitset:1,multiset:1,multimap:1,unordered_set:1,unordered_map:1,unordered_multiset:1,unordered_multimap:1,array:1,shared_ptr:1}};var a={cN:"stl_container",b:"\\b(deque|list|queue|stack|vector|map|set|bitset|multiset|multimap|unordered_map|unordered_set|unordered_multiset|unordered_multimap|array)\\s*<",e:">",k:b,r:10};a.c=[a];return{dM:{k:b,i:"</",c:[hljs.CLCM,hljs.CBLCLM,hljs.QSM,{cN:"string",b:"'",e:"[^\\\\]'",i:"[^\\\\][^']"},hljs.CNM,{cN:"preprocessor",b:"#",e:"$"},a]}}}();</script>
+
+<script>hljs.initHighlightingOnLoad();</script>
+    </div>
+</body>
+</html>

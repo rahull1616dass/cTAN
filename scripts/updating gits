@@ -1,0 +1,26 @@
+#add remote
+git remote add siris-production ssh://trinity/var/git/projects/siris-modules/<path-to-module>
+
+#get updated remote information
+git remote update
+
+#get only <depth> commits
+git fetch --depth <depth> siris-production master
+
+#switch branch
+git checkout master
+
+# remove old references (commit id of shallow)
+git filter-branch --parent-filter "sed 's/-p <id-to-remove>//'" HEAD
+
+# remove old references (commit id of new shallow)
+git filter-branch --parent-filter "sed 's/-p <new-id-to-remove>//'" HEAD
+
+#switch branch
+git checkout github-release
+
+#merge changes from siris-production
+git merge siris-production/master
+
+#finally push it
+git push github github-release

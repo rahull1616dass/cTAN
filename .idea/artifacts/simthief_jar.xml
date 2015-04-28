@@ -1,0 +1,56 @@
+<component name="ArtifactManager">
+  <artifact type="jar" name="simthief:jar">
+    <output-path>$PROJECT_DIR$/target/scala-2.9.2/artifacts/simthief_jar</output-path>
+    <root id="archive" name="simthief.jar">
+      <element id="directory" name="META-INF">
+        <element id="file-copy" path="$PROJECT_DIR$/applications/simthief/src/META-INF/MANIFEST.MF" />
+      </element>
+      <element id="module-output" name="simthief" />
+      <element id="module-output" name="core" />
+      <element id="module-output" name="editor" />
+      <element id="module-output" name="jbullet" />
+      <element id="module-output" name="jvr" />
+      <element id="module-output" name="lwjgl-sound" />
+      <element id="module-output" name="mmi" />
+      <element id="module-output" name="remote" />
+      <element id="module-output" name="vrpn" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/gestures/gracia_siris_embedded.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/lzma.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/lwjgl_util_applet.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/lwjgl_util.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/lwjgl_test.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/lwjgl.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/lwjgl-debug.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/jinput.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/sound/lwjgl-sound/lib/lwjgl-2.6/jar/AppleJavaExtensions.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/scala/scala-2.9.2/lib/scala-swing.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/physics/jbullet/lib/jbullet/jbullet.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/physics/jbullet/lib/jbullet/vecmath.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/slf4j-1.6.1/log4j-1.2.16.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/slf4j-1.6.1/log4j.properties.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/slf4j-1.6.1/slf4j-api-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/slf4j-1.6.1/slf4j-log4j12-1.6.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/scalatest/scalatest_2.9.0-1.8.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/simplex3d/simplex3d-math-core.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/simplex3d/simplex3d-math-int.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/simplex3d/simplex3d-math-double.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/simplex3d/simplex3d-math-float.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/unification/unificationModuleWithoutLibs.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/io/vrpn/lib/vrpn/vrpn.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/editor/lib/scala-swing-tree-wrapper/scalaswingtreewrapper_2.8.1.RC3-1.1.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/speech/sphinx/js.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/speech/sphinx/jsapi.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/speech/sphinx/sphinxSources.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/speech/sphinx/tags.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/mmi/lib/speech/sphinx/WSJ_8gau_13dCep_16k_40mel_130Hz_6800Hz.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/owl/owlapi-bin.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/core/lib/owl/owlapi-src.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/renderer/jvr/lib/jogl2.0/gluegen-rt.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/renderer/jvr/lib/jogl2.0/jogl.all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/renderer/jvr/lib/jogl2.0/nativewindow.all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/renderer/jvr/lib/jogl2.0/newt.all.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/components/renderer/jvr/lib/jvr/jVR.jar" path-in-jar="/" />
+      <element id="extracted-dir" path="$PROJECT_DIR$/lib/scala/scala-2.9.2/lib/scala-library.jar" path-in-jar="/" />
+    </root>
+  </artifact>
+</component>
