@@ -73,3 +73,6 @@
 [submodule "components/io/sphinx"]
 	path = components/io/sphinx
 	url = http://win9148.informatik.uni-wuerzburg.de/simx/sphinx.git
+[submodule "applications/simthief"]
+	path = applications/simthief
+	url = http://win9148.informatik.uni-wuerzburg.de/simx/simthief.git
