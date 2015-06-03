@@ -34,7 +34,7 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val tuio           = SimXComponent ( id = "tuio", 	             base = file( "components/io/tuio")).
     dependsOn( core )
 
-  lazy val sphinx           = SimXComponent ( id = "sphinx", 	             base = file( "components/io/sphinx")).
+  lazy val sphinx         = SimXComponent ( id = "sphinx", 	           base = file( "components/io/sphinx")).
     dependsOn( core )
 
   lazy val json           = SimXComponent ( id = "json", 	             base = file( "components/io/json")).
@@ -44,6 +44,9 @@ object SimXProductionBuild extends SimXBuildBase{
     dependsOn( core )
 
   lazy val j4k            = SimXComponent ( id = "j4k", 	 	           base = file( "components/io/j4k")).
+    dependsOn( core )
+
+  lazy val leapmotion     = SimXComponent ( id = "leapmotion",         base = file( "components/io/leapmotion")).
     dependsOn( core )
 
   //Physics
@@ -72,8 +75,8 @@ object SimXProductionBuild extends SimXBuildBase{
 
   /* Applications*/
   lazy val aiexamples		  = SimXApplication ( id = "examples-ai",        base = file( "applications/examples/ai")).
-    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k).
-    aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k)
+    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion).
+    aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion)
 
   lazy val basicexamples  = SimXApplication ( id = "examples-basic",     base = file( "applications/examples/basic")).
     dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, j4k).
