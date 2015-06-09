@@ -76,3 +76,6 @@
 [submodule "applications/simthief"]
 	path = applications/simthief
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/simthief.git
+[submodule "components/io/leapmotion"]
+	path = components/io/leapmotion
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/leapmotion.git
