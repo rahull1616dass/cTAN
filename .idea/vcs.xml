@@ -17,6 +17,7 @@
     <mapping directory="$PROJECT_DIR$/components/io/cv" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/j4k" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/json" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/leapmotion" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/sphinx" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/tuio" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/vrpn" vcs="Git" />
