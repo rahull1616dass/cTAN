@@ -6,7 +6,7 @@
         <option name="ENABLED" value="true" />
       </pattern>
     </extension>
-    <option name="MAIN_CLASS_NAME" value="simx.applications.examples.ai.mipro.MiProTest" />
+    <option name="MAIN_CLASS_NAME" value="simx.applications.examples.ai.mipro.MiproTest" />
     <option name="VM_PARAMETERS" value="" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/examples/ai" />
