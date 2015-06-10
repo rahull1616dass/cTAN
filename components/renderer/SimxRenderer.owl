@@ -1,0 +1,1058 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.hci.uni-wuerzburg.de/ontologies/simx/components/renderer/SimxRenderer.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/components/renderer/SimxRenderer.owl"
+     versionIRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/components/renderer/SimxRenderer20130213.owl">
+    <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Import>http://localhost:8080/core/SimxCoreComponent.owl</Import>
+    <Declaration>
+        <Class IRI="#BackTexture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Camera"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#CastShadow"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Clipping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Color"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComputerGraphics"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ComputerVision"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Damping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DiffuseColor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DisplaySetupDescription"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DownTexture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#DrawLines"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EffectsConfiguration"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ExistingNode"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FarClip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FragmentShader"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Frame"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#FrontTexture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#HeadTransform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Icon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Icon1"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Icon2"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Icon3"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Keyframe"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LeftTexture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Light"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#LinearDamping"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ManipulatorList"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Mesh"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeshIndices"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeshNormals"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeshTexCoords"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeshVertexPositions"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#NearClip"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PointLight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PostProcessingEffect"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RefreshRate"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#RightTexture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Saturation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ScreenCoordinates"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Shader"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShaderEffect"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShadowBias"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ShowHeightMap"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkyBox"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SkyBoxFog"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpecularColor"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpotCutOff"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpotExponent"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SpotLight"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Texture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#UpTexture"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Vertex"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#VertexShader"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ViewPlatform"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WaveScale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#Any"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphcis_EffectsConfigurationDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphcis_MeshDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphcis_MeshIndicesDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphcis_MeshNormalsDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphcis_MeshVertexPositionsDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_CastShadowDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_ColorDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_DiffuseColorDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_DisplaySetupDescriptionDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_DrawLinesDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_FarClipDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_FrameDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_HalfExtendsDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_HeadTransformDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_LinearDampingDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_ManipulatorListDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_MeshTexCoordsDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_NearClipDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_SaturationDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_ScreenCoordinatesDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_ShadowBiasDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_ShowHeightMapDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_SkyBoxFoxDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_SpecularColorDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_SpotCutOffDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_SpotExponentDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_TextureDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_ViewPlatformDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#SirisGraphics_WaveScaleDescription"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#scala.collection.immutable.ConstVec2List"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#simx.core.components.renderer.messages.EffectsConfiguration"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#simx.core.components.renderer.setup.DisplaySetupDesc"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="#simx.core.helper.TextureData"/>
+    </Declaration>
+    <SubClassOf>
+        <Class IRI="#BackTexture"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#BackTexture"/>
+        <Class IRI="#Texture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Camera"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CastShadow"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#CastShadow"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Clipping"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Color"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Color"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComputerGraphics"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComputerGraphics"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#ComputerScience"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ComputerVision"/>
+        <Class IRI="#Camera"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Damping"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiffuseColor"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DiffuseColor"/>
+        <Class IRI="#Color"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DisplaySetupDescription"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DownTexture"/>
+        <Class IRI="#Texture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrawLines"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#DrawLines"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#DeprecatedSimxConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EffectsConfiguration"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ExistingNode"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FarClip"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FarClip"/>
+        <Class IRI="#Clipping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FragmentShader"/>
+        <Class IRI="#Shader"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frame"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Frame"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#FrontTexture"/>
+        <Class IRI="#Texture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeadTransform"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeadTransform"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#HeadTransform"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#Transformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Icon"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Icon1"/>
+        <Class IRI="#Icon"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Icon2"/>
+        <Class IRI="#Icon"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Icon3"/>
+        <Class IRI="#Icon"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Keyframe"/>
+        <Class IRI="#Frame"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LeftTexture"/>
+        <Class IRI="#Texture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Light"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LinearDamping"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#LinearDamping"/>
+        <Class IRI="#Damping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManipulatorList"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ManipulatorList"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#DeprecatedSimxConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Mesh"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeshIndices"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeshNormals"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeshTexCoords"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#MeshVertexPositions"/>
+        <Class IRI="#MeshTexCoords"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NearClip"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#NearClip"/>
+        <Class IRI="#Clipping"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PointLight"/>
+        <Class IRI="#Light"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PostProcessingEffect"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RefreshRate"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#RightTexture"/>
+        <Class IRI="#Texture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saturation"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Saturation"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScreenCoordinates"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ScreenCoordinates"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Shader"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShaderEffect"/>
+        <Class IRI="#Shader"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShadowBias"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShadowBias"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShowHeightMap"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ShowHeightMap"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#DeprecatedSimxConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkyBox"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkyBoxFog"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SkyBoxFog"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#DeprecatedSimxConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpecularColor"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpecularColor"/>
+        <Class IRI="#Color"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpotCutOff"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpotCutOff"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpotExponent"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpotExponent"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SpotLight"/>
+        <Class IRI="#Light"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Texture"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Texture"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#UpTexture"/>
+        <Class IRI="#Texture"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vertex"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Vertex"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#DataFormat"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#VertexShader"/>
+        <Class IRI="#Shader"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ViewPlatform"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ViewPlatform"/>
+        <Class IRI="#ComputerGraphics"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ViewPlatform"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#Transformation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaveScale"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Property"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WaveScale"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#DeprecatedSimxConcept"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#Shape"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#GraphicalAspect"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectIntersectionOf>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasProperty"/>
+                <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#File"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasProperty"/>
+                <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#Scale"/>
+            </ObjectSomeValuesFrom>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasProperty"/>
+                <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#Transformation"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#ShapeFromFile"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#EffectsConfiguration"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphcis_EffectsConfigurationDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#Mesh"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphcis_MeshDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#MeshIndices"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphcis_MeshIndicesDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#MeshNormals"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphcis_MeshNormalsDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#MeshVertexPositions"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphcis_MeshVertexPositionsDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#BackTexture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#DownTexture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#FrontTexture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#LeftTexture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#RightTexture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#UpTexture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#CastShadow"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_CastShadowDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#Color"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_ColorDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#DiffuseColor"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_DiffuseColorDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#DisplaySetupDescription"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_DisplaySetupDescriptionDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#DrawLines"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_DrawLinesDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#FarClip"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_FarClipDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#Frame"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_FrameDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#HeadTransform"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_HeadTransformDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#LinearDamping"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_LinearDampingDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#ManipulatorList"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_ManipulatorListDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#MeshTexCoords"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_MeshTexCoordsDesc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#NearClip"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_NearClipDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#Saturation"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_SaturationDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#ScreenCoordinates"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_ScreenCoordinatesDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#ShadowBias"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_ShadowBiasDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#ShowHeightMap"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_ShowHeightMapDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#SkyBoxFog"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_SkyBoxFoxDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#SpecularColor"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_SpecularColorDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#SpotCutOff"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_SpotCutOffDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#SpotExponent"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_SpotExponentDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#Texture"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_TextureDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#ViewPlatform"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_ViewPlatformDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#WaveScale"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SirisGraphics_WaveScaleDescription"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#ScalaType"/>
+        <NamedIndividual IRI="#scala.collection.immutable.ConstVec2List"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#SirisType"/>
+        <NamedIndividual IRI="#simx.core.helper.TextureData"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#JavaType"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#java.awt.image.BufferedImage"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphcis_EffectsConfigurationDesc"/>
+        <NamedIndividual IRI="#simx.core.components.renderer.messages.EffectsConfiguration"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphcis_MeshDesc"/>
+        <NamedIndividual IRI="#Any"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphcis_MeshIndicesDesc"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_IntegersDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphcis_MeshNormalsDesc"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealsDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphcis_MeshVertexPositionsDesc"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealsDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_BackTextureDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_StringDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_CastShadowDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_BooleanDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphics_ColorDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#java.awt.Color"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_DiffuseColorDescription"/>
+        <NamedIndividual IRI="#SirisGraphics_ColorDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphics_DisplaySetupDescriptionDesc"/>
+        <NamedIndividual IRI="#simx.core.components.renderer.setup.DisplaySetupDesc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_DrawLinesDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_BooleanDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_FarClipDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphics_FrameDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#java.awt.image.BufferedImage"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_HalfExtendsDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_Vector3Description"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_HeadTransformDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_TransformationDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_LinearDampingDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_ManipulatorListDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_BooleanDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_MeshTexCoordsDesc"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealsDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_NearClipDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_SaturationDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphics_ScreenCoordinatesDescription"/>
+        <NamedIndividual IRI="#scala.collection.immutable.ConstVec2List"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_ShadowBiasDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_ShowHeightMapDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_BooleanDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_SkyBoxFoxDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_SpecularColorDescription"/>
+        <NamedIndividual IRI="#SirisGraphics_ColorDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_SpotCutOffDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_SpotExponentDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SirisGraphics_TextureDescription"/>
+        <NamedIndividual IRI="#simx.core.helper.TextureData"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_ViewPlatformDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_TransformationDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
+        <NamedIndividual IRI="#SirisGraphics_WaveScaleDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_RealDescription"/>
+    </ObjectPropertyAssertion>
+    <DataPropertyAssertion>
+        <DataProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#hasTypeString"/>
+        <NamedIndividual IRI="#scala.collection.immutable.ConstVec2List"/>
+        <Literal datatypeIRI="&xsd;string">scala.collection.immutable.List[simplex3d.math.float.ConstVec2]</Literal>
+    </DataPropertyAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+
