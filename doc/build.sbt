@@ -1,5 +1,8 @@
-autoCompilerPlugins := true
+libraryDependencies ++= Seq(
+	compilerPlugin("org.scala-lang.plugins" % ("scala-continuations-plugin_" + scalaVersion.value) % "1.0.2"),
+	"com.github.ansell.pellet" % "pellet-owlapiv3" % "2.3.6-ansell" exclude("msv", "xsdlib")
+)
 
-addCompilerPlugin("org.scala-lang.plugins" % "scala-continuations-plugin_2.11.6" % "1.0.2")
+autoCompilerPlugins := true
 
 scalacOptions += "-P:continuations:enable"
