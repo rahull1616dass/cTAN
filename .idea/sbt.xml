@@ -7,13 +7,65 @@
         <option name="jdk" value="1.7" />
         <option name="modules">
           <set>
+            <option value="$PROJECT_DIR$/applications/examples/ai" />
+            <option value="$PROJECT_DIR$/applications/examples/ai/project" />
+            <option value="$PROJECT_DIR$/applications/examples/basic" />
+            <option value="$PROJECT_DIR$/applications/examples/basic/project" />
+            <option value="$PROJECT_DIR$/applications/examples/unity" />
+            <option value="$PROJECT_DIR$/applications/examples/unity/project" />
+            <option value="$PROJECT_DIR$/applications/simthief" />
+            <option value="$PROJECT_DIR$/applications/simthief/project" />
+            <option value="$PROJECT_DIR$/applications/xroads" />
+            <option value="$PROJECT_DIR$/applications/xroads/project" />
+            <option value="$PROJECT_DIR$/components/ai/atn" />
+            <option value="$PROJECT_DIR$/components/ai/atn/project" />
+            <option value="$PROJECT_DIR$/components/ai/feature" />
+            <option value="$PROJECT_DIR$/components/ai/feature/project" />
+            <option value="$PROJECT_DIR$/components/ai/nlp" />
+            <option value="$PROJECT_DIR$/components/ai/nlp/project" />
+            <option value="$PROJECT_DIR$/components/ai/planning" />
+            <option value="$PROJECT_DIR$/components/ai/planning/project" />
+            <option value="$PROJECT_DIR$/components/ai/reasoning" />
+            <option value="$PROJECT_DIR$/components/ai/reasoning/project" />
+            <option value="$PROJECT_DIR$/components/editor" />
+            <option value="$PROJECT_DIR$/components/editor/project" />
+            <option value="$PROJECT_DIR$/components/io/cv" />
+            <option value="$PROJECT_DIR$/components/io/cv/project" />
+            <option value="$PROJECT_DIR$/components/io/j4k" />
+            <option value="$PROJECT_DIR$/components/io/j4k/project" />
+            <option value="$PROJECT_DIR$/components/io/json" />
+            <option value="$PROJECT_DIR$/components/io/json/project" />
+            <option value="$PROJECT_DIR$/components/io/leapmotion" />
+            <option value="$PROJECT_DIR$/components/io/leapmotion/project" />
+            <option value="$PROJECT_DIR$/components/io/sphinx" />
+            <option value="$PROJECT_DIR$/components/io/sphinx/project" />
+            <option value="$PROJECT_DIR$/components/io/tuio" />
+            <option value="$PROJECT_DIR$/components/io/tuio/project" />
+            <option value="$PROJECT_DIR$/components/io/vrpn" />
+            <option value="$PROJECT_DIR$/components/io/vrpn/project" />
+            <option value="$PROJECT_DIR$/components/ontology/generating" />
+            <option value="$PROJECT_DIR$/components/ontology/generating/project" />
+            <option value="$PROJECT_DIR$/components/physics/jbullet" />
+            <option value="$PROJECT_DIR$/components/physics/jbullet/project" />
+            <option value="$PROJECT_DIR$/components/remote" />
+            <option value="$PROJECT_DIR$/components/remote/project" />
+            <option value="$PROJECT_DIR$/components/renderer/gui" />
+            <option value="$PROJECT_DIR$/components/renderer/gui/project" />
+            <option value="$PROJECT_DIR$/components/renderer/jvr" />
+            <option value="$PROJECT_DIR$/components/renderer/jvr/project" />
+            <option value="$PROJECT_DIR$/components/renderer/unity" />
+            <option value="$PROJECT_DIR$/components/renderer/unity/project" />
+            <option value="$PROJECT_DIR$/components/sound/java-sound" />
+            <option value="$PROJECT_DIR$/components/sound/java-sound/project" />
+            <option value="$PROJECT_DIR$/components/sound/lwjgl-sound" />
+            <option value="$PROJECT_DIR$/components/sound/lwjgl-sound/project" />
+            <option value="$PROJECT_DIR$/core" />
             <option value="$PROJECT_DIR$/core/project" />
-            <option value="$PROJECT_DIR$/core/project/project" />
+            <option value="$PROJECT_DIR$/doc" />
+            <option value="$PROJECT_DIR$/doc/project" />
           </set>
         </option>
-        <option name="sbtVersion" value="0.13.5" />
-        <option name="useAutoImport" value="true" />
-        <option name="useOurOwnAutoImport" value="true" />
+        <option name="sbtVersion" value="0.13.8" />
       </SbtProjectSettings>
     </option>
   </component>
