@@ -3,8 +3,8 @@ import sbt._
 
 object SimXProductionBuild extends SimXBuildBase{
   // version settings
-  val usedJavaVersion = "1.7"
-  val usedScalaVersion = "2.11.6"
+  val usedJavaVersion = "1.8"
+  val usedScalaVersion = "2.11.7"
   val projectName = "simx-production"
 
   override def rootProject =
@@ -77,6 +77,10 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val aiexamples		  = SimXApplication ( id = "examples-ai",        base = file( "applications/examples/ai")).
     dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion).
     aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion)
+
+  lazy val raycalib		  = SimXApplication ( id = "raycalib",        base = file( "applications/raycalib")).
+    dependsOn(core, jvr, vrpn, gui).
+    aggregate(core, jvr, vrpn, gui)
 
   lazy val basicexamples  = SimXApplication ( id = "examples-basic",     base = file( "applications/examples/basic")).
     dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, j4k).
