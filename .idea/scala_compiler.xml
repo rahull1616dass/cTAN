@@ -1,16 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="SBT 1" modules="project" />
-    <profile name="SBT 5" modules="examples-ai,examples-basic,examples-unity,raycalib,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,sphinx,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,doc">
+    <profile name="SBT 1" modules="project,raycalib" />
+    <profile name="SBT 5" modules="examples-ai,examples-basic,examples-unity,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,sphinx,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,doc">
       <option name="continuations" value="true" />
       <plugins>
-        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
+        <plugin path="C:\Users\Sascha\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.7\bundles\scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
     <profile name="SBT 5" modules="ontology-generator">
       <plugins>
-        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
+        <plugin path="C:\Users\Sascha\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.7\bundles\scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
     <profile name="SBT 5" modules="core">
@@ -21,7 +21,7 @@
       <option name="featureWarnings" value="true" />
       <option name="continuations" value="true" />
       <plugins>
-        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
+        <plugin path="C:\Users\Sascha\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.7\bundles\scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
   </component>
