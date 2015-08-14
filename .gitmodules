@@ -79,3 +79,6 @@
 [submodule "components/io/leapmotion"]
 	path = components/io/leapmotion
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/leapmotion.git
+[submodule "applications/raycalib"]
+	path = applications/raycalib
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/raycalib.git

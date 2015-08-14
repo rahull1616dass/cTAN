@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="XRoadsV2" type="Application" factoryName="Application" singleton="true">
+  <configuration default="false" name="XRoadsV2" type="Application" factoryName="Application" folderName="XRoads" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="simx.applications.mains.XRoadsV2" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g -XX:MaxPermSize=128m -DdisableSafetyChecks=true" />

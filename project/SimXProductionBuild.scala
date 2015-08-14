@@ -97,5 +97,6 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val xroads         = SimXApplication ( id = "xroads",             base = file( "applications/xroads")).
     dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, sphinx, atn, reasoning).
     aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, sphinx, atn, reasoning)
+        
 }
 
