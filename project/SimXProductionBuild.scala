@@ -75,8 +75,8 @@ object SimXProductionBuild extends SimXBuildBase{
 
   /* Applications*/
   lazy val aiexamples		  = SimXApplication ( id = "examples-ai",        base = file( "applications/examples/ai")).
-    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion).
-    aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion)
+    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui).
+    aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui)
 
   lazy val raycalib		  = SimXApplication ( id = "raycalib",        base = file( "applications/raycalib")).
     dependsOn(core, jvr, vrpn, gui).
