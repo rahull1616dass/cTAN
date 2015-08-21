@@ -82,3 +82,6 @@
 [submodule "applications/raycalib"]
 	path = applications/raycalib
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/raycalib.git
+[submodule "applications/examples/mmi"]
+	path = applications/examples/mmi
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/examples-mmi.git
