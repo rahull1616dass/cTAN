@@ -11,8 +11,12 @@
             <option value="$PROJECT_DIR$/applications/examples/ai/project" />
             <option value="$PROJECT_DIR$/applications/examples/basic" />
             <option value="$PROJECT_DIR$/applications/examples/basic/project" />
+            <option value="$PROJECT_DIR$/applications/examples/mmi" />
+            <option value="$PROJECT_DIR$/applications/examples/mmi/project" />
             <option value="$PROJECT_DIR$/applications/examples/unity" />
             <option value="$PROJECT_DIR$/applications/examples/unity/project" />
+            <option value="$PROJECT_DIR$/applications/raycalib" />
+            <option value="$PROJECT_DIR$/applications/raycalib/project" />
             <option value="$PROJECT_DIR$/applications/simthief" />
             <option value="$PROJECT_DIR$/applications/simthief/project" />
             <option value="$PROJECT_DIR$/applications/xroads" />
