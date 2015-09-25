@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="SubAtnExample" type="Application" factoryName="Application" folderName="Ai Examples" singleton="true">
+  <configuration default="false" name="Atn - SubAtn Example" type="Application" factoryName="Application" folderName="Ai Examples" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="simx.applications.examples.ai.atn.SubAtnExample" />
     <option name="VM_PARAMETERS" value="-DdisableSafetyChecks=true" />
