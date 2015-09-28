@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="KinectSpeechExample" type="Application" factoryName="Application" folderName="Ai Examples" singleton="true">
+  <configuration default="false" name="KinectSpeechExample" type="Application" factoryName="Application" folderName="MMI Examples" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    <option name="MAIN_CLASS_NAME" value="simx.applications.examples.ai.mipro.KinectSpeechExample" />
+    <option name="MAIN_CLASS_NAME" value="simx.applications.examples.mmi.KinectSpeechExample" />
     <option name="VM_PARAMETERS" value="-XX:MaxPermSize=128m -DdisableSafetyChecks=true" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/examples/ai" />
@@ -10,7 +10,7 @@
     <option name="ENABLE_SWING_INSPECTOR" value="false" />
     <option name="ENV_VARIABLES" />
     <option name="PASS_PARENT_ENVS" value="true" />
-    <module name="examples-ai" />
+    <module name="examples-mmi" />
     <envs />
     <method />
   </configuration>
