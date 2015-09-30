@@ -22,17 +22,19 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/core/SimxCoreComponent.owl</Import>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/ai/atn/atn.owl</Import>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/ai/planning/planning.owl</Import>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/editor/Editor.owl</Import>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/io/TUIO/TUIO.owl</Import>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/io/VRPN/VRPN.owl</Import>
-	<Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/physics/JBullet/JBullet.owl</Import>
-    <Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/renderer/Gui/Gui.owl</Import>
-    <Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/renderer/JVR/JVR.owl</Import>
-    <Import>http://www.hci.uni-wuerzburg.de/ontologies/simx/components/sound/LWJGL-Sound/LWJGL-Sound.owl</Import>
-    <Import>http://hci.uni-wuerzburg.de/ontologies/simx/applications/xroads/xroads.owl</Import>
+	<Import>http://localhost:8080/core/SimxCoreComponent.owl</Import>
+	<Import>http://localhost:8080/components/ai/atn/atn.owl</Import>
+	<Import>http://localhost:8080/components/ai/planning/planning.owl</Import>
+	<Import>http://localhost:8080/components/editor/Editor.owl</Import>
+	<Import>http://localhost:8080/components/io/tuio/TUIO.owl</Import>
+	<Import>http://localhost:8080/components/io/vrpn/VRPN.owl</Import>
+	<Import>http://localhost:8080/components/physics/jbullet/JBullet.owl</Import>
+    <Import>http://localhost:8080/components/renderer/gui/Gui.owl</Import>
+    <Import>http://localhost:8080/components/renderer/unity/unity.owl</Import>
+    <Import>http://localhost:8080/components/renderer/jvr/JVR.owl</Import>
+    <Import>http://localhost:8080/components/sound/lwjgl-sound/LWJGL-Sound.owl</Import>
+    <Import>http://localhost:8080/applications/xroads/simxOntology.owl</Import>
+	<Import>http://localhost:8080/applications/examples/ai/simxOntology.owl</Import>
 </Ontology>
 
 
