@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ScalaCompilerConfiguration">
     <profile name="SBT 1" modules="project" />
-    <profile name="SBT 2" modules="examples-ai,examples-basic,examples-unity,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,sphinx,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,doc">
-      <option name="postfixOps" value="true" />
-      <option name="reflectiveCalls" value="true" />
-      <option name="implicitConversions" value="true" />
-      <option name="higherKinds" value="true" />
+    <profile name="SBT 5" modules="examples-ai,examples-basic,examples-mmi,examples-unity,raycalib,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,sphinx,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,doc">
       <option name="continuations" value="true" />
       <plugins>
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
@@ -15,6 +11,12 @@
     <profile name="SBT 5" modules="ontology-generator">
       <plugins>
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
+      </plugins>
+    </profile>
+    <profile name="SBT 5" modules="webeditor">
+      <option name="continuations" value="true" />
+      <plugins>
+        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.2/bundles/scala-continuations-plugin_2.11.2-1.0.2.jar" />
       </plugins>
     </profile>
     <profile name="SBT 5" modules="core">

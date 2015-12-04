@@ -85,3 +85,6 @@
 [submodule "applications/examples/mmi"]
 	path = applications/examples/mmi
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/examples-mmi.git
+[submodule "components/webeditor"]
+	path = components/webeditor
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/webeditor.git
