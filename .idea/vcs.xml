@@ -31,6 +31,7 @@
     <mapping directory="$PROJECT_DIR$/components/renderer/unity" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/java-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/webeditor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
   </component>
 </project>

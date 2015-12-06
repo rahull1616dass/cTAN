@@ -37,8 +37,8 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val tuio           = SimXComponent ( id = "tuio", 	             base = file( "components/io/tuio")).
     dependsOn( core )
 
-  lazy val sphinx         = SimXComponent ( id = "sphinx", 	           base = file( "components/io/sphinx")).
-    dependsOn( core )
+//  lazy val sphinx         = SimXComponent ( id = "sphinx", 	           base = file( "components/io/sphinx")).
+//    dependsOn( core )
 
   lazy val json           = SimXComponent ( id = "json", 	             base = file( "components/io/json")).
     dependsOn( core )
@@ -102,8 +102,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, atn, feature, jbullet, jvr, vrpn, remote, lwjgl_sound, editor, gui)
 
   lazy val xroads         = SimXApplication ( id = "xroads",             base = file( "applications/xroads")).
-    dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, sphinx, atn, reasoning).
-    aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, sphinx, atn, reasoning)
+    dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, atn, reasoning).
+    aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, atn, reasoning)
         
 }
 
