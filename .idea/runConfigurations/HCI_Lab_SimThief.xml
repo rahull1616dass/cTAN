@@ -3,7 +3,7 @@
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="simx.applications.simthief.HCILabSimThief" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g -XX:MaxPermSize=256m -DdisableSafetyChecks=true" />
-    <option name="PROGRAM_PARAMETERS" value="C:\Users\hci-admin\Desktop\samsung\ideal.calibration.xml --disable-fog --disable-interface --disable-bloom --disable-saturation --disable-dof" />
+    <option name="PROGRAM_PARAMETERS" value="config/calibration.xml --disable-fog --disable-interface --disable-bloom --disable-saturation --disable-dof" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/simthief" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
