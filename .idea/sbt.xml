@@ -41,8 +41,6 @@
             <option value="$PROJECT_DIR$/components/io/json/project" />
             <option value="$PROJECT_DIR$/components/io/leapmotion" />
             <option value="$PROJECT_DIR$/components/io/leapmotion/project" />
-            <option value="$PROJECT_DIR$/components/io/sphinx" />
-            <option value="$PROJECT_DIR$/components/io/sphinx/project" />
             <option value="$PROJECT_DIR$/components/io/tuio" />
             <option value="$PROJECT_DIR$/components/io/tuio/project" />
             <option value="$PROJECT_DIR$/components/io/vrpn" />
