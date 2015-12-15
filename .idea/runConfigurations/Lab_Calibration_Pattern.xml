@@ -1,0 +1,21 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="Lab Calibration Pattern" type="Application" factoryName="Application" folderName="Calibration" singleton="true">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
+    <option name="MAIN_CLASS_NAME" value="simx.applications.raycalib.CalibrationPattern" />
+    <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g -DdisableSafetyChecks=true" />
+    <option name="PROGRAM_PARAMETERS" value="configs/screen/calibration.xml " />
+    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/examples/basic" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+    <option name="ALTERNATIVE_JRE_PATH" value="" />
+    <option name="ENABLE_SWING_INSPECTOR" value="false" />
+    <option name="ENV_VARIABLES" />
+    <option name="PASS_PARENT_ENVS" value="true" />
+    <module name="raycalib" />
+    <envs>
+      <env name="XAUTHORITY" value="$PROJECT_DIR$/../../../screenuser/.Xauthority" />
+      <env name="DISPLAY" value=":1" />
+      <env name="ALSA_CARD" value="plughw:0" />
+    </envs>
+    <method />
+  </configuration>
+</component>
