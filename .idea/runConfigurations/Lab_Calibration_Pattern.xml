@@ -3,8 +3,8 @@
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="simx.applications.raycalib.CalibrationPattern" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g -DdisableSafetyChecks=true" />
-    <option name="PROGRAM_PARAMETERS" value="configs/screen/calibration.xml -minimizationFactor=0.333334 -yOffset=0.333334" />
-    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/examples/basic" />
+    <option name="PROGRAM_PARAMETERS" value="configs/screen/calibration.xml -minimizationFactor=0.333334 -yOffset=0.1666667" />
+    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/raycalib" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
     <option name="ENABLE_SWING_INSPECTOR" value="false" />
