@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="KinectCalibration smaller area" type="Application" factoryName="Application" folderName="Calibration" singleton="true">
+  <configuration default="false" name="KinectCalibration Minimized Area via Args" type="Application" factoryName="Application" folderName="Calibration" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
         <option name="PATTERN" value="simx.applications.raycalib.*" />
@@ -8,7 +8,7 @@
     </extension>
     <option name="MAIN_CLASS_NAME" value="simx.applications.raycalib.KinectCalibration" />
     <option name="VM_PARAMETERS" value="" />
-    <option name="PROGRAM_PARAMETERS" value="-minFactor=3 -upperEdgeOffset=1" />
+    <option name="PROGRAM_PARAMETERS" value=" -minimizationFactor=0.333334 -yOffset=0.333334" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/raycalib" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
