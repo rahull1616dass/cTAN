@@ -3,7 +3,7 @@
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
     <option name="MAIN_CLASS_NAME" value="simx.applications.simthief.HCILabSimThief" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g -DdisableSafetyChecks=true" />
-    <option name="PROGRAM_PARAMETERS" value="configs/screen/calibration.xml  --disable-interface --disable-bloom --disable-saturation --disable-dof" />
+    <option name="PROGRAM_PARAMETERS" value="$USER_HOME$/Desktop/wall/ideal/calibration_screen0.xml $USER_HOME$/Desktop/wall/2015-12-17-kinect-lab.calibration.xml --disable-interface --disable-bloom --disable-saturation --disable-dof" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/simthief" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" value="" />
@@ -14,7 +14,6 @@
     <envs>
       <env name="XAUTHORITY" value="$PROJECT_DIR$/../../../screenuser/.Xauthority" />
       <env name="DISPLAY" value=":1" />
-      <env name="ALSA_CARD" value="plughw:0" />
     </envs>
     <method />
   </configuration>
