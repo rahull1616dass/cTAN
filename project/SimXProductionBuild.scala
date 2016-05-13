@@ -93,6 +93,11 @@ object SimXProductionBuild extends SimXBuildBase{
     dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, j4k, webeditor).
     aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, j4k, webeditor)
 
+  lazy val benchmarks  = SimXApplication ( id = "benchmarks",     base = file( "applications/benchmarks")).
+    dependsOn(core, jbullet, jvr, lwjgl_sound, editor).
+    aggregate(core, jbullet, jvr, lwjgl_sound, editor)
+
+
   lazy val unityexamples  = SimXApplication ( id = "examples-unity",     base = file( "applications/examples/unity")).
     dependsOn(core, jbullet, jvr, unity, lwjgl_sound, editor ).
     aggregate(core, jbullet, jvr, unity, lwjgl_sound, editor )
