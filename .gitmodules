@@ -88,3 +88,6 @@
 [submodule "components/webeditor"]
 	path = components/webeditor
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/webeditor.git
+[submodule "applications/benchmarks"]
+	path = applications/benchmarks
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/benchmarks.git
