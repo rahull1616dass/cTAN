@@ -4,13 +4,13 @@
     <profile name="SBT 1" modules="project" />
     <profile name="SBT 2" modules="ontology-generator">
       <plugins>
-        <plugin path="C:\Users\thoma\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.7\bundles\scala-continuations-plugin_2.11.7-1.0.2.jar" />
+        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
     <profile name="SBT 3" modules="webeditor">
       <option name="continuations" value="true" />
       <plugins>
-        <plugin path="C:\Users\thoma\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.2\bundles\scala-continuations-plugin_2.11.2-1.0.2.jar" />
+        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.2/bundles/scala-continuations-plugin_2.11.2-1.0.2.jar" />
       </plugins>
     </profile>
     <profile name="SBT 4" modules="core">
@@ -21,19 +21,13 @@
       <option name="featureWarnings" value="true" />
       <option name="continuations" value="true" />
       <plugins>
-        <plugin path="C:\Users\thoma\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.7\bundles\scala-continuations-plugin_2.11.7-1.0.2.jar" />
-      </plugins>
-    </profile>
-    <profile name="SBT 5" modules="sphinx">
-      <option name="continuations" value="true" />
-      <plugins>
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
-    <profile name="SBT 6" modules="examples-ai,examples-basic,examples-mmi,examples-unity,examples-unreal,raycalib,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,unreal,doc">
+    <profile name="SBT 5" modules="sphinx,examples-ai,examples-basic,examples-mmi,examples-unity,examples-unreal,raycalib,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,unreal,doc">
       <option name="continuations" value="true" />
       <plugins>
-        <plugin path="C:\Users\thoma\.ivy2\cache\org.scala-lang.plugins\scala-continuations-plugin_2.11.7\bundles\scala-continuations-plugin_2.11.7-1.0.2.jar" />
+        <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
   </component>
