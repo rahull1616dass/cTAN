@@ -14,7 +14,7 @@ object SimXProductionBuild extends SimXBuildBase{
   /* Components */
   //Ai
   lazy val atn		        = SimXComponent ( id = "atn", 	     	       base = file( "components/ai/atn")).
-    dependsOn( editor )
+    dependsOn( core, planning )
   lazy val feature	      = SimXComponent ( id = "feature", 	         base = file( "components/ai/feature")).
     dependsOn( core )
   lazy val nlp	          = SimXComponent ( id = "nlp", 	             base = file( "components/ai/nlp")).
