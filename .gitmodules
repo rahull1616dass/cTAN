@@ -91,3 +91,9 @@
 [submodule "applications/benchmarks"]
 	path = applications/benchmarks
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/benchmarks.git
+[submodule "applications/examples/unreal"]
+	path = applications/examples/unreal
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/examples-unreal.git
+[submodule "components/unreal"]
+	path = components/unreal
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/unreal.git
