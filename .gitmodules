@@ -88,3 +88,9 @@
 [submodule "components/webeditor"]
 	path = components/webeditor
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/webeditor.git
+[submodule "applications/examples/unreal"]
+	path = applications/examples/unreal
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/examples-unreal.git
+[submodule "components/unreal"]
+	path = components/unreal
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/unreal.git
