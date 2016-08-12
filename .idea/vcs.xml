@@ -7,6 +7,7 @@
     <mapping directory="$PROJECT_DIR$/applications/examples/basic" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/applications/examples/mmi" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/applications/examples/unity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/applications/examples/unreal" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/applications/raycalib" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/applications/simthief" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/applications/xroads" vcs="Git" />
@@ -30,6 +31,7 @@
     <mapping directory="$PROJECT_DIR$/components/renderer/unity" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/java-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/unreal" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/webeditor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
   </component>

@@ -17,6 +17,8 @@
             <option value="$PROJECT_DIR$/applications/examples/mmi/project" />
             <option value="$PROJECT_DIR$/applications/examples/unity" />
             <option value="$PROJECT_DIR$/applications/examples/unity/project" />
+            <option value="$PROJECT_DIR$/applications/examples/unreal" />
+            <option value="$PROJECT_DIR$/applications/examples/unreal/project" />
             <option value="$PROJECT_DIR$/applications/raycalib" />
             <option value="$PROJECT_DIR$/applications/raycalib/project" />
             <option value="$PROJECT_DIR$/applications/simthief" />
@@ -63,6 +65,8 @@
             <option value="$PROJECT_DIR$/components/sound/java-sound/project" />
             <option value="$PROJECT_DIR$/components/sound/lwjgl-sound" />
             <option value="$PROJECT_DIR$/components/sound/lwjgl-sound/project" />
+            <option value="$PROJECT_DIR$/components/unreal" />
+            <option value="$PROJECT_DIR$/components/unreal/project" />
             <option value="$PROJECT_DIR$/components/webeditor" />
             <option value="$PROJECT_DIR$/components/webeditor/project" />
             <option value="$PROJECT_DIR$/core" />
@@ -71,6 +75,7 @@
             <option value="$PROJECT_DIR$/doc/project" />
           </set>
         </option>
+        <option name="sbtVersion" value="0.13.8" />
       </SbtProjectSettings>
     </option>
   </component>
