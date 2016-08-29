@@ -85,8 +85,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound)
 
   lazy val mmiexamples		  = SimXApplication ( id = "examples-mmi",        base = file( "applications/examples/mmi")).
-    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound).
-    aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound)
+    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal).
+    aggregate(core, jvr, jbullet, tuio, editor, vrpn, feature, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal)
 
   lazy val raycalib		  = SimXApplication ( id = "raycalib",        base = file( "applications/raycalib")).
     dependsOn(core, jvr, vrpn, gui).
@@ -101,8 +101,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jbullet, jvr, unity, lwjgl_sound, editor )
 	
   lazy val unrealexamples  = SimXApplication ( id = "examples-unreal",     base = file( "applications/examples/unreal")).
-    dependsOn(core, jbullet, jvr, unreal, lwjgl_sound, editor, feature, atn ).
-    aggregate(core, jbullet, jvr, unreal, lwjgl_sound, editor, feature, atn )
+    dependsOn(core, jbullet, jvr, unreal, lwjgl_sound, editor ).
+    aggregate(core, jbullet, jvr, unreal, lwjgl_sound, editor )
 
   lazy val simthief	      = SimXApplication ( id = "simthief",		       base = file( "applications/simthief")).
     dependsOn(core, atn, feature, jbullet, jvr, vrpn, remote, lwjgl_sound, editor, gui, unreal).
