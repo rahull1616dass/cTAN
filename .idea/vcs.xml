@@ -12,7 +12,6 @@
     <mapping directory="$PROJECT_DIR$/applications/simthief" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/applications/xroads" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/atn" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/ai/feature" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/nlp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/planning" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/reasoning" vcs="Git" />

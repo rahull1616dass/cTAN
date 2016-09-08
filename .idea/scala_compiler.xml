@@ -31,7 +31,7 @@
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
-    <profile name="SBT 6" modules="benchmarks,examples-ai,examples-basic,examples-mmi,examples-unity,examples-unreal,raycalib,simthief,xroads,atn,feature,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,unreal,doc">
+    <profile name="SBT 6" modules="feature,benchmarks,examples-ai,examples-basic,examples-mmi,examples-unity,examples-unreal,raycalib,simthief,xroads,atn,mipro,nlp,planning,reasoning,editor,cv,j4k,json,leapmotion,tuio,vrpn,jbullet,remote,gui,jvr,unity,java-sound,lwjgl_sound,unreal,doc">
       <option name="continuations" value="true" />
       <plugins>
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />

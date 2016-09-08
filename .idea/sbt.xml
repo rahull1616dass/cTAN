@@ -27,8 +27,8 @@
             <option value="$PROJECT_DIR$/applications/xroads/project" />
             <option value="$PROJECT_DIR$/components/ai/atn" />
             <option value="$PROJECT_DIR$/components/ai/atn/project" />
-            <option value="$PROJECT_DIR$/components/ai/feature" />
-            <option value="$PROJECT_DIR$/components/ai/feature/project" />
+            <option value="$PROJECT_DIR$/components/ai/mipro" />
+            <option value="$PROJECT_DIR$/components/ai/mipro/project" />
             <option value="$PROJECT_DIR$/components/ai/nlp" />
             <option value="$PROJECT_DIR$/components/ai/nlp/project" />
             <option value="$PROJECT_DIR$/components/ai/planning" />

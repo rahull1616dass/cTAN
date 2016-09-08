@@ -94,3 +94,6 @@
 [submodule "components/unreal"]
 	path = components/unreal
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/unreal.git
+[submodule "components/ai/mipro"]
+	path = components/ai/mipro
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/mipro.git
