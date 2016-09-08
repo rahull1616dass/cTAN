@@ -34,9 +34,6 @@
 [submodule "components/ai/atn"]
 	path = components/ai/atn
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/atn.git
-[submodule "components/ai/feature"]
-	path = components/ai/feature
-	url = git@win9148.informatik.uni-wuerzburg.de:simx/feature.git
 [submodule "components/renderer/gui"]
 	path = components/renderer/gui
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/gui.git
