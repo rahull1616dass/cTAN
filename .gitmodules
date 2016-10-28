@@ -97,3 +97,9 @@
 [submodule "components/ai/mipro"]
 	path = components/ai/mipro
 	url = git@win9148.informatik.uni-wuerzburg.de:simx/mipro.git
+[submodule "components/webui"]
+	path = components/webui
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/webui.git
+[submodule "applications/examples/extended"]
+	path = applications/examples/extended
+	url = git@win9148.informatik.uni-wuerzburg.de:simx/examples-extended.git
