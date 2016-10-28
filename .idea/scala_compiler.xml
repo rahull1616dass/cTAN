@@ -7,7 +7,7 @@
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.7/bundles/scala-continuations-plugin_2.11.7-1.0.2.jar" />
       </plugins>
     </profile>
-    <profile name="SBT 3" modules="webeditor">
+    <profile name="SBT 3" modules="examples-extended,webeditor,webui">
       <option name="continuations" value="true" />
       <plugins>
         <plugin path="$USER_HOME$/.ivy2/cache/org.scala-lang.plugins/scala-continuations-plugin_2.11.2/bundles/scala-continuations-plugin_2.11.2-1.0.2.jar" />

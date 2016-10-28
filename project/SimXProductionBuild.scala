@@ -30,6 +30,9 @@ object SimXProductionBuild extends SimXBuildBase{
 
   lazy val webeditor         = SimXComponent ( id = "webeditor",             base = file( "components/webeditor")).
     dependsOn( core )
+    
+  lazy val webui         = SimXComponent ( id = "webui",             base = file( "components/webui")).
+    dependsOn( core )    
   //IO
   lazy val cv	            = SimXComponent ( id = "cv", 	               base = file( "components/io/cv")).
     dependsOn( core )
@@ -95,6 +98,10 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val basicexamples  = SimXApplication ( id = "examples-basic",     base = file( "applications/examples/basic")).
     dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, j4k, webeditor).
     aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, j4k, webeditor)
+    
+  lazy val extendedexamples  = SimXApplication ( id = "examples-extended",     base = file( "applications/examples/extended")).
+    dependsOn(core, jbullet, jvr, lwjgl_sound, editor, webui, vrpn, webeditor).
+    aggregate(core, jbullet, jvr, lwjgl_sound, editor, webui, vrpn, webeditor)    
 
   lazy val benchmarks  = SimXApplication ( id = "benchmarks",     base = file( "applications/benchmarks")).
     dependsOn(core, jbullet, jvr, lwjgl_sound, editor).

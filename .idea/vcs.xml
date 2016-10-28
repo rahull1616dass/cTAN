@@ -32,6 +32,7 @@
     <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/unreal" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/webeditor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/webui" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
   </component>
 </project>
