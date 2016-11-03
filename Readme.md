@@ -1,3 +1,3 @@
-## The Simulator X main development configuration containing all components and applications
+## The Simulator X main development configuration
 
-* See the wiki gitlab projects's wiki for *How To*s and *Documentation*
+* See the wiki gitlab projects's wiki for _How To_s and *Documentation*
