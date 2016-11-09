@@ -34,9 +34,6 @@
 [submodule "components/ai/atn"]
 	path = components/ai/atn
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/atn.git
-[submodule "components/ai/feature"]
-	path = components/ai/feature
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/feature.git
 [submodule "components/renderer/gui"]
 	path = components/renderer/gui
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/gui.git
@@ -94,3 +91,6 @@
 [submodule "components/unreal"]
 	path = components/unreal
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unreal.git
+[submodule "components/ai/mipro"]
+	path = components/ai/mipro
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/mipro.git
