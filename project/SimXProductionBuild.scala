@@ -14,7 +14,7 @@ object SimXProductionBuild extends SimXBuildBase{
   /* Components */
   //Ai
   lazy val atn		        = SimXComponent ( id = "atn", 	     	       base = file( "components/ai/atn")).
-    dependsOn( editor )
+    dependsOn( core, planning )
   lazy val mipro	      = SimXComponent ( id = "mipro", 	         base = file( "components/ai/mipro")).
     dependsOn( core )
   lazy val nlp	          = SimXComponent ( id = "nlp", 	             base = file( "components/ai/nlp")).
@@ -88,8 +88,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound)
 
   lazy val mmiexamples		  = SimXApplication ( id = "examples-mmi",        base = file( "applications/examples/mmi")).
-    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound).
-    aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound)
+    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal).
+    aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal)
 
   lazy val raycalib		  = SimXApplication ( id = "raycalib",        base = file( "applications/raycalib")).
     dependsOn(core, jvr, vrpn, gui).

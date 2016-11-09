@@ -1,9 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false">
+  <component name="Encoding" useUTFGuessing="true" native2AsciiForPropertiesFiles="false" defaultCharsetForPropertiesFiles="UTF-8">
+    <file url="file://$PROJECT_DIR$/applications/examples/mmi/src/simx/applications/examples/mmi/spells/actors/SpellSounder.scala" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/applications/examples/mmi/src/simx/applications/examples/mmi/spells/definitions/SemanticEntityReferences.scala" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/applications/examples/mmi/src/simx/applications/examples/mmi/spells/definitions/SpellGestures.scala" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/applications/xroads/src/simx/applications/xroads/components/actors/traits/PlanningTest.scala" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/applications/xroads/src/simx/applications/xroads/objects/game/Campfire.scala" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/applications/xroads/src/simx/applications/xroads/objects/game/Torch.scala" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/components/ai/feature/src/simx/components/ai/mipro/implementations/Decayer.scala" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/components/io/vrpn/src/simx/components/vrpn/avatar/KinectTrackingMode.scala" charset="UTF-8" />
     <file url="PROJECT" charset="UTF-8" />
   </component>
 </project>
