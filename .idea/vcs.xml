@@ -17,6 +17,7 @@
     <mapping directory="$PROJECT_DIR$/components/ai/nlp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/planning" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/reasoning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/unification" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/editor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/cv" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/j4k" vcs="Git" />
