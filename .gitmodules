@@ -103,3 +103,6 @@
 [submodule "applications/examples/extended"]
 	path = applications/examples/extended
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-extended.git
+[submodule "components/ai/unification"]
+	path = components/ai/unification
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unification.git
