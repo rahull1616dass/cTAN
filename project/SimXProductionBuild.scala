@@ -90,8 +90,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound)
 
   lazy val mmiexamples		  = SimXApplication ( id = "examples-mmi",        base = file( "applications/examples/mmi")).
-    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal, unification).
-    aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal, unification)
+    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal, unification, json).
+    aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal, unification, json)
 
   lazy val raycalib		  = SimXApplication ( id = "raycalib",        base = file( "applications/raycalib")).
     dependsOn(core, jvr, vrpn, gui).
