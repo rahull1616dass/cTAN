@@ -127,8 +127,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, atn, reasoning)
 	
   lazy val interaction         = SimXApplication ( id = "interaction",             base = file( "applications/interaction")).
-    dependsOn(core, jbullet, jvr, editor).
-    aggregate(core, jbullet, jvr, editor)
+    dependsOn(core, jvr, editor).
+    aggregate(core, jvr, editor)
         
 }
 

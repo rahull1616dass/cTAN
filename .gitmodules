@@ -108,4 +108,4 @@
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unification.git
 [submodule "applications/interaction"]
 	path = applications/interaction
-	url = ../interaction.git
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/interaction.git
