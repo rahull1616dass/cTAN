@@ -4,7 +4,7 @@ import sbt._
 object SimXProductionBuild extends SimXBuildBase{
   // version settings
   val usedJavaVersion = "1.8"
-  val usedScalaVersion = "2.11.7"
+  val usedScalaVersion = "2.11.8"
   val projectName = "simx-production"
 
   override def rootProject =
