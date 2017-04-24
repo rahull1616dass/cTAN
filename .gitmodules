@@ -106,3 +106,6 @@
 [submodule "components/ai/unification"]
 	path = components/ai/unification
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unification.git
+[submodule "applications/interaction"]
+	path = applications/interaction
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/interaction.git
