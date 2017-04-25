@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="Test" type="Application" factoryName="Application" folderName="Interaction" singleton="true">
+  <configuration default="false" name="Interaction" type="Application" factoryName="Application" folderName="Interaction" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    <option name="MAIN_CLASS_NAME" value="simx.applications.interaction.TestApplication" />
+    <option name="MAIN_CLASS_NAME" value="simx.applications.interaction.Interaction" />
     <option name="VM_PARAMETERS" value="-DdisableSafetyChecks=true" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/interaction" />
@@ -12,6 +12,9 @@
     <option name="PASS_PARENT_ENVS" value="true" />
     <module name="interaction" />
     <envs />
-    <method />
+    <method>
+      <option name="Make" enabled="false" />
+      <option name="SBT.BeforeRunTask" enabled="true" action="compile" runInCurrentModule="true" />
+    </method>
   </configuration>
 </component>
