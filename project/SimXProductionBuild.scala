@@ -24,7 +24,7 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val reasoning      = SimXComponent ( id = "reasoning", 	       base = file( "components/ai/reasoning")).
     dependsOn( core )
   lazy val unification	  = SimXComponent ( id = "unification", 	     	       base = file( "components/ai/unification")).
-    dependsOn( core )
+    dependsOn( core, atn )
 
   //Editor
   lazy val editor         = SimXComponent ( id = "editor", 		         base = file( "components/editor")).
