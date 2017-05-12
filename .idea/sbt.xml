@@ -59,12 +59,16 @@
             <option value="$PROJECT_DIR$/components/ontology/generating/project" />
             <option value="$PROJECT_DIR$/components/physics/jbullet" />
             <option value="$PROJECT_DIR$/components/physics/jbullet/project" />
+            <option value="$PROJECT_DIR$/components/physics/physics" />
+            <option value="$PROJECT_DIR$/components/physics/physics/project" />
             <option value="$PROJECT_DIR$/components/remote" />
             <option value="$PROJECT_DIR$/components/remote/project" />
             <option value="$PROJECT_DIR$/components/renderer/gui" />
             <option value="$PROJECT_DIR$/components/renderer/gui/project" />
             <option value="$PROJECT_DIR$/components/renderer/jvr" />
             <option value="$PROJECT_DIR$/components/renderer/jvr/project" />
+            <option value="$PROJECT_DIR$/components/renderer/rendering" />
+            <option value="$PROJECT_DIR$/components/renderer/rendering/project" />
             <option value="$PROJECT_DIR$/components/renderer/unity" />
             <option value="$PROJECT_DIR$/components/renderer/unity/project" />
             <option value="$PROJECT_DIR$/components/sound/java-sound" />

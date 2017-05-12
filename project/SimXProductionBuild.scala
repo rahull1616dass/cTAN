@@ -52,14 +52,17 @@ object SimXProductionBuild extends SimXBuildBase{
     dependsOn( core )
 
   lazy val j4k            = SimXComponent ( id = "j4k", 	 	           base = file( "components/io/j4k")).
-    dependsOn( core )
+    dependsOn( rendering )
 
   lazy val leapmotion     = SimXComponent ( id = "leapmotion",         base = file( "components/io/leapmotion")).
     dependsOn( core )
 
   //Physics
-  lazy val jbullet 	      = SimXComponent ( id = "jbullet", 		       base = file( "components/physics/jbullet" )).
+  lazy val physics       = SimXComponent ( id = "physics", 	      base = file( "components/physics/physics")).
     dependsOn( core )
+	
+  lazy val jbullet 	      = SimXComponent ( id = "jbullet", 		       base = file( "components/physics/jbullet" )).
+    dependsOn( physics )
   //Remote
   lazy val remote         = SimXComponent ( id = "remote", 	 	         base = file( "components/remote")).
     dependsOn( core )
@@ -68,14 +71,17 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val gui            = SimXComponent ( id = "gui", 		           base = file( "components/renderer/gui")) .
     dependsOn( jvr, tuio, editor )
 
-  lazy val jvr            = SimXComponent ( id = "jvr", 		           base = file( "components/renderer/jvr")).
+  lazy val rendering       = SimXComponent ( id = "rendering", 	      base = file( "components/renderer/rendering")).
     dependsOn( core )
 
+  lazy val jvr            = SimXComponent ( id = "jvr", 		           base = file( "components/renderer/jvr")).
+    dependsOn( rendering )
+
   lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/renderer/unity")).
-    dependsOn( json )
+    dependsOn( json, rendering, physics )
 	
   lazy val unreal           = SimXComponent ( id = "unreal", 		           base = file( "components/unreal")).
-    dependsOn( json )
+    dependsOn( json, physics )
 
   //Sound
   lazy val lwjgl_sound    = SimXComponent ( id = "lwjgl_sound",        base = file( "components/sound/lwjgl-sound")).
@@ -127,8 +133,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, atn, reasoning)
 	
   lazy val interaction         = SimXApplication ( id = "interaction",             base = file( "applications/interaction")).
-    dependsOn(core, jvr, editor, vrpn, mipro).
-    aggregate(core, jvr, editor, vrpn, mipro)
+    dependsOn(core, editor, vrpn, mipro).
+    aggregate(core, editor, vrpn, mipro)
         
 }
 

@@ -109,3 +109,9 @@
 [submodule "applications/interaction"]
 	path = applications/interaction
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/interaction.git
+[submodule "components/renderer/rendering"]
+	path = components/renderer/rendering
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/rendering.git
+[submodule "components/physics/physics"]
+	path = components/physics/physics
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/physics.git
