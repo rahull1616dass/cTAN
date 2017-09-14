@@ -12,6 +12,9 @@
     <option name="PASS_PARENT_ENVS" value="true" />
     <module name="xroads" />
     <envs />
-    <method />
+    <method>
+      <option name="Make" enabled="false" />
+      <option name="SBT.BeforeRunTask" enabled="true" action="compile" runInCurrentModule="true" />
+    </method>
   </configuration>
 </component>

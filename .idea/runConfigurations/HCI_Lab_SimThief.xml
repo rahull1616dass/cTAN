@@ -12,9 +12,12 @@
     <option name="PASS_PARENT_ENVS" value="true" />
     <module name="simthief" />
     <envs>
-      <env name="XAUTHORITY" value="$PROJECT_DIR$/../../../screenuser/.Xauthority" />
+      <env name="XAUTHORITY" value="D:/../screenuser/.Xauthority" />
       <env name="DISPLAY" value=":1" />
     </envs>
-    <method />
+    <method>
+      <option name="Make" enabled="false" />
+      <option name="SBT.BeforeRunTask" enabled="true" action="compile" runInCurrentModule="true" />
+    </method>
   </configuration>
 </component>
