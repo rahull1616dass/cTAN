@@ -10,3 +10,4 @@ scala_settings.xml
 /modules.xml
 modules/
 libraries/
+scala_compiler.xml
