@@ -122,19 +122,6 @@ object SimXProductionBuild extends SimXBuildBase{
 	
   lazy val unrealexamples  = SimXApplication ( id = "examples-unreal",     base = file( "applications/examples/unreal")).
     dependsOn(core, jbullet, jvr, unreal, lwjgl_sound, editor, atn, mipro).
-    aggregate(core, jbullet, jvr, unreal, lwjgl_sound, editor, atn, mipro)
-
-  lazy val simthief	      = SimXApplication ( id = "simthief",		       base = file( "applications/simthief")).
-    dependsOn(core, atn, mipro, jbullet, jvr, vrpn, remote, lwjgl_sound, editor, gui, unreal).
-    aggregate(core, atn, mipro, jbullet, jvr, vrpn, remote, lwjgl_sound, editor, gui, unreal)
-
-  lazy val xroads         = SimXApplication ( id = "xroads",             base = file( "applications/xroads")).
-    dependsOn(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, atn, reasoning).
-    aggregate(core, jbullet, jvr, tuio, lwjgl_sound, editor, vrpn, remote, cv, gui, planning, atn, reasoning)
-	
-  lazy val interaction         = SimXApplication ( id = "interaction",             base = file( "applications/interaction")).
-    dependsOn(core, editor, vrpn, mipro).
-    aggregate(core, editor, vrpn, mipro)
-        
+    aggregate(core, jbullet, jvr, unreal, lwjgl_sound, editor, atn, mipro)      
 }
 
