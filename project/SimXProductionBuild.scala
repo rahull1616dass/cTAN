@@ -67,17 +67,17 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val remote         = SimXComponent ( id = "remote", 	 	         base = file( "components/remote")).
     dependsOn( core )
 
-  //Renderer
-  lazy val gui            = SimXComponent ( id = "gui", 		           base = file( "components/renderer/gui")) .
+  //Rendering
+  lazy val gui            = SimXComponent ( id = "gui", 		           base = file( "components/rendering/gui")) .
     dependsOn( jvr, tuio, editor )
 
-  lazy val rendering       = SimXComponent ( id = "rendering", 	      base = file( "components/renderer/rendering")).
+  lazy val rendering       = SimXComponent ( id = "rendering", 	      base = file( "components/rendering/rendering")).
     dependsOn( core )
 
-  lazy val jvr            = SimXComponent ( id = "jvr", 		           base = file( "components/renderer/jvr")).
+  lazy val jvr            = SimXComponent ( id = "jvr", 		           base = file( "components/rendering/jvr")).
     dependsOn( rendering )
 
-  lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/renderer/unity")).
+  lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/rendering/unity")).
     dependsOn( json, rendering, physics )
 	
   lazy val unreal           = SimXComponent ( id = "unreal", 		           base = file( "components/unreal")).

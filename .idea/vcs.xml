@@ -30,10 +30,10 @@
     <mapping directory="$PROJECT_DIR$/components/physics/jbullet" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/physics/physics" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/remote" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/renderer/gui" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/renderer/jvr" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/renderer/rendering" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/renderer/unity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/rendering/gui" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/rendering/jvr" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/rendering/rendering" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/rendering/unity" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/java-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/unreal" vcs="Git" />

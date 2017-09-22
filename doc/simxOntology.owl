@@ -29,9 +29,9 @@
 	<Import>http://localhost:8080/components/io/tuio/TUIO.owl</Import>
 	<Import>http://localhost:8080/components/io/vrpn/VRPN.owl</Import>
 	<Import>http://localhost:8080/components/physics/jbullet/JBullet.owl</Import>
-    <Import>http://localhost:8080/components/renderer/gui/Gui.owl</Import>
-    <Import>http://localhost:8080/components/renderer/unity/unity.owl</Import>
-    <Import>http://localhost:8080/components/renderer/jvr/JVR.owl</Import>
+    <Import>http://localhost:8080/components/rendering/gui/Gui.owl</Import>
+    <Import>http://localhost:8080/components/rendering/unity/unity.owl</Import>
+    <Import>http://localhost:8080/components/rendering/jvr/JVR.owl</Import>
     <Import>http://localhost:8080/components/sound/lwjgl-sound/LWJGL-Sound.owl</Import>
     <Import>http://localhost:8080/applications/xroads/simxOntology.owl</Import>
 	<Import>http://localhost:8080/applications/examples/ai/simxOntology.owl</Import>
