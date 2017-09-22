@@ -1,5 +1,5 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="AIExample" type="Application" factoryName="Application" folderName="Ai Tests" singleton="true">
+  <configuration default="false" name="Planning and Reasoning Example" type="Application" factoryName="Application" folderName="Examples-Ai" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
       <pattern>
         <option name="PATTERN" value="simx.applications.examples.ai.combinedexample.*" />
