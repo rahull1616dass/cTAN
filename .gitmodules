@@ -59,7 +59,7 @@
 	path = components/ai/nlp
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/nlp.git
 [submodule "components/renderer/unity"]
-	path = components/rendering/unity
+	path = components/synchronization/unity
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unity.git
 [submodule "components/io/json"]
 	path = components/io/json
