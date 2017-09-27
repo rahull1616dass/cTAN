@@ -86,7 +86,7 @@
 	path = applications/examples/unreal
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-unreal.git
 [submodule "components/unreal"]
-	path = components/unreal
+	path = components/synchronization/unreal
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unreal.git
 [submodule "components/ai/mipro"]
 	path = components/ai/mipro
@@ -106,3 +106,6 @@
 [submodule "components/physics/physics"]
 	path = components/physics/physics
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/physics.git
+[submodule "components/synchronization/synchronization"]
+	path = components/synchronization/synchronization
+	url = ../synchronization.git

@@ -80,8 +80,8 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/rendering/unity")).
     dependsOn( json, rendering, physics )
 	
-  lazy val unreal           = SimXComponent ( id = "unreal", 		           base = file( "components/unreal")).
-    dependsOn( json, physics )
+  lazy val unreal           = SimXComponent ( id = "unreal", 		           base = file( "components/synchronization/unreal")).
+    dependsOn( json, synchronization, physics )
 
   //Sound
   lazy val lwjgl_sound    = SimXComponent ( id = "lwjgl_sound",        base = file( "components/sound/lwjgl-sound")).
@@ -89,6 +89,10 @@ object SimXProductionBuild extends SimXBuildBase{
 
   lazy val java_sound     = SimXComponent ( id = "java-sound",         base = file( "components/sound/java-sound")).
     dependsOn( core )
+	
+  //Synchronization
+  lazy val synchronization  = SimXComponent ( id = "synchronization", 	      base = file( "components/synchronization/synchronization")).
+    dependsOn( core )	
 
   /* Applications*/
   lazy val aiexamples		  = SimXApplication ( id = "examples-ai",        base = file( "applications/examples/ai")).
