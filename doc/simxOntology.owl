@@ -30,7 +30,7 @@
 	<Import>http://localhost:8080/components/io/vrpn/VRPN.owl</Import>
 	<Import>http://localhost:8080/components/physics/jbullet/JBullet.owl</Import>
     <Import>http://localhost:8080/components/rendering/gui/Gui.owl</Import>
-    <Import>http://localhost:8080/components/rendering/unity/unity.owl</Import>
+    <Import>http://localhost:8080/components/synchronization/unity/unity.owl</Import>
     <Import>http://localhost:8080/components/rendering/jvr/JVR.owl</Import>
     <Import>http://localhost:8080/components/sound/lwjgl-sound/LWJGL-Sound.owl</Import>
     <Import>http://localhost:8080/applications/xroads/simxOntology.owl</Import>

@@ -77,7 +77,7 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val jvr            = SimXComponent ( id = "jvr", 		           base = file( "components/rendering/jvr")).
     dependsOn( rendering )
 
-  lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/rendering/unity")).
+  lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/synchronization/unity")).
     dependsOn( json, rendering, physics )
 	
   lazy val unreal           = SimXComponent ( id = "unreal", 		           base = file( "components/synchronization/unreal")).

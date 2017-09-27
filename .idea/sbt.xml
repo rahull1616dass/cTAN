@@ -63,14 +63,14 @@
             <option value="$PROJECT_DIR$/components/rendering/jvr/project" />
             <option value="$PROJECT_DIR$/components/rendering/rendering" />
             <option value="$PROJECT_DIR$/components/rendering/rendering/project" />
-            <option value="$PROJECT_DIR$/components/rendering/unity" />
-            <option value="$PROJECT_DIR$/components/rendering/unity/project" />
             <option value="$PROJECT_DIR$/components/sound/java-sound" />
             <option value="$PROJECT_DIR$/components/sound/java-sound/project" />
             <option value="$PROJECT_DIR$/components/sound/lwjgl-sound" />
             <option value="$PROJECT_DIR$/components/sound/lwjgl-sound/project" />
             <option value="$PROJECT_DIR$/components/synchronization/synchronization" />
             <option value="$PROJECT_DIR$/components/synchronization/synchronization/project" />
+            <option value="$PROJECT_DIR$/components/synchronization/unity" />
+            <option value="$PROJECT_DIR$/components/synchronization/unity/project" />
             <option value="$PROJECT_DIR$/components/synchronization/unreal" />
             <option value="$PROJECT_DIR$/components/synchronization/unreal/project" />
             <option value="$PROJECT_DIR$/components/webeditor" />
