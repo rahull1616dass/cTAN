@@ -33,6 +33,7 @@
     <mapping directory="$PROJECT_DIR$/components/rendering/unity" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/java-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/synchronization/synchronization" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/synchronization/unreal" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/webeditor" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/webui" vcs="Git" />
