@@ -79,9 +79,7 @@ object SimXProductionBuild extends SimXBuildBase{
 
   lazy val unity            = SimXComponent ( id = "unity", 		           base = file( "components/synchronization/unity")).
     dependsOn( json, rendering, physics, synchronization )
-	
-  lazy val unreal           = SimXComponent ( id = "unreal", 		           base = file( "components/synchronization/unreal")).
-    dependsOn( json, synchronization, physics )
+
 
   //Sound
   lazy val lwjgl_sound    = SimXComponent ( id = "lwjgl_sound",        base = file( "components/sound/lwjgl-sound")).
@@ -100,8 +98,8 @@ object SimXProductionBuild extends SimXBuildBase{
     aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound)
 
   lazy val mmiexamples		  = SimXApplication ( id = "examples-mmi",        base = file( "applications/examples/mmi")).
-    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal, unification, json).
-    aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unreal, unification, json)
+    dependsOn(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unification, json).
+    aggregate(core, jvr, jbullet, tuio, editor, vrpn, mipro, atn, remote, planning, reasoning, nlp, j4k, leapmotion, gui, lwjgl_sound, unification, json)
 
   lazy val raycalib		  = SimXApplication ( id = "raycalib",        base = file( "applications/raycalib")).
     dependsOn(core, jvr, vrpn, gui).
@@ -119,13 +117,9 @@ object SimXProductionBuild extends SimXBuildBase{
     dependsOn(core, jbullet, jvr, lwjgl_sound, editor).
     aggregate(core, jbullet, jvr, lwjgl_sound, editor)
 
-
   lazy val unityexamples  = SimXApplication ( id = "examples-unity",     base = file( "applications/examples/unity")).
     dependsOn(core, jbullet, jvr, unity, lwjgl_sound, editor ).
     aggregate(core, jbullet, jvr, unity, lwjgl_sound, editor )
-	
-  lazy val unrealexamples  = SimXApplication ( id = "examples-unreal",     base = file( "applications/examples/unreal")).
-    dependsOn(core, jbullet, jvr, unreal, lwjgl_sound, editor, atn, mipro).
-    aggregate(core, jbullet, jvr, unreal, lwjgl_sound, editor, atn, mipro)      
+
 }
 

@@ -82,12 +82,6 @@
 [submodule "applications/benchmarks"]
 	path = applications/benchmarks
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/benchmarks.git
-[submodule "applications/examples/unreal"]
-	path = applications/examples/unreal
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-unreal.git
-[submodule "components/unreal"]
-	path = components/synchronization/unreal
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unreal.git
 [submodule "components/ai/mipro"]
 	path = components/ai/mipro
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/mipro.git

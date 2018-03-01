@@ -19,8 +19,6 @@
             <option value="$PROJECT_DIR$/applications/examples/mmi/project" />
             <option value="$PROJECT_DIR$/applications/examples/unity" />
             <option value="$PROJECT_DIR$/applications/examples/unity/project" />
-            <option value="$PROJECT_DIR$/applications/examples/unreal" />
-            <option value="$PROJECT_DIR$/applications/examples/unreal/project" />
             <option value="$PROJECT_DIR$/applications/raycalib" />
             <option value="$PROJECT_DIR$/applications/raycalib/project" />
             <option value="$PROJECT_DIR$/components/ai/atn" />
@@ -71,8 +69,6 @@
             <option value="$PROJECT_DIR$/components/synchronization/synchronization/project" />
             <option value="$PROJECT_DIR$/components/synchronization/unity" />
             <option value="$PROJECT_DIR$/components/synchronization/unity/project" />
-            <option value="$PROJECT_DIR$/components/synchronization/unreal" />
-            <option value="$PROJECT_DIR$/components/synchronization/unreal/project" />
             <option value="$PROJECT_DIR$/components/webeditor" />
             <option value="$PROJECT_DIR$/components/webeditor/project" />
             <option value="$PROJECT_DIR$/components/webui" />
