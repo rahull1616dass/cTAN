@@ -102,4 +102,4 @@
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/physics.git
 [submodule "components/synchronization/synchronization"]
 	path = components/synchronization/synchronization
-	url = ../synchronization.git
+	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/synchronization.git
