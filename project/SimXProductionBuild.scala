@@ -120,6 +120,10 @@ object SimXProductionBuild extends SimXBuildBase{
   lazy val unityexamples  = SimXApplication ( id = "examples-unity",     base = file( "applications/examples/unity")).
     dependsOn(core, jbullet, jvr, unity, lwjgl_sound, editor ).
     aggregate(core, jbullet, jvr, unity, lwjgl_sound, editor )
+	
+  lazy val multimodalinteraction  = SimXApplication ( id = "multimodal-interaction",     base = file( "applications/multimodal-interaction")).
+    dependsOn(core, unity, editor, mipro, atn, planning, reasoning, vrpn).
+    aggregate(core, unity, editor, mipro, atn, planning, reasoning, vrpn)
 
 }
 
