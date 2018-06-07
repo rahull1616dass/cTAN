@@ -69,10 +69,10 @@ class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with
   /** ----------- Filter Definitions ----------- */
   // Depending on Semantics
   val Ball = SValEquals(semanticTypes.Semantics(Symbols.ball))
-  val Box = SValEquals(semanticTypes.Semantics(Symbols.box))
+  val Box  = SValEquals(semanticTypes.Semantics(Symbols.box))
   // Depending on Selection
   val SelectableEntities = HasSVal(semanticTypes.Selected)
-  val SelectedEntities = SValEquals(semanticTypes.Selected(true))
+  val SelectedEntities   = SValEquals(semanticTypes.Selected(true))
   val UnselectedEntities = SValEquals(semanticTypes.Selected(false))
 
   /** Definition of required entities and properties for application*/
@@ -104,10 +104,10 @@ class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with
   def keyOnePressed(): Unit ={
     println("[info][SemanticValueDSLExample] --- Key_1 pressed ---")
     // Requests all selected entities
-    val selectedEntities = all(SelectedEntities)
+    val selectedEntities = Get all SelectedEntities
     println("[info][SemanticValueDSLExample] All selected entities: " + selectedEntities.map(_.getSimpleName))
     // Requests only one selected entity
-    val oneSelectedEntity = one(SelectedEntities)
+    val oneSelectedEntity = Get one SelectedEntities
     println("[info][SemanticValueDSLExample] One Selected entities: " + oneSelectedEntity.getSimpleName)
   }
 
