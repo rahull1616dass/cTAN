@@ -36,10 +36,10 @@ import simx.components.synchronization.unity.UnityComponentAspect
 
 
 
-object AtnExample extends SimXApplicationMain (new AtnExample) {}
+object AtnExampleApplication extends SimXApplicationMain (new AtnExampleApplication) {}
 
 
-class AtnExample extends SimXApplication with EventHandler
+class AtnExampleApplication extends SimXApplication with EventHandler
 {
 
   val useUnity = false

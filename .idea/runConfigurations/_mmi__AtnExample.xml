@@ -1,7 +1,7 @@
 <component name="ProjectRunConfigurationManager">
   <configuration default="false" name="[mmi] AtnExample" type="Application" factoryName="Application" singleton="true">
     <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea" />
-    <option name="MAIN_CLASS_NAME" value="simx.applications.multimodalinteraction.AtnExample" />
+    <option name="MAIN_CLASS_NAME" value="simx.applications.multimodalinteraction.AtnExampleApplication" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g" />
     <option name="PROGRAM_PARAMETERS" value="" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/multimodal-interaction" />
