@@ -18,9 +18,10 @@
  * Federal Ministry of Education and Research (grant no. 17N4409).
  */
 
-package simx.applications.multimodalinteraction
+package simx.applications.multimodalinteraction.extendedAtnExample
 
-import simx.applications.multimodalinteraction.atn.{ExampleAtnParser, ExampleWords}
+import simplex3d.math.floatx.{ConstVec3f, Vec3f}
+import simx.applications.multimodalinteraction.extendedAtnExample.atn.{ExtendedExampleAtnParser, ExtendedExampleWords}
 import simx.applications.multimodalinteraction.io.SpeechSimulator
 import simx.components.ai.atn.interaction.lexicon.Lexicon
 import simx.components.editor.EditorComponentAspect
@@ -39,13 +40,20 @@ import simx.core.worldinterface.entity.filter.SValEquals
 
 
 
-object AtnExampleApplication extends SimXApplicationMain (new AtnExampleApplication) {}
+object ExtendedAtnExampleApplication extends SimXApplicationMain (new ExtendedAtnExampleApplication) {}
 
 
-class AtnExampleApplication extends SimXApplication with EventHandler
+class ExtendedAtnExampleApplication extends SimXApplication with EventHandler with SemanticValueDSL
 {
 
-  val useUnity = false
+  val useUnity = true
+
+  val User = SValEquals(types.Semantics(Symbols.user))
+  val PrefabFactory = SValEquals(types.Semantics(Symbols.entityCreation))
+
+  Requires all properties from User
+  Requires all properties from PrefabFactory
+
 
   protected def applicationConfiguration: ApplicationConfig = ApplicationConfig withComponent
     EditorComponentAspect('editor) and
@@ -54,22 +62,27 @@ class AtnExampleApplication extends SimXApplication with EventHandler
 
 
   protected def configureComponents(components: Map[Symbol, Ref]): Unit = {
-    SVarActor.createActor(new ExampleAtnParser('myATN))
+    SVarActor.createActor(new ExtendedExampleAtnParser('myATN, _autoResetAfter = Some(5000L)))
     SVarActor.createActor(SpeechSimulator())
 
     Lexicon.clear()
-    Lexicon.put("select", ExampleWords.Selection())
-    Lexicon.put("a", ExampleWords.Article())
-    Lexicon.put("ball", ExampleWords.Ball())
-    Lexicon.put("box", ExampleWords.Box())
+    Lexicon.put("select", ExtendedExampleWords.Selection())
+    Lexicon.put("move", ExtendedExampleWords.Translation())
+    Lexicon.put("create", ExtendedExampleWords.Creation())
+    Lexicon.put("make", ExtendedExampleWords.Scale())
+    Lexicon.put("a", ExtendedExampleWords.Article())
+    Lexicon.put("ball", ExtendedExampleWords.Ball())
+    Lexicon.put("box", ExtendedExampleWords.Box())
+    Lexicon.put("bigger", ExtendedExampleWords.Bigger())
+    Lexicon.put("big", ExtendedExampleWords.Big())
   }
 
   protected def createEntities(): Unit = {
     if(!useUnity) createTestEntities()
+
   }
 
   protected def finishConfiguration(): Unit = {
-
     AtnEvents.command.observe{ newCommand =>
       val values = newCommand.values
       val action = values.firstValueFor(lexiconTypes.Verb).actions.head
@@ -77,7 +90,44 @@ class AtnExampleApplication extends SimXApplication with EventHandler
       if(action == Symbols.selection) {
         selectEntity(entity)
       }
+      if(action == Symbols.move) {
+        moveEntity(entity)
+      }
+      if(action == Symbols.entityCreation){
+        println("EntityCreation")
+        val noun = values.getFirstValueFor(lexiconTypes.Noun)
+        if(noun.isDefined) {
+          println("EntityCreation")
+          entityCreation(noun.get.entityRelation.toSymbol.name)
+        }
+      }
+      if(action == Symbols.scale) {
+        val adj = values.getFirstValueFor(lexiconTypes.Adjective)
+        if(adj.isDefined){
+          val property = adj.get.property
+          val semanticValueScale = property.generate().asInstanceOf[types.Scale]
+          scaleEntity(entity, semanticValueScale.value)
+        }
+      }
     }
+  }
+
+  private def entityCreation(name: String): Unit = {
+    Update the properties of PrefabFactory `with` types.Text(name + ":" + System.currentTimeMillis().toString)
+  }
+
+  private def scaleEntity(e: Entity, scale: ConstVec3f): Unit = {
+    e.get(types.Scale){currentScale =>
+      val newScale = currentScale * scale.x
+      e.set(types.Scale(newScale))
+    }
+  }
+
+
+  private def moveEntity(e: Entity): Unit ={
+    val hitPoint = (types.RaycastHit of User).value
+    //e.set(types.Position(hitPoint))
+    e.set(types.TargetPosition(hitPoint))
   }
 
   private def selectEntity(e: Entity): Unit ={
@@ -97,4 +147,9 @@ class AtnExampleApplication extends SimXApplication with EventHandler
       e.set(types.Selected(false))
     }
   }
+
+
+  override def onNewRequirementValue(e: Entity, requirementInfo: StateParticleInfo[_], timestamp: TimedRingBuffer.Time): Unit = {}
+
+  override def onStartOfObservation(e: Entity, requirementInfo: StateParticleInfo[_]): Unit = {}
 }
