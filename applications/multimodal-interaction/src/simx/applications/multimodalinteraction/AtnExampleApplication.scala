@@ -23,19 +23,16 @@ package simx.applications.multimodalinteraction
 import simx.applications.multimodalinteraction.atn.{ExampleAtnParser, ExampleWords}
 import simx.applications.multimodalinteraction.io.SpeechSimulator
 import simx.components.ai.atn.interaction.lexicon.Lexicon
+import simx.components.ai.atn.ontology.{types => lexiconTypes}
+import simx.components.ai.atn.{Events => AtnEvents}
 import simx.components.editor.EditorComponentAspect
+import simx.components.synchronization.unity.UnityComponentAspect
 import simx.core.entity.Entity
 import simx.core.ontology.{EntityDescription, Symbols, types}
-import simx.core.svaractor.{SVarActor, TimedRingBuffer}
+import simx.core.svaractor.SVarActor
 import simx.core.svaractor.SVarActor.Ref
 import simx.core.worldinterface.eventhandling.EventHandler
 import simx.core.{ApplicationConfig, SimXApplication, SimXApplicationMain}
-import simx.components.ai.atn.{Events => AtnEvents}
-import simx.components.ai.atn.ontology.{types => lexiconTypes}
-import simx.components.ai.mipro.SemanticValueDSL
-import simx.components.synchronization.unity.UnityComponentAspect
-import simx.core.svaractor.unifiedaccess.StateParticleInfo
-import simx.core.worldinterface.entity.filter.SValEquals
 
 
 

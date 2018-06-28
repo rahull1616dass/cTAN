@@ -61,4 +61,7 @@ object ExtendedExampleWords {
   case class Big() extends WordTypes.Adjective {
     val property = new SimpleSemanticTypeInstance(types.Scale(Vec3f(1f, 1f, 1f)))
   }
+
+  case class Existential() extends WordTypes.Existential
+
 }

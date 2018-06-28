@@ -20,7 +20,7 @@
 
 package simx.applications.multimodalinteraction.extendedAtnExample
 
-import simplex3d.math.floatx.{ConstVec3f, Vec3f}
+import simplex3d.math.floatx.ConstVec3f
 import simx.applications.multimodalinteraction.extendedAtnExample.atn.{ExtendedExampleAtnParser, ExtendedExampleWords}
 import simx.applications.multimodalinteraction.io.SpeechSimulator
 import simx.components.ai.atn.interaction.lexicon.Lexicon
@@ -34,7 +34,7 @@ import simx.core.{ApplicationConfig, SimXApplication, SimXApplicationMain}
 import simx.components.ai.atn.{Events => AtnEvents}
 import simx.components.ai.atn.ontology.{types => lexiconTypes}
 import simx.components.ai.mipro.SemanticValueDSL
-import simx.components.synchronization.unity.UnityComponentAspect
+import simx.components.synchronization.unity.{UnityComponent, UnityComponentAspect}
 import simx.core.svaractor.unifiedaccess.StateParticleInfo
 import simx.core.worldinterface.entity.filter.SValEquals
 
@@ -48,10 +48,8 @@ class ExtendedAtnExampleApplication extends SimXApplication with EventHandler wi
 
   val useUnity = true
 
-  val User = SValEquals(types.Semantics(Symbols.user))
   val PrefabFactory = SValEquals(types.Semantics(Symbols.entityCreation))
 
-  Requires all properties from User
   Requires all properties from PrefabFactory
 
 
@@ -75,11 +73,11 @@ class ExtendedAtnExampleApplication extends SimXApplication with EventHandler wi
     Lexicon.put("box", ExtendedExampleWords.Box())
     Lexicon.put("bigger", ExtendedExampleWords.Bigger())
     Lexicon.put("big", ExtendedExampleWords.Big())
+    Lexicon.put("there", ExtendedExampleWords.Existential())
   }
 
   protected def createEntities(): Unit = {
     if(!useUnity) createTestEntities()
-
   }
 
   protected def finishConfiguration(): Unit = {
@@ -91,13 +89,14 @@ class ExtendedAtnExampleApplication extends SimXApplication with EventHandler wi
         selectEntity(entity)
       }
       if(action == Symbols.move) {
-        moveEntity(entity)
+        val raycastHit = values.getFirstValueFor(types.RaycastHit)
+        if(raycastHit.isDefined){
+          moveEntity(entity, raycastHit.get)
+        }
       }
       if(action == Symbols.entityCreation){
-        println("EntityCreation")
         val noun = values.getFirstValueFor(lexiconTypes.Noun)
         if(noun.isDefined) {
-          println("EntityCreation")
           entityCreation(noun.get.entityRelation.toSymbol.name)
         }
       }
@@ -113,7 +112,7 @@ class ExtendedAtnExampleApplication extends SimXApplication with EventHandler wi
   }
 
   private def entityCreation(name: String): Unit = {
-    Update the properties of PrefabFactory `with` types.Text(name + ":" + System.currentTimeMillis().toString)
+    Update the properties of PrefabFactory `with` UnityComponent.createPrefabReference(name)
   }
 
   private def scaleEntity(e: Entity, scale: ConstVec3f): Unit = {
@@ -123,11 +122,8 @@ class ExtendedAtnExampleApplication extends SimXApplication with EventHandler wi
     }
   }
 
-
-  private def moveEntity(e: Entity): Unit ={
-    val hitPoint = (types.RaycastHit of User).value
-    //e.set(types.Position(hitPoint))
-    e.set(types.TargetPosition(hitPoint))
+  private def moveEntity(e: Entity, raycastHit: ConstVec3f): Unit ={
+    e.set(types.TargetPosition(raycastHit))
   }
 
   private def selectEntity(e: Entity): Unit ={
