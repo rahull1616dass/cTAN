@@ -35,7 +35,7 @@ trait AtnHelper {
 
   protected def checkForWordType[T<: WordTypes.Word](in: Event)(implicit tag: ClassTag[T]): Condition.Result = {
     in.name match {
-      case SpeechEvents.token.name =>
+      case SpeechEvents.token.name | SpeechEvents.processedToken.name =>
         var isValid = false
         val token = in.values.firstValueFor(types.String)
         Lexicon.lookUp(token) match {
