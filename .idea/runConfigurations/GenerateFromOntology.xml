@@ -1,0 +1,25 @@
+<component name="ProjectRunConfigurationManager">
+  <configuration default="false" name="GenerateFromOntology" type="Application" factoryName="Application" folderName="Examples-Basic" singleton="true">
+    <extension name="coverage" enabled="false" merge="false" sample_coverage="true" runner="idea">
+      <pattern>
+        <option name="PATTERN" value="simx.components.ontology.generation.server.*" />
+        <option name="ENABLED" value="true" />
+      </pattern>
+    </extension>
+    <option name="MAIN_CLASS_NAME" value="simx.components.ontology.generation.OntoGenSimxOntology" />
+    <option name="VM_PARAMETERS" value="" />
+    <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$ $PROJECT_DIR$/applications/multimodal-interaction" />
+    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
+    <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+    <option name="ALTERNATIVE_JRE_PATH" />
+    <option name="ENABLE_SWING_INSPECTOR" value="false" />
+    <option name="ENV_VARIABLES" />
+    <option name="PASS_PARENT_ENVS" value="true" />
+    <module name="ontology-generator" />
+    <envs />
+    <method>
+      <option name="Make" enabled="false" />
+      <option name="SBT.BeforeRunTask" enabled="true" action="compile" runInCurrentModule="true" />
+    </method>
+  </configuration>
+</component>
