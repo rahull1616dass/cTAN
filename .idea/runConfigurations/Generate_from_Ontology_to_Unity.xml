@@ -8,7 +8,7 @@
     </extension>
     <option name="MAIN_CLASS_NAME" value="simx.components.ontology.generation.OntoGenUnityOntology" />
     <option name="VM_PARAMETERS" value="" />
-    <option name="PROGRAM_PARAMETERS" value="$PROJECT_DIR$ $PROJECT_DIR$/applications/multimodal-interaction" />
+    <option name="PROGRAM_PARAMETERS" value="/path/to/simx/project/folder /path/to/simx/project/folder/applications/multimodal-interaction /path/to/unity/project/folder" />
     <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$" />
     <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
     <option name="ALTERNATIVE_JRE_PATH" />
