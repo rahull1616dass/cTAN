@@ -10,11 +10,11 @@
 
 
 <Ontology xmlns="http://www.w3.org/2002/07/owl#"
-     xml:base="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl"
-     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
-     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xml:base="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodalinteraction/mmi.owl"
      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
      xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
      ontologyIRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodalinteraction/mmi.owl"
      versionIRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodalinteraction/mmi20130319.owl">
     <Prefix name="" IRI="http://www.w3.org/2002/07/owl#"/>
@@ -22,43 +22,63 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://localhost:8080/components/synchronization/unity/unity.owl</Import>
     <Import>http://localhost:8080/components/rendering/gui/Gui.owl</Import>
-    <Import>http://localhost:8080/components/rendering/jvr/JVR.owl</Import>
-    <Import>http://localhost:8080/components/editor/Editor.owl</Import>
     <Import>http://localhost:8080/components/physics/jbullet/JBullet.owl</Import>
+    <Import>http://localhost:8080/components/io/vrpn/VRPN.owl</Import>
+    <Import>http://localhost:8080/components/ai/planning/planning.owl</Import>
+    <Import>http://localhost:8080/components/editor/Editor.owl</Import>
     <Import>http://localhost:8080/components/sound/lwjgl-sound/LWJGL-Sound.owl</Import>
-	<Import>http://localhost:8080/components/ai/planning/planning.owl</Import>
-	<Import>http://localhost:8080/components/ai/atn/atn.owl</Import>
-	<Import>http://localhost:8080/components/io/vrpn/VRPN.owl</Import>
-	<Declaration>
-        <Class IRI="#Multimodalinteraction"/>
+    <Import>http://localhost:8080/components/ai/atn/atn.owl</Import>
+    <Import>http://localhost:8080/components/synchronization/unity/unity.owl</Import>
+    <Import>http://localhost:8080/components/rendering/jvr/JVR.owl</Import>
+    <Declaration>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#Multimodalinteraction"/>
     </Declaration>
     <Declaration>
-        <NamedIndividual IRI="#SimxComponent_Multimodalinteraction"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#SimxComponent_Multimodalinteraction"/>
     </Declaration>
     <SubClassOf>
-        <Class IRI="#Multimodalinteraction"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#Multimodalinteraction"/>
         <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Component"/>
     </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Visible"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#Concept"/>
+    </SubClassOf>
     <ClassAssertion>
-        <Class IRI="#Multimodalinteraction"/>
-        <NamedIndividual IRI="#SimxComponent_Multimodalinteraction"/>
+        <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#Multimodalinteraction"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#SimxComponent_Multimodalinteraction"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#describesProperty"/>
+            <Class IRI="#Visible"/>
+        </ObjectSomeValuesFrom>
+        <NamedIndividual IRI="#SimxMultimodalinteraction_VisibleDescription"/>
     </ClassAssertion>
     <ObjectPropertyAssertion>
         <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#basedOn"/>
-        <NamedIndividual IRI="#SimxComponent_Multimodalinteraction"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#SimxComponent_Multimodalinteraction"/>
         <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicDescriptions.owl#SirisCore_ComponentDescription"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#forComponent"/>
+        <NamedIndividual IRI="#SimxMultimodalinteraction_VisibleDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#SimxComponent_Multimodalinteraction"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#hasDataType"/>
+        <NamedIndividual IRI="#SimxMultimodalinteraction_VisibleDescription"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/concepts/BasicTypes.owl#scala.Boolean"/>
     </ObjectPropertyAssertion>
     <DataPropertyAssertion>
         <DataProperty IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/SimxCoreOntology.owl#inPackage"/>
-        <NamedIndividual IRI="#SimxComponent_Multimodalinteraction"/>
+        <NamedIndividual IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#SimxComponent_Multimodalinteraction"/>
         <Literal datatypeIRI="&rdf;PlainLiteral">simx.applications.multimodalinteraction</Literal>
     </DataPropertyAssertion>
-
 </Ontology>
 
 
 
-<!-- Generated by the OWL API (version 3.4.2) http://owlapi.sourceforge.net -->
+<!-- Generated by the OWL API (version 3.5.1) http://owlapi.sourceforge.net -->
 
