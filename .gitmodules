@@ -1,60 +1,21 @@
 [submodule "core"]
     path = core
     url = git@gitlab2.informatik.uni-wuerzburg.de:simx/core.git
-[submodule "components/sound/lwjgl-sound"]
-	path = components/sound/lwjgl-sound
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/lwjgl-sound.git
-[submodule "components/remote"]
-	path = components/remote
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/remote.git
 [submodule "components/editor"]
 	path = components/editor
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/editor.git
-[submodule "components/physics/jbullet"]
-	path = components/physics/jbullet
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/jbullet.git
-[submodule "components/renderer/jvr"]
-	path = components/rendering/jvr
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/jvr.git
-[submodule "components/io/cv"]
-	path = components/io/cv
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/cv.git
 [submodule "components/io/vrpn"]
 	path = components/io/vrpn
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/vrpn.git
 [submodule "components/ontology/generating"]
 	path = components/ontology/generating
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/generating.git
-[submodule "components/io/tuio"]
-	path = components/io/tuio
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/tuio.git
 [submodule "components/ai/planning"]
 	path = components/ai/planning
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/planning.git
 [submodule "components/ai/atn"]
 	path = components/ai/atn
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/atn.git
-[submodule "components/renderer/gui"]
-	path = components/rendering/gui
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/gui.git
-[submodule "components/sound/java-sound"]
-	path = components/sound/java-sound
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/java-sound.git
-[submodule "applications/examples/basic"]
-	path = applications/examples/basic
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-basic.git
-[submodule "applications/examples/ai"]
-	path = applications/examples/ai
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-ai.git
-[submodule "components/io/j4k"]
-	path = components/io/j4k
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/j4k.git
-[submodule "applications/examples/unity"]
-	path = applications/examples/unity
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-unity.git
-[submodule "components/ai/reasoning"]
-	path = components/ai/reasoning
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/reasoning.git
 [submodule "components/ai/nlp"]
 	path = components/ai/nlp
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/nlp.git
@@ -64,42 +25,12 @@
 [submodule "components/io/json"]
 	path = components/io/json
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/json.git
-[submodule "components/io/sphinx"]
-	path = components/io/sphinx
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/sphinx.git
-[submodule "components/io/leapmotion"]
-	path = components/io/leapmotion
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/leapmotion.git
-[submodule "applications/raycalib"]
-	path = applications/raycalib
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/raycalib.git
-[submodule "applications/examples/mmi"]
-	path = applications/examples/mmi
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-mmi.git
-[submodule "components/webeditor"]
-	path = components/webeditor
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/webeditor.git
-[submodule "applications/benchmarks"]
-	path = applications/benchmarks
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/benchmarks.git
 [submodule "components/ai/mipro"]
 	path = components/ai/mipro
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/mipro.git
-[submodule "components/webui"]
-	path = components/webui
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/webui.git
-[submodule "applications/examples/extended"]
-	path = applications/examples/extended
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/examples-extended.git
 [submodule "components/ai/unification"]
 	path = components/ai/unification
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/unification.git
-[submodule "components/renderer/rendering"]
-	path = components/rendering/rendering
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/rendering.git
-[submodule "components/physics/physics"]
-	path = components/physics/physics
-	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/physics.git
 [submodule "components/synchronization/synchronization"]
 	path = components/synchronization/synchronization
 	url = git@gitlab2.informatik.uni-wuerzburg.de:simx/synchronization.git

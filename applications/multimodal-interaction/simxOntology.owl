@@ -22,15 +22,11 @@
     <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
     <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
     <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
-    <Import>http://localhost:8080/components/rendering/gui/Gui.owl</Import>
-    <Import>http://localhost:8080/components/physics/jbullet/JBullet.owl</Import>
     <Import>http://localhost:8080/components/io/vrpn/VRPN.owl</Import>
     <Import>http://localhost:8080/components/ai/planning/planning.owl</Import>
     <Import>http://localhost:8080/components/editor/Editor.owl</Import>
-    <Import>http://localhost:8080/components/sound/lwjgl-sound/LWJGL-Sound.owl</Import>
     <Import>http://localhost:8080/components/ai/atn/atn.owl</Import>
     <Import>http://localhost:8080/components/synchronization/unity/unity.owl</Import>
-    <Import>http://localhost:8080/components/rendering/jvr/JVR.owl</Import>
     <Declaration>
         <Class IRI="http://www.hci.uni-wuerzburg.de/ontologies/simx/applications/multimodal-interaction/mmi.owl#Multimodalinteraction"/>
     </Declaration>

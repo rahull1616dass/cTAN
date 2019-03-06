@@ -4,84 +4,27 @@
     <option name="linkedExternalProjectsSettings">
       <SbtProjectSettings>
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="jdk" value="1.8" />
         <option name="modules">
           <set>
-            <option value="$PROJECT_DIR$/applications/benchmarks" />
-            <option value="$PROJECT_DIR$/applications/benchmarks/project" />
-            <option value="$PROJECT_DIR$/applications/examples/ai" />
-            <option value="$PROJECT_DIR$/applications/examples/ai/project" />
-            <option value="$PROJECT_DIR$/applications/examples/basic" />
-            <option value="$PROJECT_DIR$/applications/examples/basic/project" />
-            <option value="$PROJECT_DIR$/applications/examples/extended" />
-            <option value="$PROJECT_DIR$/applications/examples/extended/project" />
-            <option value="$PROJECT_DIR$/applications/examples/mmi" />
-            <option value="$PROJECT_DIR$/applications/examples/mmi/project" />
-            <option value="$PROJECT_DIR$/applications/examples/unity" />
-            <option value="$PROJECT_DIR$/applications/examples/unity/project" />
             <option value="$PROJECT_DIR$/applications/multimodal-interaction" />
-            <option value="$PROJECT_DIR$/applications/multimodal-interaction/project" />
-            <option value="$PROJECT_DIR$/applications/raycalib" />
-            <option value="$PROJECT_DIR$/applications/raycalib/project" />
             <option value="$PROJECT_DIR$/components/ai/atn" />
-            <option value="$PROJECT_DIR$/components/ai/atn/project" />
             <option value="$PROJECT_DIR$/components/ai/mipro" />
-            <option value="$PROJECT_DIR$/components/ai/mipro/project" />
             <option value="$PROJECT_DIR$/components/ai/nlp" />
-            <option value="$PROJECT_DIR$/components/ai/nlp/project" />
             <option value="$PROJECT_DIR$/components/ai/planning" />
-            <option value="$PROJECT_DIR$/components/ai/planning/project" />
-            <option value="$PROJECT_DIR$/components/ai/reasoning" />
-            <option value="$PROJECT_DIR$/components/ai/reasoning/project" />
             <option value="$PROJECT_DIR$/components/ai/unification" />
-            <option value="$PROJECT_DIR$/components/ai/unification/project" />
             <option value="$PROJECT_DIR$/components/editor" />
-            <option value="$PROJECT_DIR$/components/editor/project" />
-            <option value="$PROJECT_DIR$/components/io/cv" />
-            <option value="$PROJECT_DIR$/components/io/cv/project" />
-            <option value="$PROJECT_DIR$/components/io/j4k" />
-            <option value="$PROJECT_DIR$/components/io/j4k/project" />
             <option value="$PROJECT_DIR$/components/io/json" />
-            <option value="$PROJECT_DIR$/components/io/json/project" />
-            <option value="$PROJECT_DIR$/components/io/leapmotion" />
-            <option value="$PROJECT_DIR$/components/io/leapmotion/project" />
-            <option value="$PROJECT_DIR$/components/io/tuio" />
-            <option value="$PROJECT_DIR$/components/io/tuio/project" />
             <option value="$PROJECT_DIR$/components/io/vrpn" />
-            <option value="$PROJECT_DIR$/components/io/vrpn/project" />
             <option value="$PROJECT_DIR$/components/ontology/generating" />
-            <option value="$PROJECT_DIR$/components/ontology/generating/project" />
-            <option value="$PROJECT_DIR$/components/physics/jbullet" />
-            <option value="$PROJECT_DIR$/components/physics/jbullet/project" />
-            <option value="$PROJECT_DIR$/components/physics/physics" />
-            <option value="$PROJECT_DIR$/components/physics/physics/project" />
-            <option value="$PROJECT_DIR$/components/remote" />
-            <option value="$PROJECT_DIR$/components/remote/project" />
-            <option value="$PROJECT_DIR$/components/rendering/gui" />
-            <option value="$PROJECT_DIR$/components/rendering/gui/project" />
-            <option value="$PROJECT_DIR$/components/rendering/jvr" />
-            <option value="$PROJECT_DIR$/components/rendering/jvr/project" />
-            <option value="$PROJECT_DIR$/components/rendering/rendering" />
-            <option value="$PROJECT_DIR$/components/rendering/rendering/project" />
-            <option value="$PROJECT_DIR$/components/sound/java-sound" />
-            <option value="$PROJECT_DIR$/components/sound/java-sound/project" />
-            <option value="$PROJECT_DIR$/components/sound/lwjgl-sound" />
-            <option value="$PROJECT_DIR$/components/sound/lwjgl-sound/project" />
             <option value="$PROJECT_DIR$/components/synchronization/synchronization" />
-            <option value="$PROJECT_DIR$/components/synchronization/synchronization/project" />
             <option value="$PROJECT_DIR$/components/synchronization/unity" />
-            <option value="$PROJECT_DIR$/components/synchronization/unity/project" />
-            <option value="$PROJECT_DIR$/components/webeditor" />
-            <option value="$PROJECT_DIR$/components/webeditor/project" />
-            <option value="$PROJECT_DIR$/components/webui" />
-            <option value="$PROJECT_DIR$/components/webui/project" />
             <option value="$PROJECT_DIR$/core" />
-            <option value="$PROJECT_DIR$/core/project" />
             <option value="$PROJECT_DIR$/doc" />
             <option value="$PROJECT_DIR$/doc/project" />
           </set>
         </option>
         <option name="sbtVersion" value="0.13.8" />
+        <option name="useAutoImport" value="true" />
       </SbtProjectSettings>
     </option>
   </component>

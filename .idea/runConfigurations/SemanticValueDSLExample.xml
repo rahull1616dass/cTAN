@@ -1,11 +1,10 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="[mmi] SemanticValueDSLExample" type="Application" factoryName="Application" singleton="true">
+  <configuration default="false" name="SemanticValueDSLExample" type="Application" factoryName="Application" singleton="true">
     <option name="MAIN_CLASS_NAME" value="simx.applications.multimodalinteraction.SemanticValueDSLExample" />
     <module name="multimodal-interaction" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g" />
-    <option name="WORKING_DIRECTORY" value="file://$PROJECT_DIR$/applications/multimodal-interaction" />
-    <method>
-      <option name="Make" enabled="false" />
+    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/multimodal-interaction" />
+    <method v="2">
       <option name="SBT.BeforeRunTask" enabled="true" action="compile" runInCurrentModule="true" />
     </method>
   </configuration>
