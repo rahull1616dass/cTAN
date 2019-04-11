@@ -2,39 +2,17 @@
 <project version="4">
   <component name="VcsDirectoryMappings">
     <mapping directory="$PROJECT_DIR$" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/benchmarks" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/examples/ai" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/examples/basic" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/examples/extended" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/examples/mmi" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/examples/unity" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/applications/raycalib" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/atn" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/mipro" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/nlp" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/planning" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/ai/reasoning" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ai/unification" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/editor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/io/cv" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/io/j4k" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/json" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/io/leapmotion" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/io/tuio" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/io/vrpn" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/ontology/generating" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/physics/jbullet" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/physics/physics" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/remote" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/rendering/gui" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/rendering/jvr" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/rendering/rendering" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/sound/java-sound" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/sound/lwjgl-sound" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/synchronization/synchronization" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/components/synchronization/unity" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/webeditor" vcs="Git" />
-    <mapping directory="$PROJECT_DIR$/components/webui" vcs="Git" />
     <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
   </component>
 </project>
