@@ -113,12 +113,15 @@ class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with
 
   def keyTwoPressed(): Unit ={
     println("[info][SemanticValueDSLExample] --- Key_2 pressed ---")
-    // Requests the property Selected from entities described by "Ball"
-    val selected = semanticTypes.Selected of Box
-    println("[info][SemanticValueDSLExample] Selected of entitiy Box = " + selected.value)
-    // Sets the property Selected to value true for all entities passing the "Box" filter
-    Update the properties of Box `with` semanticTypes.Selected(!selected.value)
-    println("[info][SemanticValueDSLExample] Set property Selected of entitiy Box = " + !selected.value)
+    // Requests all Boxes
+    val boxes = Get all Box
+    // Sets the property Selected for each Box
+    boxes.foreach{ box =>
+      val selected = semanticTypes.Selected of box
+      box.set(semanticTypes.Selected(!selected.value))
+      println("[info][SemanticValueDSLExample] Set property Selected of entity with Name " + box.getSimpleName + " to value " + !selected.value)
+    }
+
   }
 
   protected def finishConfiguration(): Unit = {
