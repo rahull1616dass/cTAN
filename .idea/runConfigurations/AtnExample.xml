@@ -4,8 +4,6 @@
     <module name="multimodal-interaction" />
     <option name="VM_PARAMETERS" value="-Xmx2g -Xms1g" />
     <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/applications/multimodal-interaction" />
-    <method v="2">
-      <option name="SBT.BeforeRunTask" enabled="true" action="compile" runInCurrentModule="true" />
-    </method>
+    <method v="2" />
   </configuration>
 </component>

@@ -5,7 +5,7 @@ import sbtassembly.AssemblyPlugin.autoImport._
 
 trait SimXBuildBase extends Build with SimXSettings{
 
-lazy val jarExcludes = Seq(
+/*lazy val jarExcludes = Seq(
 	assemblyExcludedJars in assembly := {
 		val cp = (fullClasspath in assembly).value
 			cp filter {name => 	
@@ -14,11 +14,11 @@ lazy val jarExcludes = Seq(
 			name.data.getName.equals("xmlpull-1.1.3.1.jar") ||
 			name.data.getName.equals("xpp3_min-1.1.4c.jar")
 	}}
-)
+)*/
 
   object SimXComponent {
     def apply(id: String, base: File) = Project(id, base, settings = buildSettings ++ docSettings
-						++ jarExcludes)
+						/*++ jarExcludes*/)
   }
 
   object SimXApplication {
@@ -26,7 +26,7 @@ lazy val jarExcludes = Seq(
       Project(id, base, settings = buildSettings ++ docSettings ++ Seq(
         setOntoDir := updateWorkingDirectory(baseDirectory.value),
         compile in Compile <<= compile in Compile dependsOn setOntoDir
-      ) ++ jarExcludes)
+      ) /*++ jarExcludes*/)
   }
 
   lazy val ontologyGen = Project(
