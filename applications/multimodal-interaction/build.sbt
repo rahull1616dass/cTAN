@@ -14,16 +14,20 @@ classDirectory in Compile := target.value / "scala/classes"
 
 classDirectory in Test := target.value / "scala/test-classes"
 
-fork := false
+fork := true
 
 unmanagedClasspath in Runtime +=  baseDirectory.value / "configs" // (baseDirectory) map { bd => Attributed.blank(bd / "configs") }
 
 baseDirectory in run := baseDirectory.value
 
+connectInput in run := true
+
+//workingDirectory in run := baseDirectory.value
+
 javaOptions in run += "-Xmx2G" 
 
 javaOptions in run += "-Xms1G"
 
-assemblyJarName in assembly := "something.jar"
+//assemblyJarName in assembly := "something.jar"
 
-mainClass in assembly := Some("simx.applications.multimodalinteraction.AtnExampleApplication")
+//mainClass in assembly := Some("simx.applications.multimodalinteraction.AtnExampleApplication")
