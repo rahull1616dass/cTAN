@@ -1,9 +1,0 @@
-<component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="ExampleATNApplication Mac" type="SbtRunConfiguration" factoryName="sbt Task">
-    <setting name="tasks" value="&quot;runMain simx.applications.multimodalinteraction.AtnExampleApplication&quot;" />
-    <setting name="vmparams" value="-Xms512M -Xmx1024M -Xss1M -XX:+CMSClassUnloadingEnabled" />
-    <setting name="workingDir" value="$PROJECT_DIR$" />
-    <setting name="useSbtShell" value="false" />
-    <method v="2" />
-  </configuration>
-</component>
