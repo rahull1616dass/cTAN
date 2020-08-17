@@ -85,6 +85,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
   }
 
   protected def finishConfiguration(): Unit = {
+    // defines the reaction to an AtnEvents.command from the MMIParser by checking which action was recognized by the cATN
     AtnEvents.command.observe{ newCommand =>
       val values = newCommand.values
       val action = values.firstValueFor(lexiconTypes.Verb).actions.head

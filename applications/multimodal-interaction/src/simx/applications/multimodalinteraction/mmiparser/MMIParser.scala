@@ -73,12 +73,17 @@ class MMIParser(aName: Symbol,
     create Arc 'firstCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
     create Arc 'finalCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
 
+    // a condition which always returns true
     private def alwaysTrue(in: Event, register: SValSet): Condition.Result = ConditionResult(doTransition = true)
 
+    // resolves a recognized noun phrase
     private def resolveNP(in: Event, register: SValSet): Unit = {
       val noun = register.firstValueFor(lexiconTypes.Noun)
+      // retrieves all entities with a semantic property that corresponds to the noun from the application state
       val entities = Get all SValEquals(semanticTypes.Semantics(noun.entityRelation))
+      // retrieves all selected entities from the cATNs register
       val selectedEntities = register.getAllValuesFor(semanticTypes.Entity)
+      // performs multimodal fusion by comparing both lists
       val matchingEntities = entities.filter(selectedEntities.contains)
       if (matchingEntities.nonEmpty) {
         register.add(semanticTypes.Entity(matchingEntities.head))
@@ -87,15 +92,21 @@ class MMIParser(aName: Symbol,
       }
     }
 
+    // resolves the pronoun "myself"
     private def resolvePro(in: Event, register: SValSet): Unit = {
+      // gets the user from the application state
       val user = Get one User
+      // adds the user entity to the register
       register.add(semanticTypes.Entity(user))
     }
 
+    // resolves the artivle/determiner "a", "the", "that"
     private def resolveDet(in: Event, register: SValSet): Unit = {
+      // retrieves the timestamp of the incoming speech event
       val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
       val allEntities = Get all HasSVal(semanticTypes.Selected)
       var selectedEntities: List[Entity] = Nil
+      // checks which entities were selected at the detTimeStamp
       allEntities.foreach{e =>
         val wasSelected = (semanticTypes.Selected of e at detTimeStamp).value
         if(wasSelected) selectedEntities = e :: selectedEntities
@@ -103,13 +114,16 @@ class MMIParser(aName: Symbol,
       selectedEntities.foreach{e => register.add(semanticTypes.Entity(e))}
     }
 
+    // resolves the existental "there"
     private def resolveEx(in: Event, register: SValSet): Unit = {
+      // retrieves the timestamp of the incoming speech event
       val exTimeStamp = in.values.firstValueFor(semanticTypes.Time)
+      // checks where the user was pointing at exTimeStamp
       val raycastHit = (semanticTypes.RaycastHit of User at exTimeStamp).value
       register.add(semanticTypes.RaycastHit(raycastHit))
     }
 
-
+    // sends an ATNEvent.command to the MMIParserApplication
     private def returnCommand(in: Event, register: SValSet): List[Event] = {
       AtnEvents.command(register.toSValSeq:_*) :: Nil
     }
