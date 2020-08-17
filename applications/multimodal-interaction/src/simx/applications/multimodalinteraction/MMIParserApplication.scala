@@ -89,11 +89,6 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     AtnEvents.command.observe{ newCommand =>
       val values = newCommand.values
       val action = values.firstValueFor(lexiconTypes.Verb).actions.head
-      if(action == Symbols.selection) {
-        val entity = values.firstValueFor(types.Entity)
-        selectEntity(entity)
-      }
-
       if(action == Symbols.move) {
         val entity = values.firstValueFor(types.Entity)
         val raycastHit = values.getFirstValueFor(types.RaycastHit)
