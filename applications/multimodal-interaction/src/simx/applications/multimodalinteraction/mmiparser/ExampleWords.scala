@@ -18,7 +18,7 @@
  * Federal Ministry of Education and Research (grant no. 17N4409).
  */
 
-package simx.applications.multimodalinteraction.atn
+package simx.applications.multimodalinteraction.mmiparser
 
 import simx.components.ai.atn.interaction.lexicon.WordTypes
 import simx.core.ontology.Symbols
@@ -28,10 +28,6 @@ object ExampleWords {
 
   case class Ball() extends WordTypes.Noun {
     val entityRelation: OntologySymbol = Symbols.ball
-  }
-
-  case class Box() extends WordTypes.Noun {
-    val entityRelation: OntologySymbol = Symbols.box
   }
 
   case class Selection() extends WordTypes.Verb {
@@ -45,6 +41,14 @@ object ExampleWords {
   case class Deletion() extends WordTypes.Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.entityDeletion)
   }
+
+  case class Translation() extends WordTypes.Verb {
+    val actions: Set[OntologySymbol] = Set(Symbols.move)
+  }
+
+  case class Existential() extends WordTypes.Existential
+
+  case class Myself() extends WordTypes.ProNoun
 
   case class Article() extends WordTypes.Determiner
 }
