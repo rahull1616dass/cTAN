@@ -55,13 +55,12 @@ class MMIParser(aName: Symbol,
 
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
     create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP //TODO: Add another arc in the cATN parallel to the 'isNP subarc
-    create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'endState
+    create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'endState  //TODO: Extend the ATN to recognize the existential "there"
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
     create State    'hasDT  withArc         'isNN       toTargetState 'hasNN
     create State    'hasNN  withEpsilonArc  'resolveNP  toTargetState 'endNP
-    //TODO: Extend the ATN to recognize the existential "there"
     create EndState 'endNP
 
     create Arc 'isVB            withCondition (checkForWordType[WordTypes.Verb], checkConfidence(0.2f))        addFunction copySpeechToRegisterAs(lexiconTypes.Verb)

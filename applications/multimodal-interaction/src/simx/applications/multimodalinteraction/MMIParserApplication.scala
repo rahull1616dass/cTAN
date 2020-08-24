@@ -51,7 +51,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
   val PrefabFactory = SValEquals(types.Semantics(Symbols.entityCreation))
   Requires all properties from PrefabFactory
 
-  val keyboardMode = false
+  val keyboardMode = true
 
   protected def applicationConfiguration: ApplicationConfig = ApplicationConfig withComponent
     EditorComponentAspect('editor) and
@@ -90,10 +90,12 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
       val values = newCommand.values
       val action = values.firstValueFor(lexiconTypes.Verb).actions.head
       if(action == Symbols.move) {
-        val entity = values.firstValueFor(types.Entity)
+        val entity = values.getFirstValueFor(types.Entity)
         val raycastHit = values.getFirstValueFor(types.RaycastHit)
-        if(raycastHit.isDefined){
-          moveEntity(entity, raycastHit.get)
+        if(raycastHit.isDefined && entity.isDefined){
+          moveEntity(entity.get, raycastHit.get)
+        } else {
+          println("No entity or raycastHit found in ATN command!")
         }
       }
 
@@ -101,12 +103,14 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
         val noun = values.getFirstValueFor(lexiconTypes.Noun)
         if(noun.isDefined) {
           entityCreation(noun.get.entityRelation.toSymbol.name)
+        } else {
+          println("No entity found in ATN command!")
         }
       }
 
       if(action == Symbols.entityDeletion) {
-        val entity = values.firstValueFor(types.Entity)
-        deleteEntity(entity)
+        val entity = values.getFirstValueFor(types.Entity)
+        if(entity.isDefined){deleteEntity(entity.get)}else{println("No entity found in ATN command!")}
       }
 
       //TODO: Missing Select Action
