@@ -64,11 +64,10 @@ object SemanticValueDSLExample extends SimXApplicationMain[SemanticValueDSLExamp
 
 class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with SemanticValueDSL {
 
-  val InputManager = semanticTypes.Semantics(Symbols.keyboard)
-
   /** ----------- Filter Definitions ----------- */
   // Depending on Semantics
   val Ball = SValEquals(semanticTypes.Semantics(Symbols.ball))
+  val InputManager = semanticTypes.Semantics(Symbols.keyboard)
   val Box  = SValEquals(semanticTypes.Semantics(Symbols.box))
   // Depending on Selection
   val SelectableEntities = HasSVal(semanticTypes.Selected)
