@@ -64,7 +64,7 @@ object SemanticValueDSLExample extends SimXApplicationMain[SemanticValueDSLExamp
 
 class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with SemanticValueDSL {
 
-  val Keyboard = semanticTypes.Semantics(Symbols.keyboard)
+  val InputManager = semanticTypes.Semantics(Symbols.keyboard)
 
   /** ----------- Filter Definitions ----------- */
   // Depending on Semantics
@@ -95,7 +95,7 @@ class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with
       e.set(semanticTypes.Selected(false))
     }
     // Creates an entity "Keyboard" with property Key_1 and Key_2
-    new EntityDescription('Keyboard, Keyboard).realize{e =>
+    new EntityDescription('InputManager, InputManager).realize{e =>
       e.set(semanticTypes.Key_1(false))
       e.set(semanticTypes.Key_2(false))
     }
@@ -106,9 +106,6 @@ class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with
     // Requests all selected entities
     val selectedEntities = Get all SelectedEntities
     println("[info][SemanticValueDSLExample] All selected entities: " + selectedEntities.map(_.getSimpleName))
-    // Requests only one selected entity
-    val oneSelectedEntity = Get one SelectedEntities
-    println("[info][SemanticValueDSLExample] One Selected entities: " + oneSelectedEntity.getSimpleName)
   }
 
   def keyTwoPressed(): Unit ={
@@ -125,7 +122,7 @@ class SemanticValueDSLExample(args : Array[String]) extends SimXApplication with
   }
 
   protected def finishConfiguration(): Unit = {
-    onOneEntityAppearance(SValEquals(Keyboard)){e =>
+    onOneEntityAppearance(SValEquals(InputManager)){e =>
       e.observe(semanticTypes.Key_1){pressed => if(pressed){keyOnePressed()}}
       e.observe(semanticTypes.Key_2){pressed => if(pressed){keyTwoPressed()}}
     }
