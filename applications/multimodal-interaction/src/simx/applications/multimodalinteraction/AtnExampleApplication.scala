@@ -49,7 +49,6 @@ class AtnExampleApplication extends SimXApplication with EventHandler
     UnityComponentAspect('unity, "localhost", 8000) iff useUnity
 
 
-
   protected def configureComponents(components: Map[Symbol, Ref]): Unit = {
     SVarActor.createActor(new ExampleAtnParser('myATN))
     SVarActor.createActor(SpeechSimulator())

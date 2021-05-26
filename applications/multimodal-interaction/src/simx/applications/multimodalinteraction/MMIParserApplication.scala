@@ -70,7 +70,6 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     SVarActor.createActor(new MMIParser('myATN, _autoResetAfter = autoreset))
 
     Lexicon.clear()
-    Lexicon.put("create", ExampleWords.Creation())
     Lexicon.put("select", ExampleWords.Selection())
     Lexicon.put("move", ExampleWords.Translation())
     Lexicon.put("a", ExampleWords.Article())
@@ -78,7 +77,6 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.put("that", ExampleWords.Article())
     Lexicon.put("ball", ExampleWords.Ball())
     Lexicon.put("there", ExampleWords.Existential())
-    Lexicon.put("myself", ExampleWords.Myself())
   }
 
   protected def createEntities(): Unit = {
@@ -92,45 +90,42 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
       if(action == Symbols.move) {
         val entity = values.getFirstValueFor(types.Entity)
         val raycastHit = values.getFirstValueFor(types.RaycastHit)
-        if(raycastHit.isDefined && entity.isDefined){
-          moveEntity(entity.get, raycastHit.get)
-        } else {
-          println("No entity or raycastHit found in ATN command!")
-        }
+        moveEntity(entity, raycastHit)
       }
-
-      if(action == Symbols.entityCreation){
-        val noun = values.getFirstValueFor(lexiconTypes.Noun)
-        if(noun.isDefined) {
-          entityCreation(noun.get.entityRelation.toSymbol.name)
-        } else {
-          println("No entity found in ATN command!")
-        }
-      }
-
-      if(action == Symbols.entityDeletion) {
+      if(action == Symbols.selection) {
         val entity = values.getFirstValueFor(types.Entity)
-        if(entity.isDefined){deleteEntity(entity.get)}else{println("No entity found in ATN command!")}
+        selectEntity(entity)
       }
-
-      //TODO: Missing Select Action
     }
   }
 
-  private def entityCreation(name: String): Unit = {
+  private def createEntity(name: String): Unit = {
     Update the properties of PrefabFactory `with` UnityComponent.createPrefabReference(name)
   }
 
-  private def deleteEntity(e: Entity): Unit ={
-    e.remove()
+  private def deleteEntity(e: Option[Entity]): Unit ={
+    if(e.isDefined){
+      e.get.remove()
+    } else {
+      println("[MMIParserApplication] Entity in deleteEntity() not defined")
+    }
   }
 
-  private def moveEntity(e: Entity, raycastHit: ConstVec3f): Unit ={
-    e.set(types.TargetPosition(raycastHit))
+  private def moveEntity(e: Option[Entity], raycastHit: Option[ConstVec3f]): Unit ={
+    if(e.isDefined && raycastHit.isDefined){
+      println("test")
+      e.get.set(types.TargetPosition(raycastHit.get))
+    } else {
+      println("[MMIParserApplication] Entity or RayCastHit in moveEntity() not defined")
+    }
   }
 
-  private def selectEntity(e: Entity): Unit ={
-    e.set(types.Selected(true))
+  private def selectEntity(e: Option[Entity]): Unit ={
+    if (e.isDefined) {
+      e.get.set(types.Selected(true))
+    } else {
+      println("[MMIParserApplication] Entity in selectEntity() not defined")
+    }
   }
 
   protected def removeFromLocalRep(e: Entity) {}

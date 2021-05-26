@@ -54,8 +54,10 @@ class MMIParser(aName: Symbol,
     override val outputTypes: List[EventDescription] = AtnEvents.command :: Nil
 
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
-    create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP //TODO: Add another arc in the cATN parallel to the 'isNP subarc
-    create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'endState  //TODO: Extend the ATN to recognize the existential "there"
+    create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP
+    create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
+    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx
+    create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
@@ -91,15 +93,7 @@ class MMIParser(aName: Symbol,
       }
     }
 
-    // resolves the pronoun "myself"
-    private def resolvePro(in: Event, register: SValSet): Unit = {
-      // gets the user from the application state
-      val user = Get one User
-      // adds the user entity to the register
-      register.add(semanticTypes.Entity(user))
-    }
-
-    // resolves the artivle/determiner "a", "the", "that"
+    // resolves the article/determiner "a", "the", "that"
     private def resolveDet(in: Event, register: SValSet): Unit = {
       // retrieves the timestamp of the incoming speech event
       val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
@@ -113,7 +107,7 @@ class MMIParser(aName: Symbol,
       selectedEntities.foreach{e => register.add(semanticTypes.Entity(e))}
     }
 
-    // resolves the existental "there"
+    // resolves the existential "there"
     private def resolveEx(in: Event, register: SValSet): Unit = {
       // retrieves the timestamp of the incoming speech event
       val exTimeStamp = in.values.firstValueFor(semanticTypes.Time)
