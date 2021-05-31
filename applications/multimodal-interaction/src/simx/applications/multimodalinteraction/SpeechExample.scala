@@ -52,33 +52,21 @@ class SpeechExample(args : Array[String]) extends SimXApplication with EventHand
   protected def finishConfiguration(): Unit = {
     println("[info][SpeechExample] Starting SpeechRecognizer")
     SVarActor.createActor(SpeechRecognizer(Servers.speechServer))
-    SVarActor.createActor(
-      new Bucketeer(
-        inputEvent = SpeechEvents.token,
-        outputEvent = SpeechEvents.processedToken,
-        func = compare,
-        timeEpsilon = 50L
-      )
-    )
 
-    SpeechEvents.processedToken.observe{ event =>
-      println("[info][SpeechExample] Received speech event from Bucketeer: " +
-        event.values.firstValueFor(types.String) +
-      " at " + event.values.firstValueFor(types.Time) +
-      " with confidence: " + event.values.firstValueFor(types.Confidence))
+    SpeechEvents.hypothesis.observe{ event =>
+      printSpeechEventToConsole(event, "hypothesized")
+    }
+
+    SpeechEvents.recognized.observe{ event =>
+      printSpeechEventToConsole(event, "recognized")
     }
   }
 
-  def compare(e1: Event, e2: Event): Boolean = {
-    val token1 = e1.values.getFirstValueFor(types.String).getOrElse(" ")
-    val token2 = e2.values.getFirstValueFor(types.String).getOrElse(" ")
-    val conf1 = e1.values.getFirstValueFor(types.Confidence).getOrElse(0f)
-    val conf2 = e2.values.getFirstValueFor(types.Confidence).getOrElse(0f)
-
-    val con1 = token1 == token2
-    val con2 = conf1 > conf2
-
-    con1 && con2
+  private def printSpeechEventToConsole(event: Event, _type: String): Unit ={
+    println("[info][SpeechExample] Received "+_type+" token from SpeechRecognizer: " +
+      event.values.firstValueFor(types.String) +
+      " at " + event.values.firstValueFor(types.Time) +
+      " with confidence: " + event.values.firstValueFor(types.Confidence))
   }
 
   override protected def removeFromLocalRep(e: Entity): Unit = {}
