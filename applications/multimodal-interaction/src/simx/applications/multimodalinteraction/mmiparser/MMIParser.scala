@@ -82,10 +82,10 @@ class MMIParser(aName: Symbol,
       val noun = register.firstValueFor(lexiconTypes.Noun)
       // retrieves all entities with a semantic property that corresponds to the noun from the application state
       val entities = Get all SValEquals(semanticTypes.Semantics(noun.entityRelation))
-      // retrieves all selected entities from the cATNs register
-      val selectedEntities = register.getAllValuesFor(semanticTypes.Entity)
+      // retrieves all activated entities from the cATNs register
+      val activatedEntities = register.getAllValuesFor(semanticTypes.Entity)
       // performs multimodal fusion by comparing both lists
-      val matchingEntities = entities.filter(selectedEntities.contains)
+      val matchingEntities = entities.filter(activatedEntities.contains)
       if (matchingEntities.nonEmpty) {
         register.add(semanticTypes.Entity(matchingEntities.head))
       } else if (entities.nonEmpty) {
@@ -97,14 +97,14 @@ class MMIParser(aName: Symbol,
     private def resolveDet(in: Event, register: SValSet): Unit = {
       // retrieves the timestamp of the incoming speech event
       val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
-      val allEntities = Get all HasSVal(semanticTypes.Selected)
-      var selectedEntities: List[Entity] = Nil
-      // checks which entities were selected at the detTimeStamp
+      val allEntities = Get all HasSVal(semanticTypes.Activated)
+      var activatedEntities: List[Entity] = Nil
+      // checks which entities were activated at the detTimeStamp
       allEntities.foreach{e =>
-        val wasSelected = (semanticTypes.Selected of e at detTimeStamp).value
-        if(wasSelected) selectedEntities = e :: selectedEntities
+        val wasActivated = (semanticTypes.Activated of e at detTimeStamp).value
+        if(wasActivated) activatedEntities = e :: activatedEntities
       }
-      selectedEntities.foreach{e => register.add(semanticTypes.Entity(e))}
+      activatedEntities.foreach{e => register.add(semanticTypes.Entity(e))}
     }
 
     // resolves the existential "there"

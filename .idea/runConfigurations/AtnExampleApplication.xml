@@ -1,9 +1,14 @@
 <component name="ProjectRunConfigurationManager">
-  <configuration default="false" name="AtnExampleApplication" type="SbtRunConfiguration" factoryName="sbt Task">
-    <setting name="tasks" value="&quot;runMain simx.applications.multimodalinteraction.AtnExampleApplication&quot;" />
-    <setting name="vmparams" value="-Xms2G -Xmx4G -Xss1M -XX:+CMSClassUnloadingEnabled" />
-    <setting name="workingDir" value="$PROJECT_DIR$" />
-    <setting name="useSbtShell" value="false" />
+  <configuration default="false" name="AtnExampleApplication" type="SbtRunConfiguration" factoryName="sbt Task" show_console_on_std_err="false" show_console_on_std_out="false">
+    <option name="allowRunningInParallel" value="false" />
+    <option name="projectPathOnTarget" />
+    <option name="selectedOptions">
+      <list />
+    </option>
+    <option name="tasks" value="&quot;runMain simx.applications.multimodalinteraction.AtnExampleApplication&quot;" />
+    <option name="useSbtShell" value="false" />
+    <option name="vmparams" value="-Xms2G -Xmx4G -Xss1M -XX:+CMSClassUnloadingEnabled -Dsbt.ivy.home=d:\.ivy2" />
+    <option name="workingDir" value="$PROJECT_DIR$" />
     <method v="2" />
   </configuration>
 </component>
