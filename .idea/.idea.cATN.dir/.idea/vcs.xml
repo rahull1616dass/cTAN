@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="VcsDirectoryMappings">
+    <mapping directory="$PROJECT_DIR$" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/atn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/mipro" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/nlp" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/planning" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ai/unification" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/editor" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/json" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/io/vrpn" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/ontology/generating" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/synchronization/synchronization" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/components/synchronization/unity" vcs="Git" />
+    <mapping directory="$PROJECT_DIR$/core" vcs="Git" />
+  </component>
+</project>
