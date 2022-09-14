@@ -19,7 +19,7 @@
  */
 
 package simx.applications.multimodalinteraction
-
+import akka.util.Helpers.Requiring
 import simplex3d.math.floatx.ConstVec3f
 import simx.applications.multimodalinteraction.mmiparser.{ExampleWords, MMIParser}
 import simx.applications.multimodalinteraction.io.{Servers, SpeechRecognizer, SpeechSimulator}
@@ -32,6 +32,7 @@ import simx.components.synchronization.unity.{UnityComponent, UnityComponentAspe
 import simx.components.vrpn.VRPNComponentAspect
 import simx.core.entity.Entity
 import simx.core.entity.typeconversion.TypeInfo
+import simx.core.ontology.types.OntologySymbol
 import simx.core.ontology.{EntityDescription, GroundedSymbol, Symbols, types}
 import simx.core.svaractor.{SVarActor, TimedRingBuffer}
 import simx.core.svaractor.SVarActor.Ref
@@ -71,14 +72,18 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
 
     Lexicon.clear()
     Lexicon.put("select", ExampleWords.Selection())
+    Lexicon.put("deselect", ExampleWords.Deselection())
     Lexicon.put("move", ExampleWords.Translation())
     Lexicon.put("delete", ExampleWords.Deletion())
+    Lexicon.put("destroy", ExampleWords.Deletion())
     Lexicon.put("create", ExampleWords.Creation())
     Lexicon.put("a", ExampleWords.Article())
     Lexicon.put("the", ExampleWords.Article())
     Lexicon.put("that", ExampleWords.Article())
     Lexicon.put("ball", ExampleWords.Ball())
     Lexicon.put("there", ExampleWords.Existential())
+    Lexicon.put("color", ExampleWords.Coloration())
+    Lexicon.put("green", ExampleWords.Green())
   }
 
   protected def createEntities(): Unit = {
@@ -96,28 +101,32 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
       }
       if(action == Symbols.selection) {
         val entity = values.getFirstValueFor(types.Entity)
-        selectEntity(entity)
+        if (values.firstValueFor(lexiconTypes.Verb).toString == "Selection()") {
+          selectEntity(entity)
+        } else if (values.firstValueFor(lexiconTypes.Verb).toString == "Deselection()") {
+          deselectEntity(entity)
+        }
       }
       if (action == Symbols.entityDeletion) {
         val entity = values.getFirstValueFor(types.Entity)
         deleteEntity(entity)
       }
       if (action == Symbols.entityCreation) {
+        val noun = values.getFirstValueFor(lexiconTypes.Noun)
+        createEntity(noun.get.entityRelation.toString)
+      }
+      if (action == Symbols.color) {
         val entity = values.getFirstValueFor(types.Entity)
-        val name = entity.get.getSimpleName;
-        if (entity.isDefined) {
-          if (name.contains("(Clone)")) {
-            val subString = name.substring(name.length - 7, name.length)
-            if (subString.equals("(Clone)")) {
-              //name = name.substring(0, name.length - 7)
-              createEntity(name.substring(0, name.length - 7))
-            }
+        val lexiconColor = values.getFirstValueFor(lexiconTypes.Adjective)
+        println(lexiconColor)
+        if (lexiconColor.isDefined) {
+          val color = lexiconColor.get.value
+          println("Lexicon Color: " + color)
+          if (color.toString.equals("Green()")) {
+            colorEntity(entity, "green")
+          } else if (color.toString.equals("Blue()")) {
+            colorEntity(entity, "blue")
           }
-          else {
-            createEntity(name)
-          }
-          //println(name)
-          //createEntity(entity.get.getSimpleName)
         }
       }
     }
@@ -152,6 +161,17 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     }
   }
 
+  private def deselectEntity(e: Option[Entity]): Unit = {
+    if (e.isDefined) {
+      e.get.set(types.Selected(false))
+    } else {
+      println("[MMIParserApplication] Entity in selectEntity() not defined")
+    }
+  }
+
+  private def colorEntity(e: Option[Entity], name: String): Unit = {
+
+  }
   protected def removeFromLocalRep(e: Entity) {}
 
   override def onNewRequirementValue(e: Entity, requirementInfo: StateParticleInfo[_], timestamp: TimedRingBuffer.Time): Unit = {}

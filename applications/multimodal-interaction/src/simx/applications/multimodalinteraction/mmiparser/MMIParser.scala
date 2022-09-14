@@ -58,6 +58,7 @@ class MMIParser(aName: Symbol,
     create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
     create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx
     create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
+    create State      'hasAdj withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
@@ -69,6 +70,7 @@ class MMIParser(aName: Symbol,
     create Arc 'isDT            withCondition (checkForWordType[WordTypes.Determiner], checkConfidence(0.2f))  addFunction resolveDet
     create Arc 'isNN            withCondition (checkForWordType[WordTypes.Noun], checkConfidence(0.5f))        addFunction copySpeechToRegisterAs(lexiconTypes.Noun)
     create Arc 'isEx            withCondition (checkForWordType[WordTypes.Existential], checkConfidence(0.5f)) addFunction resolveEx
+    create Arc 'isAdj           withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
 
     create Arc 'resolveNP             withCondition alwaysTrue                              addFunction resolveNP
     create Arc 'firstCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
@@ -120,6 +122,19 @@ class MMIParser(aName: Symbol,
     private def returnCommand(in: Event, register: SValSet): List[Event] = {
       AtnEvents.command(register.toSValSeq:_*) :: Nil
     }
+    /*//resolves adjectives like color words
+    private def resolveAdj(in: Event, register: SValSet): Unit = {
+      // retrieves the timestamp of the incoming speech event
+      val adjTimeStamp = in.values.firstValueFor(semanticTypes.Time)
+      val colors = Get all HasSVal(semanticTypes.Color)
+      // checks adjective
+      //val adjWord = (semanticTypes.Color of Adjectives at adjTimeStamp).value
+      colors.foreach{e =>
+        val adjWord = (semanticTypes.Color of in.values at adjTimeStamp).value
+        register.add(semanticTypes.Color(adjWord))
+      }
+      //register.add(semanticTypes.Color(adjWord))
+    }*/
   }
 
   override protected def name: Symbol = aName

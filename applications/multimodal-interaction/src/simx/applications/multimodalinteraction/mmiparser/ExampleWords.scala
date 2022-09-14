@@ -20,18 +20,29 @@
 
 package simx.applications.multimodalinteraction.mmiparser
 
+import java.awt.Color
 import simx.components.ai.atn.interaction.lexicon.WordTypes
-import simx.core.ontology.Symbols
+import simx.components.ai.atn.misc.{SemanticTypeInstance, SimpleSemanticTypeInstance}
+import simx.core.ontology.{Symbols, types}
 import simx.core.ontology.types.OntologySymbol
 
 object ExampleWords {
 
+  import WordTypes._
   case class Ball() extends WordTypes.Noun {
     val entityRelation: OntologySymbol = Symbols.ball
   }
 
-  case class Selection() extends WordTypes.Verb {
+  case class Selection() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.selection)
+  }
+
+  case class Box() extends Noun {
+    val entityRelation = Symbols.box
+  }
+
+  case class Deselection() extends Verb {
+    val actions: Set[OntologySymbol] = Set(Symbols.entityDeletion)
   }
 
   case class Creation() extends WordTypes.Verb {
@@ -46,9 +57,37 @@ object ExampleWords {
     val actions: Set[OntologySymbol] = Set(Symbols.move)
   }
 
+  case class Coloration() extends Verb {
+    val actions: Set[OntologySymbol] = Set(Symbols.color)
+  }
+
+  case class Blue() extends Adjective {
+    val property = new SimpleSemanticTypeInstance(types.Color.withAnnotations(Symbols.color)(Color.BLUE))
+  }
+
+  case class Green() extends Adjective {
+    val property = new SimpleSemanticTypeInstance(types.Color.withAnnotations(Symbols.color)(Color.GREEN))
+  }
+
+  case class Red() extends Adjective {
+    val property = new SimpleSemanticTypeInstance(types.Color.withAnnotations(Symbols.color)(Color.RED))
+  }
+
+  case class Scaling() extends Verb {
+    val actions: Set[OntologySymbol] = Set(Symbols.scale)
+  }
+
+  case class Big() extends Adjective {
+    val property = new SimpleSemanticTypeInstance(types.Real.withAnnotations(Symbols.scale)(2f))
+  }
+
+  case class Small() extends Adjective {
+    val property = new SimpleSemanticTypeInstance(types.Real.withAnnotations(Symbols.scale)(0.5f))
+  }
   case class Existential() extends WordTypes.Existential
 
   case class Myself() extends WordTypes.ProNoun
 
   case class Article() extends WordTypes.Determiner
+  case class Demonstrative() extends WordTypes.Demonstrative
 }
