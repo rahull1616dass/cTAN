@@ -150,7 +150,7 @@ class MMIParser(aName: Symbol,
       val positionLeft = (semanticTypes.Position of leftHandController.head at timeStamp).value
       val positionRight = (semanticTypes.Position of rightHandController.head at timeStamp).value
       val distance3DPoints: Double = Math.abs(Math.sqrt(Math.pow(positionLeft.x - positionRight.x, 2) + Math.pow(positionLeft.y - positionRight.y, 2) + Math.pow(positionLeft.z - positionRight.z, 2)))
-      val distance: Float = distance3DPoints.toFloat * 4f
+      val distance :Float = distance3DPoints.toFloat * 5f
       register.add(semanticTypes.Scale(ConstVec3f(distance, distance, distance)))
     }
 

@@ -96,6 +96,8 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.put("green", ExampleWords.Green())
     Lexicon.put("blue", ExampleWords.Blue())
     Lexicon.put("red", ExampleWords.Red())
+    Lexicon.put("black", ExampleWords.Black())
+
 
     Lexicon.put("make", ExampleWords.Scaling())
     Lexicon.put("this", ExampleWords.Scale())

@@ -72,6 +72,11 @@ object ExampleWords {
     val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("red"))
   }
 
+  case class Black() extends Adjective {
+    val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("black"))
+  }
+
+
   case class Scaling() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.scale)
   }
