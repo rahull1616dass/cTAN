@@ -72,6 +72,8 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.clear()
     Lexicon.put("select", ExampleWords.Selection())
     Lexicon.put("move", ExampleWords.Translation())
+    Lexicon.put("delete", ExampleWords.Deletion())
+    Lexicon.put("create", ExampleWords.Creation())
     Lexicon.put("a", ExampleWords.Article())
     Lexicon.put("the", ExampleWords.Article())
     Lexicon.put("that", ExampleWords.Article())
@@ -95,6 +97,28 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
       if(action == Symbols.selection) {
         val entity = values.getFirstValueFor(types.Entity)
         selectEntity(entity)
+      }
+      if (action == Symbols.entityDeletion) {
+        val entity = values.getFirstValueFor(types.Entity)
+        deleteEntity(entity)
+      }
+      if (action == Symbols.entityCreation) {
+        val entity = values.getFirstValueFor(types.Entity)
+        val name = entity.get.getSimpleName;
+        if (entity.isDefined) {
+          if (name.contains("(Clone)")) {
+            val subString = name.substring(name.length - 7, name.length)
+            if (subString.equals("(Clone)")) {
+              //name = name.substring(0, name.length - 7)
+              createEntity(name.substring(0, name.length - 7))
+            }
+          }
+          else {
+            createEntity(name)
+          }
+          //println(name)
+          //createEntity(entity.get.getSimpleName)
+        }
       }
     }
   }
