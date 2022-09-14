@@ -52,7 +52,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
   val PrefabFactory = SValEquals(types.Semantics(Symbols.entityCreation))
   Requires all properties from PrefabFactory
 
-  val keyboardMode = true
+  val keyboardMode = false
 
   protected def applicationConfiguration: ApplicationConfig = ApplicationConfig withComponent
     EditorComponentAspect('editor) and
@@ -75,6 +75,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.put("create", ExampleWords.Creation())
     Lexicon.put("delete", ExampleWords.Deletion())
     Lexicon.put("destroy", ExampleWords.Deletion())
+    Lexicon.put("purge", ExampleWords.Deletion())
 
     Lexicon.put("select", ExampleWords.Selection())
     Lexicon.put("deselect", ExampleWords.Deselection())
@@ -100,9 +101,11 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
 
 
     Lexicon.put("make", ExampleWords.Scaling())
+    Lexicon.put("scale", ExampleWords.Scaling())
     Lexicon.put("this", ExampleWords.Scale())
     Lexicon.put("big", ExampleWords.Big())
     Lexicon.put("small", ExampleWords.Small())
+
   }
 
   protected def createEntities(): Unit = {
