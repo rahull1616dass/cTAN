@@ -57,14 +57,17 @@ class MMIParser(aName: Symbol,
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
     create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP
     create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
-    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx withArc 'isAdj toTargetState 'hasAdj
+    create State 'hasFirstCommand withArc 'isEx toTargetState 'hasEx withArc 'isAdj toTargetState 'hasAdj withArc 'isIndication toTargetState 'hasIndication
+    create State 'hasIndication withArc 'isAdj toTargetState 'hasAdj
     create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create State      'hasAdj withEpsilonArc 'finalCommandFinished toTargetState 'endState
+    create State      'hasIndic withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
-    create State 'hasDT withArc 'isNN toTargetState 'hasNN withArc         'isAdj       toTargetState 'hasAdj
-    create State    'hasAdj  withArc         'isNN       toTargetState 'hasNN
+    create State 'hasDT withArc 'isNN toTargetState 'hasNN withArc 'isDescriptionAdj toTargetState 'hasDescriptionAdj
+    create State 'hasDescriptionAdj withArc 'isNN toTargetState 'hasNN
+
     create State    'hasNN  withEpsilonArc  'resolveNP  toTargetState 'endNP
     create EndState 'endNP
 
@@ -73,8 +76,8 @@ class MMIParser(aName: Symbol,
     create Arc 'isNN            withCondition (checkForWordType[WordTypes.Noun], checkConfidence(0.5f))        addFunction copySpeechToRegisterAs(lexiconTypes.Noun)
     create Arc 'isEx            withCondition (checkForWordType[WordTypes.Existential], checkConfidence(0.5f)) addFunction resolveEx
     create Arc 'isAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
-    create Arc 'isNAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction resolveNounAdj
-    create Arc 'isIndic withCondition(checkForWordType[WordTypes.Demonstrative], checkConfidence(0.5f)) addFunction resolveBiminIndic
+    create Arc 'isDescriptionAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction resolveDescriptionAdj
+    create Arc 'isIndication withCondition(checkForWordType[WordTypes.Demonstrative], checkConfidence(0.5f)) addFunction resolveScale
 
     create Arc 'resolveNP             withCondition alwaysTrue                              addFunction resolveNP
     create Arc 'firstCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
@@ -125,29 +128,29 @@ class MMIParser(aName: Symbol,
     }
 
     // resolves the colors "red", "blue", "green"
-    private def resolveNounAdj(in: Event, register: SValSet): Unit = {
-      val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
+    private def resolveDescriptionAdj(in: Event, register: SValSet): Unit = {
+      val adjTimeStamp = in.values.firstValueFor(semanticTypes.Time)
       val adj = in.values.firstValueFor(semanticTypes.String)
       //search for entites with right color
       val allColoredEntities = Get all HasSVal(semanticTypes.ColorName)
       var coloredEntities: List[Entity] = Nil
       allColoredEntities.foreach { e =>
         //println("Farbe: " + adj.property.generate().value.toString)
-        val color = (semanticTypes.ColorName of e at detTimeStamp).value
+        val color = (semanticTypes.ColorName of e at adjTimeStamp).value
         if (color.equals(adj)) coloredEntities = e :: coloredEntities
       }
       coloredEntities.foreach { e => register.add(semanticTypes.Entity(e)) }
     }
 
     // resolves indication of size
-    private def resolveBiminIndic(in: Event, register: SValSet): Unit = {
+    private def resolveScale(in: Event, register: SValSet): Unit = {
       val timeStamp = in.values.firstValueFor(semanticTypes.Time)
       val leftHandController = Get all SValEquals(semanticTypes.Semantics(Symbols.left))
       val rightHandController = Get all SValEquals(semanticTypes.Semantics(Symbols.right))
       val positionLeft = (semanticTypes.Position of leftHandController.head at timeStamp).value
       val positionRight = (semanticTypes.Position of rightHandController.head at timeStamp).value
-      val distancePoints: Double = Math.abs(Math.sqrt(Math.pow(positionLeft.x - positionRight.x, 2) + Math.pow(positionLeft.y - positionRight.y, 2) + Math.pow(positionLeft.z - positionRight.z, 2)))
-      val distance: Float = distancePoints.toFloat * 4f
+      val distance3DPoints: Double = Math.abs(Math.sqrt(Math.pow(positionLeft.x - positionRight.x, 2) + Math.pow(positionLeft.y - positionRight.y, 2) + Math.pow(positionLeft.z - positionRight.z, 2)))
+      val distance: Float = distance3DPoints.toFloat * 4f
       register.add(semanticTypes.Scale(ConstVec3f(distance, distance, distance)))
     }
 

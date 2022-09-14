@@ -1,0 +1,127 @@
+<grammar version="1.0" xml:lang="en-US" root="command"
+ xmlns="http://www.w3.org/2001/06/grammar">
+
+    <rule id="command">
+        <one-of>
+            <item><ruleref uri="#creation" /></item>
+			      <item><ruleref uri="#deletion" /></item>
+			      <item><ruleref uri="#selection" /></item>
+				  <item><ruleref uri="#deselection" /></item>
+            <item><ruleref uri="#translation" /></item>
+            <item><ruleref uri="#coloring" /></item>
+			<item><ruleref uri="#scaling" /></item>
+         </one-of>
+    </rule>
+
+	<rule id="creation">
+      <item>create</item>
+		  <item>a</item>
+		  <item><ruleref uri="#noun" /></item>
+	</rule>
+
+    <rule id="coloring">
+	  <one-of>
+			<item>color</item>
+			<item>paint</item>
+		</one-of>
+	  <item>
+		<ruleref uri="#det"/>
+	  </item>
+	  <item>
+	    <ruleref uri="#noun"/>
+	  </item>
+	  <item>
+	    <ruleref uri="#color"/>
+	  </item>
+    </rule>
+	
+	<rule id="deletion">
+		<one-of>
+			<item>delete</item>
+			<item>destroy</item>
+			<item>purge</item>
+		</one-of>
+		<item>
+			<ruleref uri="#det"/>
+		</item>
+		<item><ruleref uri="#noun"/></item>
+	</rule>
+	
+	<rule id="selection">
+        <item>select</item>
+		<item>
+			<ruleref uri="#det"/>
+		</item>
+		<item><ruleref uri="#noun"/></item>
+	</rule>
+
+	<rule id="deselection">
+        <item>deselect</item>
+		<item>
+			<ruleref uri="#det"/>
+		</item>
+		<item><ruleref uri="#noun"/></item>
+	</rule>
+
+    <rule id="translation">
+		<one-of>
+			<item>move</item>
+			<item>put</item>
+		</one-of>
+		<item>
+			<ruleref uri="#det"/>
+		</item>
+		<item><ruleref uri="#noun" /></item>
+		<item>there</item>
+    </rule>
+	
+	<rule id="scaling">
+	  <one-of>
+			<item>make</item>
+			<item>scale</item>
+		</one-of>
+	  <item>
+		<ruleref uri="#det"/>
+	  </item>
+	  <item>
+	    <ruleref uri="#noun"/>
+	  </item>
+	  <item>this</item>
+	  <one-of>
+	    <item>big</item>
+  	    <item>small</item>
+	  </one-of>
+    </rule>
+	
+	
+
+    <rule id="noun">
+		<one-of>
+			<item>
+				<ruleref uri="#color"/>
+			</item>
+			<item></item>
+		</one-of>
+		<one-of>
+			<item>ball</item>
+			<item>box</item>
+	    </one-of>
+    </rule>
+	
+	<rule id="color">
+		<one-of>
+			<item>green</item>
+			<item>red</item>
+			<item>black</item>
+			<item>blue</item>
+	    </one-of>
+    </rule>
+	
+	<rule id="det">
+		<one-of>
+            <item>a</item>
+            <item>the</item>
+			<item>that</item>
+        </one-of>
+    </rule>
+</grammar>

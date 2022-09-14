@@ -71,24 +71,36 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     SVarActor.createActor(new MMIParser('myATN, _autoResetAfter = autoreset))
 
     Lexicon.clear()
-    Lexicon.put("select", ExampleWords.Selection())
-    Lexicon.put("deselect", ExampleWords.Deselection())
-    Lexicon.put("put", ExampleWords.Translation())
-    Lexicon.put("move", ExampleWords.Translation())
+
+    Lexicon.put("create", ExampleWords.Creation())
     Lexicon.put("delete", ExampleWords.Deletion())
     Lexicon.put("destroy", ExampleWords.Deletion())
-    Lexicon.put("create", ExampleWords.Creation())
+
+    Lexicon.put("select", ExampleWords.Selection())
+    Lexicon.put("deselect", ExampleWords.Deselection())
+
+    Lexicon.put("put", ExampleWords.Translation())
+    Lexicon.put("move", ExampleWords.Translation())
+
     Lexicon.put("a", ExampleWords.Article())
     Lexicon.put("the", ExampleWords.Article())
     Lexicon.put("that", ExampleWords.Article())
+
     Lexicon.put("ball", ExampleWords.Ball())
+    Lexicon.put("box", ExampleWords.Box())
+
     Lexicon.put("there", ExampleWords.Existential())
+
     Lexicon.put("color", ExampleWords.Coloration())
+    Lexicon.put("paint", ExampleWords.Coloration())
     Lexicon.put("green", ExampleWords.Green())
     Lexicon.put("blue", ExampleWords.Blue())
     Lexicon.put("red", ExampleWords.Red())
-    Lexicon.put("this big", ExampleWords.Demonstrative())
+
     Lexicon.put("make", ExampleWords.Scaling())
+    Lexicon.put("this", ExampleWords.Scale())
+    Lexicon.put("big", ExampleWords.Big())
+    Lexicon.put("small", ExampleWords.Small())
   }
 
   protected def createEntities(): Unit = {
