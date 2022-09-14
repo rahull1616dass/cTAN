@@ -20,6 +20,7 @@
 
 package simx.applications.multimodalinteraction.mmiparser
 
+import simplex3d.math.floatx.ConstVec3f
 import simx.components.ai.atn.ImplicitConversions._
 import simx.components.ai.atn.core.{AtnProcessing, AugmentedTransitionNetwork, Condition, ConditionResult}
 import simx.components.ai.atn.interaction.lexicon.WordTypes
@@ -56,14 +57,14 @@ class MMIParser(aName: Symbol,
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
     create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP
     create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
-    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx //TODO//// withArc 'isAdj toTargetState 'hasAdj
+    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx withArc 'isAdj toTargetState 'hasAdj
     create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create State      'hasAdj withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
-    create State 'hasDT withArc 'isNN toTargetState 'hasNN //TODO////withArc         'isAdj       toTargetState 'hasAdj
-    //TODO////create State    'hasAdj  withArc         'isNN       toTargetState 'hasNN
+    create State 'hasDT withArc 'isNN toTargetState 'hasNN withArc         'isAdj       toTargetState 'hasAdj
+    create State    'hasAdj  withArc         'isNN       toTargetState 'hasNN
     create State    'hasNN  withEpsilonArc  'resolveNP  toTargetState 'endNP
     create EndState 'endNP
 
@@ -71,7 +72,9 @@ class MMIParser(aName: Symbol,
     create Arc 'isDT            withCondition (checkForWordType[WordTypes.Determiner], checkConfidence(0.2f))  addFunction resolveDet
     create Arc 'isNN            withCondition (checkForWordType[WordTypes.Noun], checkConfidence(0.5f))        addFunction copySpeechToRegisterAs(lexiconTypes.Noun)
     create Arc 'isEx            withCondition (checkForWordType[WordTypes.Existential], checkConfidence(0.5f)) addFunction resolveEx
-    create Arc 'isAdj           withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
+    create Arc 'isAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
+    create Arc 'isNAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction resolveNounAdj
+    create Arc 'isIndic withCondition(checkForWordType[WordTypes.Demonstrative], checkConfidence(0.5f)) addFunction resolveBiminIndic
 
     create Arc 'resolveNP             withCondition alwaysTrue                              addFunction resolveNP
     create Arc 'firstCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
@@ -99,7 +102,6 @@ class MMIParser(aName: Symbol,
 
     // resolves the article/determiner "a", "the", "that"
     private def resolveDet(in: Event, register: SValSet): Unit = {
-      //TODO Recognise object
       // retrieves the timestamp of the incoming speech event
       val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
       val allEntities = Get all HasSVal(semanticTypes.Activated)
@@ -110,13 +112,6 @@ class MMIParser(aName: Symbol,
         if(wasActivated) activatedEntities = e :: activatedEntities
       }
 
-      /*
-      val raycastHit = (semanticTypes.RaycastHit of User at detTimeStamp).value
-      allEntities.foreach{e =>
-        if(raycastHit.equals(semanticTypes.Position of e)) {
-          activatedEntities = e :: activatedEntities
-        }
-      }*/
       activatedEntities.foreach{e => register.add(semanticTypes.Entity(e))}
     }
 
@@ -129,23 +124,37 @@ class MMIParser(aName: Symbol,
       register.add(semanticTypes.RaycastHit(raycastHit))
     }
 
+    // resolves the colors "red", "blue", "green"
+    private def resolveNounAdj(in: Event, register: SValSet): Unit = {
+      val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
+      val adj = in.values.firstValueFor(semanticTypes.String)
+      //search for entites with right color
+      val allColoredEntities = Get all HasSVal(semanticTypes.ColorName)
+      var coloredEntities: List[Entity] = Nil
+      allColoredEntities.foreach { e =>
+        //println("Farbe: " + adj.property.generate().value.toString)
+        val color = (semanticTypes.ColorName of e at detTimeStamp).value
+        if (color.equals(adj)) coloredEntities = e :: coloredEntities
+      }
+      coloredEntities.foreach { e => register.add(semanticTypes.Entity(e)) }
+    }
+
+    // resolves indication of size
+    private def resolveBiminIndic(in: Event, register: SValSet): Unit = {
+      val timeStamp = in.values.firstValueFor(semanticTypes.Time)
+      val leftHandController = Get all SValEquals(semanticTypes.Semantics(Symbols.left))
+      val rightHandController = Get all SValEquals(semanticTypes.Semantics(Symbols.right))
+      val positionLeft = (semanticTypes.Position of leftHandController.head at timeStamp).value
+      val positionRight = (semanticTypes.Position of rightHandController.head at timeStamp).value
+      val distancePoints: Double = Math.abs(Math.sqrt(Math.pow(positionLeft.x - positionRight.x, 2) + Math.pow(positionLeft.y - positionRight.y, 2) + Math.pow(positionLeft.z - positionRight.z, 2)))
+      val distance: Float = distancePoints.toFloat * 4f
+      register.add(semanticTypes.Scale(ConstVec3f(distance, distance, distance)))
+    }
+
     // sends an ATNEvent.command to the MMIParserApplication
     private def returnCommand(in: Event, register: SValSet): List[Event] = {
       AtnEvents.command(register.toSValSeq:_*) :: Nil
     }
-    /*//resolves adjectives like color words
-    private def resolveAdj(in: Event, register: SValSet): Unit = {
-      // retrieves the timestamp of the incoming speech event
-      val adjTimeStamp = in.values.firstValueFor(semanticTypes.Time)
-      val colors = Get all HasSVal(semanticTypes.Color)
-      // checks adjective
-      //val adjWord = (semanticTypes.Color of Adjectives at adjTimeStamp).value
-      colors.foreach{e =>
-        val adjWord = (semanticTypes.Color of in.values at adjTimeStamp).value
-        register.add(semanticTypes.Color(adjWord))
-      }
-      //register.add(semanticTypes.Color(adjWord))
-    }*/
   }
 
   override protected def name: Symbol = aName

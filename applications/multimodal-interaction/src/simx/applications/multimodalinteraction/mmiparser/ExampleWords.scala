@@ -75,11 +75,15 @@ object ExampleWords {
   case class Scaling() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.scale)
   }
-
+/*
   case class Big() extends Adjective {
     val property = new SimpleSemanticTypeInstance(types.Real.withAnnotations(Symbols.scale)(2f))
   }
 
+  case class Size() extends Adjective {
+    val property: SemanticTypeInstance[_, _, _, _] = null
+  }
+  */
   case class Small() extends Adjective {
     val property = new SimpleSemanticTypeInstance(types.Real.withAnnotations(Symbols.scale)(0.5f))
   }

@@ -73,6 +73,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.clear()
     Lexicon.put("select", ExampleWords.Selection())
     Lexicon.put("deselect", ExampleWords.Deselection())
+    Lexicon.put("put", ExampleWords.Translation())
     Lexicon.put("move", ExampleWords.Translation())
     Lexicon.put("delete", ExampleWords.Deletion())
     Lexicon.put("destroy", ExampleWords.Deletion())
@@ -86,6 +87,8 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.put("green", ExampleWords.Green())
     Lexicon.put("blue", ExampleWords.Blue())
     Lexicon.put("red", ExampleWords.Red())
+    Lexicon.put("this big", ExampleWords.Demonstrative())
+    Lexicon.put("make", ExampleWords.Scaling())
   }
 
   protected def createEntities(): Unit = {
@@ -119,29 +122,19 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
       }
       if (action == Symbols.color) {
 
-        //TODO change method
-        /*
         val entity = values.getFirstValueFor(types.Entity)
         val lexiconColor = values.getFirstValueFor(lexiconTypes.Adjective)
         if(lexiconColor.isDefined) {
-          val color = lexiconColor.get.property.generate() //.value.toString
+          val color = lexiconColor.get.property.generate().value.toString
           colorEntity(entity, color)
-        }*/
-
-        ////// remove 1
-        val entity = values.getFirstValueFor(types.Entity)
-        val lexiconColor = values.getFirstValueFor(lexiconTypes.Adjective)
-        println(lexiconColor)
-        if (lexiconColor.isDefined) {
-          val color = lexiconColor.get.value
-          println("Lexicon Color: " + color)
-          if (color.toString.equals("Green()")) {
-            colorEntity(entity, "green")
-          } else if (color.toString.equals("Blue()")) {
-            colorEntity(entity, "blue")
-          }
         }
-        //////// remove 2
+      }
+      if (action == Symbols.scale) {
+        val entity = values.getFirstValueFor(types.Entity)
+        val scale = values.getFirstValueFor(types.Scale)
+        if (scale.isDefined) {
+          scaleEntity(entity, scale.get)
+        }
       }
     }
   }
@@ -190,6 +183,15 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
       println("[MMIParserApplication] Entity in colorEntity() not defined")
     }
   }
+
+  private def scaleEntity(e: Option[Entity], size: ConstVec3f): Unit = {
+    if (e.isDefined) {
+      e.get.set(types.Scale(size))
+    } else {
+      println("[MMIParserApplication] Entity in scaleEntity() not defined")
+    }
+  }
+
   protected def removeFromLocalRep(e: Entity) {}
 
   override def onNewRequirementValue(e: Entity, requirementInfo: StateParticleInfo[_], timestamp: TimedRingBuffer.Time): Unit = {}
