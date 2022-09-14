@@ -56,13 +56,14 @@ class MMIParser(aName: Symbol,
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
     create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP
     create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
-    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx
+    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx //TODO//// withArc 'isAdj toTargetState 'hasAdj
     create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create State      'hasAdj withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
-    create State    'hasDT  withArc         'isNN       toTargetState 'hasNN
+    create State 'hasDT withArc 'isNN toTargetState 'hasNN //TODO////withArc         'isAdj       toTargetState 'hasAdj
+    //TODO////create State    'hasAdj  withArc         'isNN       toTargetState 'hasNN
     create State    'hasNN  withEpsilonArc  'resolveNP  toTargetState 'endNP
     create EndState 'endNP
 
@@ -81,6 +82,7 @@ class MMIParser(aName: Symbol,
 
     // resolves a recognized noun phrase
     private def resolveNP(in: Event, register: SValSet): Unit = {
+      //TODO recognise Adjectives --> seperate Method to get all Objects with certain color
       val noun = register.firstValueFor(lexiconTypes.Noun)
       // retrieves all entities with a semantic property that corresponds to the noun from the application state
       val entities = Get all SValEquals(semanticTypes.Semantics(noun.entityRelation))
@@ -97,6 +99,7 @@ class MMIParser(aName: Symbol,
 
     // resolves the article/determiner "a", "the", "that"
     private def resolveDet(in: Event, register: SValSet): Unit = {
+      //TODO Recognise object
       // retrieves the timestamp of the incoming speech event
       val detTimeStamp = in.values.firstValueFor(semanticTypes.Time)
       val allEntities = Get all HasSVal(semanticTypes.Activated)
@@ -106,6 +109,14 @@ class MMIParser(aName: Symbol,
         val wasActivated = (semanticTypes.Activated of e at detTimeStamp).value
         if(wasActivated) activatedEntities = e :: activatedEntities
       }
+
+      /*
+      val raycastHit = (semanticTypes.RaycastHit of User at detTimeStamp).value
+      allEntities.foreach{e =>
+        if(raycastHit.equals(semanticTypes.Position of e)) {
+          activatedEntities = e :: activatedEntities
+        }
+      }*/
       activatedEntities.foreach{e => register.add(semanticTypes.Entity(e))}
     }
 

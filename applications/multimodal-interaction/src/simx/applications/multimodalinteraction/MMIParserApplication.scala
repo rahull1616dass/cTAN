@@ -84,6 +84,8 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
     Lexicon.put("there", ExampleWords.Existential())
     Lexicon.put("color", ExampleWords.Coloration())
     Lexicon.put("green", ExampleWords.Green())
+    Lexicon.put("blue", ExampleWords.Blue())
+    Lexicon.put("red", ExampleWords.Red())
   }
 
   protected def createEntities(): Unit = {
@@ -116,6 +118,17 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
         createEntity(noun.get.entityRelation.toString)
       }
       if (action == Symbols.color) {
+
+        //TODO change method
+        /*
+        val entity = values.getFirstValueFor(types.Entity)
+        val lexiconColor = values.getFirstValueFor(lexiconTypes.Adjective)
+        if(lexiconColor.isDefined) {
+          val color = lexiconColor.get.property.generate() //.value.toString
+          colorEntity(entity, color)
+        }*/
+
+        ////// remove 1
         val entity = values.getFirstValueFor(types.Entity)
         val lexiconColor = values.getFirstValueFor(lexiconTypes.Adjective)
         println(lexiconColor)
@@ -128,6 +141,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
             colorEntity(entity, "blue")
           }
         }
+        //////// remove 2
       }
     }
   }
@@ -170,7 +184,11 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
   }
 
   private def colorEntity(e: Option[Entity], name: String): Unit = {
-
+    if (e.isDefined) {
+      e.get.set(types.ColorName(name))
+    } else {
+      println("[MMIParserApplication] Entity in colorEntity() not defined")
+    }
   }
   protected def removeFromLocalRep(e: Entity) {}
 

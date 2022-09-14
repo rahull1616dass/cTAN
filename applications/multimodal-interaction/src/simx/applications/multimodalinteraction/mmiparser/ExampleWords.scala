@@ -62,15 +62,14 @@ object ExampleWords {
   }
 
   case class Blue() extends Adjective {
-    val property = new SimpleSemanticTypeInstance(types.Color.withAnnotations(Symbols.color)(Color.BLUE))
-  }
+    val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("blue"))  }
 
   case class Green() extends Adjective {
-    val property = new SimpleSemanticTypeInstance(types.Color.withAnnotations(Symbols.color)(Color.GREEN))
+    val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("green"))
   }
 
   case class Red() extends Adjective {
-    val property = new SimpleSemanticTypeInstance(types.Color.withAnnotations(Symbols.color)(Color.RED))
+    val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("red"))
   }
 
   case class Scaling() extends Verb {
