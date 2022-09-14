@@ -57,17 +57,15 @@ class MMIParser(aName: Symbol,
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
     create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP
     create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
-    create State 'hasFirstCommand withArc 'isEx toTargetState 'hasEx withArc 'isAdj toTargetState 'hasAdj withArc 'isIndication toTargetState 'hasIndication
-    create State 'hasIndication withArc 'isAdj toTargetState 'hasAdj
+    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx    withArc 'isAdj toTargetState 'hasAdj    withArc 'isIndication toTargetState 'hasIndication
+    create State      'hasIndication   withArc 'isAdj toTargetState 'hasAdj
     create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create State      'hasAdj withEpsilonArc 'finalCommandFinished toTargetState 'endState
-    create State      'hasIndic withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create EndState 'endState
 
     create State    'isNP   withArc         'isDT       toTargetState 'hasDT
-    create State 'hasDT withArc 'isNN toTargetState 'hasNN withArc 'isDescriptionAdj toTargetState 'hasDescriptionAdj
-    create State 'hasDescriptionAdj withArc 'isNN toTargetState 'hasNN
-
+    create State    'hasDT  withArc         'isNN       toTargetState 'hasNN   withArc         'isDescriptionAdj       toTargetState 'hasDescriptionAdj
+    create State    'hasDescriptionAdj  withArc         'isNN       toTargetState 'hasNN
     create State    'hasNN  withEpsilonArc  'resolveNP  toTargetState 'endNP
     create EndState 'endNP
 
@@ -75,9 +73,9 @@ class MMIParser(aName: Symbol,
     create Arc 'isDT            withCondition (checkForWordType[WordTypes.Determiner], checkConfidence(0.2f))  addFunction resolveDet
     create Arc 'isNN            withCondition (checkForWordType[WordTypes.Noun], checkConfidence(0.5f))        addFunction copySpeechToRegisterAs(lexiconTypes.Noun)
     create Arc 'isEx            withCondition (checkForWordType[WordTypes.Existential], checkConfidence(0.5f)) addFunction resolveEx
-    create Arc 'isAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
-    create Arc 'isDescriptionAdj withCondition(checkForWordType[WordTypes.Adjective], checkConfidence(0.5f)) addFunction resolveDescriptionAdj
-    create Arc 'isIndication withCondition(checkForWordType[WordTypes.Demonstrative], checkConfidence(0.5f)) addFunction resolveScale
+    create Arc 'isAdj           withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.5f))   addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
+    create Arc 'isDescriptionAdj  withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.5f))   addFunction resolveDescriptionAdj
+    create Arc 'isIndication    withCondition (checkForWordType[WordTypes.Demonstrative], checkConfidence(0.5f))   addFunction resolveScale
 
     create Arc 'resolveNP             withCondition alwaysTrue                              addFunction resolveNP
     create Arc 'firstCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
@@ -149,7 +147,7 @@ class MMIParser(aName: Symbol,
       val rightHandController = Get all SValEquals(semanticTypes.Semantics(Symbols.right))
       val positionLeft = (semanticTypes.Position of leftHandController.head at timeStamp).value
       val positionRight = (semanticTypes.Position of rightHandController.head at timeStamp).value
-      val distance3DPoints: Double = Math.abs(Math.sqrt(Math.pow(positionLeft.x - positionRight.x, 2) + Math.pow(positionLeft.y - positionRight.y, 2) + Math.pow(positionLeft.z - positionRight.z, 2)))
+      val distance3DPoints :Double = Math.abs(Math.sqrt(Math.pow(positionLeft.x - positionRight.x, 2) + Math.pow(positionLeft.y - positionRight.y, 2) + Math.pow(positionLeft.z - positionRight.z, 2)))
       val distance :Float = distance3DPoints.toFloat * 5f
       register.add(semanticTypes.Scale(ConstVec3f(distance, distance, distance)))
     }

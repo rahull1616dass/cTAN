@@ -21,6 +21,7 @@
 package simx.applications.multimodalinteraction.mmiparser
 
 import java.awt.Color
+
 import simx.components.ai.atn.interaction.lexicon.WordTypes
 import simx.components.ai.atn.misc.{SemanticTypeInstance, SimpleSemanticTypeInstance}
 import simx.core.ontology.{Symbols, types}
@@ -29,31 +30,32 @@ import simx.core.ontology.types.OntologySymbol
 object ExampleWords {
 
   import WordTypes._
-  case class Ball() extends WordTypes.Noun {
-    val entityRelation: OntologySymbol = Symbols.ball
-  }
 
-  case class Selection() extends Verb {
-    val actions: Set[OntologySymbol] = Set(Symbols.selection)
+  case class Ball() extends Noun {
+    val entityRelation: OntologySymbol = Symbols.ball
   }
 
   case class Box() extends Noun {
     val entityRelation = Symbols.box
   }
 
-  case class Deselection() extends Verb {
-    val actions: Set[OntologySymbol] = Set(Symbols.entityDeletion)
+  case class Selection() extends Verb {
+    val actions: Set[OntologySymbol] = Set(Symbols.selection)
   }
 
-  case class Creation() extends WordTypes.Verb {
+  case class Deselection() extends Verb {
+    val actions: Set[OntologySymbol] = Set(Symbols.selection)
+  }
+
+  case class Creation() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.entityCreation)
   }
 
-  case class Deletion() extends WordTypes.Verb {
+  case class Deletion() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.entityDeletion)
   }
 
-  case class Translation() extends WordTypes.Verb {
+  case class Translation() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.move)
   }
 
@@ -62,7 +64,8 @@ object ExampleWords {
   }
 
   case class Blue() extends Adjective {
-    val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("blue"))  }
+    val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("blue"))
+  }
 
   case class Green() extends Adjective {
     val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("green"))
@@ -76,7 +79,6 @@ object ExampleWords {
     val property: SemanticTypeInstance[_, _, _, _] = new SimpleSemanticTypeInstance(types.ColorName("black"))
   }
 
-
   case class Scaling() extends Verb {
     val actions: Set[OntologySymbol] = Set(Symbols.scale)
   }
@@ -84,14 +86,20 @@ object ExampleWords {
   case class Big() extends Adjective {
     val property = new SimpleSemanticTypeInstance(types.Real.withAnnotations(Symbols.scale)(2f))
   }
+
   case class Small() extends Adjective {
     val property = new SimpleSemanticTypeInstance(types.Real.withAnnotations(Symbols.scale)(0.5f))
   }
+
+
   case class Scale() extends WordTypes.Demonstrative
+
   case class Existential() extends WordTypes.Existential
 
   case class Myself() extends WordTypes.ProNoun
 
   case class Article() extends WordTypes.Determiner
+
   case class Demonstrative() extends WordTypes.Demonstrative
+
 }
