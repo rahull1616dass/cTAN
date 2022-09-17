@@ -66,6 +66,7 @@ case class SpeechRecognizer(ip: String) extends SVarActor with EventProvider wit
     if(hypothesized){
       SpeechEvents.hypothesis.emit(types.String(text), types.Time(timestamp), types.Confidence(confidence))
     } else {
+      println(s"$text=$confidence")
       SpeechEvents.recognized.emit(types.String(text), types.Time(timestamp), types.Confidence(confidence))
     }
     //SpeechEvents.token.emit(types.String(text), types.Time(timestamp), types.Confidence(confidence))

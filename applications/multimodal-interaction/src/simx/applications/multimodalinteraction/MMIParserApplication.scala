@@ -54,6 +54,7 @@ class MMIParserApplication extends SimXApplication with EventHandler with Semant
 
   val keyboardMode = false
 
+
   protected def applicationConfiguration: ApplicationConfig = ApplicationConfig withComponent
     EditorComponentAspect('editor) and
     UnityComponentAspect('unity, "localhost", 8000) and

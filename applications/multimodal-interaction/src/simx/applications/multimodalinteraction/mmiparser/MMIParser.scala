@@ -69,13 +69,13 @@ class MMIParser(aName: Symbol,
     create State    'hasNN  withEpsilonArc  'resolveNP  toTargetState 'endNP
     create EndState 'endNP
 
-    create Arc 'isVB            withCondition (checkForWordType[WordTypes.Verb], checkConfidence(0.2f))        addFunction copySpeechToRegisterAs(lexiconTypes.Verb)
-    create Arc 'isDT            withCondition (checkForWordType[WordTypes.Determiner], checkConfidence(0.2f))  addFunction resolveDet
-    create Arc 'isNN            withCondition (checkForWordType[WordTypes.Noun], checkConfidence(0.5f))        addFunction copySpeechToRegisterAs(lexiconTypes.Noun)
-    create Arc 'isEx            withCondition (checkForWordType[WordTypes.Existential], checkConfidence(0.5f)) addFunction resolveEx
-    create Arc 'isAdj           withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.5f))   addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
-    create Arc 'isDescriptionAdj  withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.5f))   addFunction resolveDescriptionAdj
-    create Arc 'isIndication    withCondition (checkForWordType[WordTypes.Demonstrative], checkConfidence(0.5f))   addFunction resolveScale
+    create Arc 'isVB            withCondition (checkForWordType[WordTypes.Verb], checkConfidence(0.08f))        addFunction copySpeechToRegisterAs(lexiconTypes.Verb)
+    create Arc 'isDT            withCondition (checkForWordType[WordTypes.Determiner], checkConfidence(0.08f))  addFunction resolveDet
+    create Arc 'isNN            withCondition (checkForWordType[WordTypes.Noun], checkConfidence(0.2f))        addFunction copySpeechToRegisterAs(lexiconTypes.Noun)
+    create Arc 'isEx            withCondition (checkForWordType[WordTypes.Existential], checkConfidence(0.2f)) addFunction resolveEx
+    create Arc 'isAdj           withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.2f))   addFunction copySpeechToRegisterAs(lexiconTypes.Adjective)
+    create Arc 'isDescriptionAdj  withCondition (checkForWordType[WordTypes.Adjective], checkConfidence(0.2f))   addFunction resolveDescriptionAdj
+    create Arc 'isIndication    withCondition (checkForWordType[WordTypes.Demonstrative], checkConfidence(0.2f))   addFunction resolveScale
 
     create Arc 'resolveNP             withCondition alwaysTrue                              addFunction resolveNP
     create Arc 'firstCommandFinished  withCondition alwaysTrue                              addFeedback returnCommand
