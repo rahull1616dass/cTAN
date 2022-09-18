@@ -57,7 +57,7 @@ class MMIParser(aName: Symbol,
     create StartState 'startState withArc        'isVB            toTargetState 'hasVB
     create State      'hasVB      withSubArc     'isNP            toTargetState 'hasNP
     create State      'hasNP      withEpsilonArc 'firstCommandFinished toTargetState 'hasFirstCommand
-    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx    withArc 'isAdj toTargetState 'hasAdj    withArc 'isIndication toTargetState 'hasIndication
+    create State      'hasFirstCommand withArc 'isEx toTargetState 'hasEx    withArc 'isAdj toTargetState 'hasAdj withArc 'isIndication toTargetState 'hasIndication
     create State      'hasIndication   withArc 'isAdj toTargetState 'hasAdj
     create State      'hasEx withEpsilonArc 'finalCommandFinished toTargetState 'endState
     create State      'hasAdj withEpsilonArc 'finalCommandFinished toTargetState 'endState
@@ -133,7 +133,6 @@ class MMIParser(aName: Symbol,
       val allColoredEntities = Get all HasSVal(semanticTypes.ColorName)
       var coloredEntities: List[Entity] = Nil
       allColoredEntities.foreach { e =>
-        //println("Farbe: " + adj.property.generate().value.toString)
         val color = (semanticTypes.ColorName of e at adjTimeStamp).value
         if (color.equals(adj)) coloredEntities = e :: coloredEntities
       }
